@@ -165,6 +165,33 @@ only) derives two summary tables from the data CSVs:
   `institution_key`, `institution_name`, `ror`, `country`, `n_papers`
   (distinct works), `n_authors` (distinct author keys), `first_use`,
   `last_use`.
+- **`analysis/journals.csv`** — one row per unique venue: `journal_key`,
+  `journal_name`, `n_papers` (distinct works), `n_authors` (distinct author
+  keys), `first_use`, `last_use`. Venues are keyed by normalized name
+  (lowercased, runs of punctuation/whitespace collapsed to single spaces —
+  this merges MEDLINE-style variants like *Journal of experimental
+  psychology. General*) since the sources provide no ISSNs; `journal_name`
+  shows the most frequent original spelling. A work's venue is its
+  **canonical member's** venue, so a preprint linked to its published
+  article counts for the journal rather than the preprint server — but
+  works that exist *only* as preprints count under their server (PsyArXiv,
+  bioRxiv, …), which is why preprint servers appear in the table. When the
+  canonical member's venue is blank, it is inferred from the DOI registrant
+  prefix (10.31234 → PsyArXiv, 10.31219 → OSF Preprints, 10.31235 →
+  SocArXiv, 10.35542 → EdArXiv, 10.48550 → arXiv, 10.21203 → Research
+  Square, 10.20944 → Preprints.org, 10.2139 → SSRN, 10.1101 →
+  bioRxiv/medRxiv, the last shared between the two servers) — this affects
+  only the journals table, never the raw data, and matters because OpenAlex
+  leaves the venue blank on most PsyArXiv/OSF preprint records: PsyArXiv's
+  count comes almost entirely from this fallback. A small alias map merges
+  OpenAlex's alternate spellings of the same server into the fallback rows
+  ("PsyArXiv (OSF Preprints)" → "PsyArXiv", "OSF Preprints (OSF Preprints)"
+  → "OSF Preprints") so one server doesn't split into two rows; only
+  observed splits are aliased, and *bioRxiv (Cold Spring Harbor
+  Laboratory)* / *medRxiv* / *arXiv (Cornell University)* are left as-is
+  (the joint "bioRxiv/medRxiv" fallback row can't be attributed to either
+  server, and arXiv has no fallback row to merge). Works with no venue and
+  no mapped DOI prefix are skipped (the script prints how many).
 
 **Works, not rows.** Rows linked through `duplicate_of` (a preprint and its
 published version, or several preprint versions) are collapsed into a single

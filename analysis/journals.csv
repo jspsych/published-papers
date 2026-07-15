@@ -1,0 +1,572 @@
+journal_key,journal_name,n_papers,n_authors,first_use,last_use
+name:psyarxiv,PsyArXiv,268,803,2017-03-03,2026-07-02
+name:behavior research methods,Behavior Research Methods,93,380,2014-03-28,2026-07-06
+name:cognition,Cognition,64,191,2017-02-15,2026-05-25
+name:osf preprints,OSF Preprints,63,172,2016-06-01,2026-07-02
+name:biorxiv cold spring harbor laboratory,bioRxiv (Cold Spring Harbor Laboratory),59,232,2017-09-15,2026-06-22
+name:scientific reports,Scientific Reports,56,233,2016-09-13,2026-06-12
+name:frontiers in psychology,Frontiers in Psychology,45,165,2014-08-06,2026-06-04
+name:attention perception psychophysics,Attention Perception & Psychophysics,44,139,2016-02-04,2026-07-13
+name:arxiv cornell university,arXiv (Cornell University),41,174,2019-05-17,2026-06-24
+name:memory cognition,Memory & Cognition,39,120,2018-04-30,2026-05-29
+name:plos one,PLoS ONE,38,154,2015-06-26,2026-05-15
+name:psychonomic bulletin review,Psychonomic Bulletin & Review,37,114,2016-07-06,2026-07-13
+name:quarterly journal of experimental psychology,Quarterly Journal of Experimental Psychology,31,97,2020-01-14,2026-05-03
+name:cognitive science,Cognitive Science,27,82,2015-01-01,2026-06-01
+name:elife,eLife,27,58,2017-11-21,2026-03-27
+name:journal of cognition,Journal of Cognition,25,85,2019-01-01,2026-01-09
+name:open mind,Open Mind,23,91,2020-01-01,2026-06-30
+name:communications psychology,Communications Psychology,22,87,2022-10-17,2026-04-29
+name:journal of memory and language,Journal of Memory and Language,20,47,2018-06-11,2026-06-20
+name:psychological research,Psychological Research,20,68,2020-11-12,2026-02-07
+name:ssrn electronic journal,SSRN Electronic Journal,18,68,2022-01-01,2026-01-01
+name:consciousness and cognition,Consciousness and Cognition,17,53,2019-09-12,2026-03-12
+name:escholarship california digital library,eScholarship (California Digital Library),17,49,2013-01-01,2024-01-01
+name:journal of experimental psychology general,Journal of Experimental Psychology General,17,59,2018-11-28,2026-01-26
+name:nature communications,Nature Communications,17,57,2019-03-08,2026-05-15
+name:institutional repositories database irdb,Institutional Repositories DataBase (IRDB),16,33,2020-03-23,2026-04-01
+name:journal of vision,Journal of Vision,16,52,2021-08-18,2026-04-01
+name:proceedings of the national academy of sciences,Proceedings of the National Academy of Sciences,16,61,2020-04-02,2026-04-14
+name:psychological science,Psychological Science,15,74,2019-07-25,2026-02-19
+name:cognitive research principles and implications,Cognitive Research Principles and Implications,14,50,2017-02-20,2025-10-30
+name:the journal of the acoustical society of america,The Journal of the Acoustical Society of America,14,62,2020-10-01,2026-05-01
+name:nature human behaviour,Nature Human Behaviour,13,92,2020-04-11,2026-02-05
+name:plos computational biology,PLoS Computational Biology,13,55,2020-09-28,2026-06-29
+name:royal society open science,Royal Society Open Science,13,45,2020-01-17,2026-01-28
+name:journal of experimental psychology learning memory and cognition,Journal of Experimental Psychology Learning Memory and Cognition,12,34,2018-02-01,2026-02-12
+name:acta psychologica,Acta Psychologica,11,42,2017-07-04,2026-06-30
+name:cognitive psychology,Cognitive Psychology,11,33,2019-07-17,2024-07-13
+name:neuropsychologia,Neuropsychologia,11,49,2021-02-18,2026-02-27
+name:the proceedings of the annual convention of the japanese psychological association,The Proceedings of the Annual Convention of the Japanese Psychological Association,11,36,2021-01-01,2025-01-01
+name:collabra psychology,Collabra Psychology,10,74,2019-01-01,2026-01-01
+name:iscience,iScience,10,40,2019-03-09,2026-06-17
+name:visual cognition,Visual Cognition,10,29,2021-09-18,2025-02-07
+name:cognition emotion,Cognition & Emotion,9,32,2019-08-13,2025-01-20
+name:cognitive affective behavioral neuroscience,Cognitive Affective & Behavioral Neuroscience,8,29,2023-05-15,2025-10-13
+name:computational brain behavior,Computational Brain & Behavior,8,21,2020-03-21,2026-05-26
+name:frontiers in human neuroscience,Frontiers in Human Neuroscience,8,34,2021-06-30,2026-04-01
+name:journal of experimental social psychology,Journal of Experimental Social Psychology,8,30,2017-08-17,2026-03-23
+name:journal of neuroscience,Journal of Neuroscience,8,26,2017-07-03,2026-06-10
+name:language cognition and neuroscience,Language Cognition and Neuroscience,8,24,2017-02-06,2026-01-11
+name:lecture notes in computer science,Lecture notes in computer science,8,36,2018-01-01,2026-01-01
+name:memory,Memory,8,22,2019-05-30,2025-07-30
+name:proceedings of the acm on human computer interaction,Proceedings of the ACM on Human-Computer Interaction,8,17,2018-11-01,2026-05-28
+name:jasa express letters,JASA Express Letters,7,18,2021-08-01,2026-01-01
+name:neuroscience of consciousness,Neuroscience of Consciousness,7,20,2021-01-01,2026-01-01
+name:science advances,Science Advances,7,33,2018-12-16,2025-01-01
+name:advances in methods and practices in psychological science,Advances in Methods and Practices in Psychological Science,6,218,2019-04-17,2026-07-01
+name:bilingualism language and cognition,Bilingualism Language and Cognition,6,19,2020-11-26,2025-12-02
+name:brain sciences,Brain Sciences,6,28,2020-03-26,2024-08-29
+name:current psychology,Current Psychology,6,20,2022-12-09,2026-05-01
+name:ieee transactions on visualization and computer graphics,IEEE Transactions on Visualization and Computer Graphics,6,30,2021-09-29,2026-01-01
+name:journal of experimental psychology human perception performance,Journal of Experimental Psychology Human Perception & Performance,6,31,2021-06-30,2026-03-19
+name:journal of speech language and hearing research,Journal of Speech Language and Hearing Research,6,23,2023-08-09,2026-02-23
+name:language and cognition,Language and Cognition,6,20,2024-02-12,2026-01-01
+name:neuroimage,NeuroImage,6,35,2020-02-26,2025-01-23
+name:research square,Research Square,6,34,2023-05-05,2025-10-27
+name:appetite,Appetite,5,19,2022-12-10,2025-12-06
+name:applied psycholinguistics,Applied Psycholinguistics,5,14,2024-09-01,2026-01-01
+name:behavioral sciences,Behavioral Sciences,5,11,2023-07-14,2026-04-01
+name:child development,Child Development,5,22,2017-04-24,2026-02-20
+name:computers in human behavior,Computers in Human Behavior,5,24,2023-12-21,2025-12-03
+name:experimental psychology formerly zeitschrift für experimentelle psychologie,Experimental Psychology (formerly Zeitschrift für Experimentelle Psychologie),5,19,2018-07-01,2024-12-11
+name:frontiers in behavioral neuroscience,Frontiers in Behavioral Neuroscience,5,24,2022-07-22,2024-01-24
+name:glossa psycholinguistics,Glossa Psycholinguistics,5,17,2022-04-12,2026-04-16
+name:human factors the journal of the human factors and ergonomics society,Human Factors The Journal of the Human Factors and Ergonomics Society,5,10,2018-07-23,2025-02-12
+name:international journal of human computer studies,International Journal of Human-Computer Studies,5,16,2021-04-29,2025-11-08
+name:journal of environmental psychology,Journal of Environmental Psychology,5,15,2021-09-20,2026-02-21
+name:journal of psychiatric research,Journal of Psychiatric Research,5,22,2021-03-11,2025-02-13
+name:journal of second language pronunciation,Journal of Second Language Pronunciation,5,26,2019-01-28,2026-06-12
+name:la referencia red federada de repositorios institucionales de publicaciones científicas,LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas),5,5,2019-01-01,2025-01-01
+name:language learning,Language Learning,5,14,2017-02-16,2025-03-07
+name:nature,Nature,5,82,2022-05-19,2025-11-12
+name:peerj,PeerJ,5,18,2015-07-23,2026-01-07
+name:scientific data,Scientific Data,5,154,2023-02-03,2026-02-18
+name:the journal of open source software,The Journal of Open Source Software,5,17,2018-02-04,2025-03-20
+name:tspace university of toronto,TSpace (University of Toronto),5,5,2019-11-01,2022-11-01
+name:behaviour research and therapy,Behaviour Research and Therapy,4,38,2017-10-11,2025-12-06
+name:bmc psychiatry,BMC Psychiatry,4,112,2024-12-04,2025-12-25
+name:cognitive development,Cognitive Development,4,12,2022-09-26,2025-04-16
+name:current biology,Current Biology,4,22,2023-04-26,2026-05-20
+name:discourse processes,Discourse Processes,4,4,2018-12-03,2022-10-06
+name:eneuro,eNeuro,4,20,2017-05-01,2025-10-01
+name:experimental psychology russia,Experimental Psychology (Russia),4,5,2023-12-26,2025-12-30
+name:f1000research,F1000Research,4,6,2022-04-08,2025-03-24
+name:hal le centre pour la communication scientifique directe,HAL (Le Centre pour la Communication Scientifique Directe),4,6,2019-01-01,2025-06-05
+name:journal of eating disorders,Journal of Eating Disorders,4,8,2024-01-24,2026-05-11
+name:laboratory phonology journal of the association for laboratory phonology,Laboratory Phonology Journal of the Association for Laboratory Phonology,4,14,2023-07-23,2025-10-21
+name:language and speech,Language and Speech,4,13,2022-04-14,2026-04-09
+name:music perception an interdisciplinary journal,Music Perception An Interdisciplinary Journal,4,14,2020-06-10,2025-06-05
+name:proceedings of the human factors and ergonomics society annual meeting,Proceedings of the Human Factors and Ergonomics Society Annual Meeting,4,16,2018-09-01,2024-08-13
+name:proceedings of the linguistic society of america,Proceedings of the Linguistic Society of America,4,7,2018-03-03,2026-05-08
+name:research methods in applied linguistics,Research Methods in Applied Linguistics,4,11,2025-06-20,2026-07-01
+name:the japanese journal of psychology,The Japanese journal of psychology,4,11,2021-01-01,2025-09-29
+name:the journal of the institute of image information and television engineers,The Journal of The Institute of Image Information and Television Engineers,4,6,2021-01-01,2021-01-01
+name:the quantitative methods for psychology,The Quantitative Methods for Psychology,4,32,2021-09-01,2025-02-01
+name:translational psychiatry,Translational Psychiatry,4,20,2023-02-24,2026-04-02
+name:vision,Vision,4,16,2022-02-24,2022-08-19
+name:vision research,Vision Research,4,15,2022-06-21,2025-05-12
+name:wellcome open research,Wellcome Open Research,4,2,2021-02-05,2022-04-11
+name:zenodo cern european organization for nuclear research,Zenodo (CERN European Organization for Nuclear Research),4,12,2023-03-24,2026-05-30
+name:advances in cognitive psychology,Advances in Cognitive Psychology,3,10,2023-01-01,2024-01-01
+name:affective science,Affective Science,3,11,2023-12-06,2026-06-03
+name:american journal of speech language pathology,American Journal of Speech-Language Pathology,3,9,2022-01-04,2025-12-23
+name:apollo university of cambridge,Apollo (University of Cambridge),3,22,2019-09-01,2026-07-06
+name:communications in computer and information science,Communications in computer and information science,3,6,2023-01-01,2026-01-01
+name:cortex,Cortex,3,13,2021-03-29,2025-09-17
+name:dokumentenrepositorium der rub ruhr university bochum,Dokumentenrepositorium der RUB (Ruhr University Bochum),3,7,2024-11-05,2025-10-09
+name:elsevier ebooks,Elsevier eBooks,3,9,2020-01-01,2026-01-01
+name:european eating disorders review,European Eating Disorders Review,3,12,2022-11-04,2025-03-17
+name:experimental brain research,Experimental Brain Research,3,10,2022-01-27,2026-02-21
+name:frontiers in psychiatry,Frontiers in Psychiatry,3,16,2021-10-27,2024-11-11
+name:glossa a journal of general linguistics,Glossa a journal of general linguistics,3,10,2022-09-27,2025-01-23
+name:heliyon,Heliyon,3,15,2022-02-10,2025-11-30
+name:journal of anomalous experience and cognition,Journal of Anomalous Experience and Cognition,3,6,2021-10-28,2024-06-05
+name:journal of child language,Journal of Child Language,3,6,2023-06-15,2026-03-05
+name:journal of cognitive neuroscience,Journal of Cognitive Neuroscience,3,13,2019-11-04,2022-12-06
+name:journal of experimental child psychology,Journal of Experimental Child Psychology,3,6,2020-11-08,2025-12-08
+name:journal of experimental psychology animal learning and cognition,Journal of Experimental Psychology Animal Learning and Cognition,3,4,2022-04-01,2023-04-01
+name:journal of phonetics,Journal of Phonetics,3,6,2023-10-18,2025-11-01
+name:journal of psycholinguistic research,Journal of Psycholinguistic Research,3,12,2021-07-27,2024-08-20
+name:judgment and decision making,Judgment and Decision Making,3,7,2020-12-22,2024-01-01
+name:mpg pure max planck society,MPG.PuRe (Max Planck Society),3,15,2023-06-15,2026-03-18
+name:open research europe,Open Research Europe,3,5,2025-10-28,2026-02-26
+name:open scholarship institutional repository washington university in st louis,Open Scholarship Institutional Repository (Washington University in St. Louis),3,3,2017-01-01,2019-06-21
+name:open science framework,Open Science Framework,3,6,2021-01-01,2022-01-01
+name:perception,Perception,3,14,2022-03-28,2025-04-21
+name:personality and social psychology bulletin,Personality and Social Psychology Bulletin,3,10,2022-06-29,2026-01-08
+name:philosophical transactions of the royal society b biological sciences,Philosophical Transactions of the Royal Society B Biological Sciences,3,9,2018-02-12,2023-12-17
+name:psychological medicine,Psychological Medicine,3,18,2022-03-17,2026-01-01
+name:psychology of music,Psychology of Music,3,10,2021-02-18,2025-01-29
+name:pub publications at bielefeld university bielefeld university,PUB – Publications at Bielefeld University (Bielefeld University),3,10,2016-01-01,2020-04-20
+name:science,Science,3,32,2018-11-21,2026-03-19
+name:the japanese journal of cognitive psychology,The Japanese Journal of Cognitive Psychology,3,7,2021-08-31,2025-02-28
+name:zeitschrift für psychologie,Zeitschrift für Psychologie,3,6,2021-09-01,2021-12-01
+name:acm transactions on computer human interaction,ACM Transactions on Computer-Human Interaction,2,15,2022-03-31,2026-05-28
+name:addictive behaviors reports,Addictive Behaviors Reports,2,12,2025-02-10,2025-11-26
+name:applied cognitive psychology,Applied Cognitive Psychology,2,10,2021-07-17,2026-05-01
+name:applied sciences,Applied Sciences,2,8,2021-08-25,2022-07-17
+name:arxiv org,ArXiv.org,2,13,2025-01-27,2025-01-31
+name:auditory perception cognition,Auditory Perception & Cognition,2,6,2022-05-31,2022-06-29
+name:behavioral and brain sciences,Behavioral and Brain Sciences,2,9,2021-03-17,2022-12-21
+name:bmc psychology,BMC Psychology,2,9,2024-08-30,2026-02-14
+name:brain research,Brain Research,2,9,2024-10-31,2025-08-29
+name:british journal of psychology,British Journal of Psychology,2,8,2018-08-24,2025-11-21
+name:cartographic perspectives,Cartographic Perspectives,2,5,2018-09-09,2018-10-01
+name:clinical and experimental dermatology,Clinical and Experimental Dermatology,2,2,2022-03-27,2024-02-23
+name:cognitive processing,Cognitive Processing,2,6,2023-12-07,2024-09-24
+name:communications biology,Communications Biology,2,10,2022-12-15,2023-10-28
+name:computational psychiatry,Computational Psychiatry,2,9,2023-05-07,2025-12-18
+name:computer speech language,Computer Speech & Language,2,13,2023-10-31,2024-07-05
+name:computers in human behavior artificial humans,Computers in Human Behavior Artificial Humans,2,6,2023-08-01,2024-12-16
+name:data in brief,Data in Brief,2,13,2021-12-01,2025-06-27
+name:developmental science,Developmental Science,2,8,2020-11-18,2022-06-30
+name:digital access to scholarship at harvard dash harvard university,Digital Access to Scholarship at Harvard (DASH) (Harvard University),2,2,2023-01-01,2025-01-01
+name:digital library repository of tomsk state university,Digital library (repository) of Tomsk State University,2,2,2023-01-01,2025-01-01
+name:durham e theses durham university,Durham e-Theses (Durham University),2,2,2019-01-01,2026-06-04
+name:educational psychology review,Educational Psychology Review,2,6,2016-09-15,2021-06-27
+name:era,ERA,2,2,2021-07-31,2026-06-05
+name:european journal of neuroscience,European Journal of Neuroscience,2,9,2022-08-09,2024-11-17
+name:european journal of social psychology,European Journal of Social Psychology,2,4,2015-12-08,2023-12-11
+name:experimental aging research,Experimental Aging Research,2,8,2022-11-03,2023-04-03
+name:faculty of 1000 research ltd,Faculty of 1000 Research Ltd,2,2,2022-01-01,2022-01-01
+name:fire,Fire,2,3,2024-11-22,2025-09-27
+name:frontiers in cognition,Frontiers in Cognition,2,8,2025-11-04,2026-06-24
+name:frontiers in communication,Frontiers in Communication,2,8,2022-09-26,2023-08-03
+name:frontiers in language sciences,Frontiers in Language Sciences,2,3,2024-02-09,2024-08-19
+name:frontiers in robotics and ai,Frontiers in Robotics and AI,2,8,2019-06-26,2022-03-23
+name:frontiers in sports and active living,Frontiers in Sports and Active Living,2,13,2021-07-05,2023-06-22
+name:hormones and behavior,Hormones and Behavior,2,9,2025-04-26,2025-05-28
+name:humanities and social sciences communications,Humanities and Social Sciences Communications,2,12,2021-03-04,2023-02-04
+name:impact,Impact,2,1,2026-01-23,2026-01-23
+name:institutional repository of institute of psychology chinese academy of sciences institute of psychology chinese academy of sciences,"Institutional Repository of Institute of Psychology, Chinese Academy of Sciences (Institute of Psychology, Chinese Academy of Sciences)",2,4,2017-07-01,2023-06-01
+name:international journal of audiology,International Journal of Audiology,2,4,2024-09-14,2025-03-15
+name:international journal of eating disorders,International Journal of Eating Disorders,2,7,2026-03-09,2026-07-09
+name:international journal of english linguistics,International Journal of English Linguistics,2,2,2025-05-13,2026-04-20
+name:international journal of social robotics,International Journal of Social Robotics,2,10,2024-08-01,2026-04-01
+name:international journal of speech technology,International Journal of Speech Technology,2,8,2022-07-21,2023-03-13
+name:international journal of sport and exercise psychology,International Journal of Sport and Exercise Psychology,2,10,2024-02-14,2025-03-13
+name:japanese psychological research,Japanese Psychological Research,2,9,2024-06-19,2024-09-02
+name:journal of applied business behavioral sciences,Journal of Applied Business & Behavioral Sciences,2,3,2025-12-18,2026-01-06
+name:journal of behavioral decision making,Journal of Behavioral Decision Making,2,7,2023-04-11,2024-03-21
+name:journal of communication disorders,Journal of Communication Disorders,2,8,2025-01-01,2025-01-22
+name:journal of iot and machine learning,Journal of IoT and Machine Learning.,2,1,2023-01-01,2024-02-10
+name:journal of mood and anxiety disorders,Journal of Mood and Anxiety Disorders,2,6,2024-02-16,2026-01-22
+name:journal of open psychology data,Journal of Open Psychology Data,2,12,2023-05-01,2025-08-13
+name:journal of scientific exploration,Journal of Scientific Exploration,2,3,2022-08-20,2022-08-20
+name:journal of the experimental analysis of behavior,Journal of the Experimental Analysis of Behavior,2,4,2018-06-06,2025-05-06
+name:language cognition and mind,"Language, cognition and mind",2,5,2018-01-01,2019-06-12
+name:languages,Languages,2,9,2018-08-06,2022-07-29
+name:learning memory,Learning & Memory,2,9,2023-09-01,2023-09-01
+name:lingua,Lingua,2,5,2020-07-21,2026-04-23
+name:linguistics vanguard,Linguistics Vanguard,2,7,2021-11-13,2026-06-22
+name:macsphere mcmaster university,MacSphere (McMaster University),2,2,2024-01-01,2024-01-01
+name:medrxiv,medRxiv,2,20,2023-03-29,2025-10-13
+name:mindfulness,Mindfulness,2,6,2021-08-17,2025-01-08
+name:molecular autism,Molecular Autism,2,10,2024-01-08,2026-02-27
+name:mspace university of manitoba,Mspace (University of Manitoba),2,1,2020-12-18,2025-09-16
+name:multisensory research,Multisensory Research,2,10,2022-01-18,2023-02-23
+name:music science,Music & Science,2,6,2023-01-01,2025-09-01
+name:musicae scientiae,Musicae Scientiae,2,8,2018-11-14,2023-02-03
+name:nature mental health,Nature Mental Health,2,19,2024-04-29,2025-03-12
+name:nature neuroscience,Nature Neuroscience,2,12,2024-01-01,2026-06-26
+name:nippon onkyo gakkaishi acoustical science and technology nihon onkyo gakkaishi,Nippon Onkyo Gakkaishi/Acoustical science and technology/Nihon Onkyo Gakkaishi,2,3,2023-02-28,2024-03-15
+name:npj digital medicine,npj Digital Medicine,2,9,2023-06-13,2025-12-26
+name:npj science of learning,npj Science of Learning,2,9,2023-01-06,2026-04-04
+name:plos biology,PLoS Biology,2,7,2025-06-26,2026-01-09
+name:pnas nexus,PNAS Nexus,2,7,2024-08-23,2025-08-29
+name:proceedings of the aaai conference on artificial intelligence,Proceedings of the AAAI Conference on Artificial Intelligence,2,10,2020-06-18,2026-03-14
+name:proceedings of the national academy of sciences of the united states of america,Proceedings of the National Academy of Sciences of the United States of America,2,11,2022-07-26,2025-03-11
+name:psychology international,Psychology International,2,7,2023-07-20,2025-07-09
+name:pubmed,PubMed,2,6,2020-06-05,2021-07-01
+name:reading and writing,Reading and Writing,2,8,2024-08-30,2025-11-25
+name:repec research papers in economics,RePEc: Research Papers in Economics,2,38,2017-01-01,2020-04-11
+name:scientific studies of reading,Scientific Studies of Reading,2,6,2023-02-20,2025-12-05
+name:sensors,Sensors,2,9,2023-03-29,2024-02-29
+name:social cognition,Social Cognition,2,5,2024-10-01,2025-08-01
+name:social psychological and personality science,Social Psychological and Personality Science,2,5,2023-09-25,2023-12-28
+name:studies in second language acquisition,Studies in Second Language Acquisition,2,5,2023-03-27,2026-06-09
+name:technology mind and behavior,Technology Mind and Behavior,2,5,2022-01-01,2022-01-01
+name:the american journal of psychology,The American Journal of Psychology,2,5,2025-01-01,2026-01-01
+name:the mental lexicon,The Mental Lexicon,2,6,2024-12-16,2024-12-31
+name:topics in cognitive science,Topics in Cognitive Science,2,9,2018-09-02,2025-12-30
+name:transportation research part f traffic psychology and behaviour,Transportation Research Part F Traffic Psychology and Behaviour,2,9,2023-01-30,2025-10-04
+name:uva dare university of amsterdam,UvA-DARE (University of Amsterdam),2,6,2021-01-01,2025-01-01
+name:zas papers in linguistics,ZAS Papers in Linguistics,2,4,2023-03-24,2023-03-24
+name:zurich open repository and archive university of zurich,Zurich Open Repository and Archive (University of Zurich),2,3,2019-01-01,2020-01-01
+name:2022 ieee 25th international conference on computer supported cooperative work in design cscwd,2022 IEEE 25th International Conference on Computer Supported Cooperative Work in Design (CSCWD),1,5,2022-05-04,2022-05-04
+name:2022 ieee international conference on systems man and cybernetics smc,"2022 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",1,3,2022-10-09,2022-10-09
+name:abralin,ABRALIN,1,2,2024-05-23,2024-05-23
+name:accademia university press ebooks,Accademia University Press eBooks,1,6,2020-01-01,2020-01-01
+name:acm transactions on applied perception,ACM Transactions on Applied Perception,1,2,2025-08-07,2025-08-07
+name:acm transactions on graphics,ACM Transactions on Graphics,1,4,2023-07-26,2023-07-26
+name:acm transactions on social computing,ACM Transactions on Social Computing,1,2,2024-08-14,2024-08-14
+name:acm transactions on software engineering and methodology,ACM Transactions on Software Engineering and Methodology,1,6,2023-03-14,2023-03-14
+name:acta acustica,Acta Acustica,1,6,2025-01-01,2025-01-01
+name:acta psychologica sinica,Acta Psychologica Sinica,1,3,2023-01-01,2023-01-01
+name:advanced science,Advanced Science,1,7,2024-09-09,2024-09-09
+name:advances in neural information processing systems,Advances in neural information processing systems,1,4,2020-12-01,2020-12-01
+name:advances in science technology innovation advances in science technology innovation,"Advances in Science, Technology & Innovation/Advances in science, technology & innovation",1,6,2026-01-01,2026-01-01
+name:advances in social science education and humanities research advances in social science education and humanities research,"Advances in Social Science, Education and Humanities Research/Advances in social science, education and humanities research",1,3,2021-01-01,2021-01-01
+name:afinla teema,AFinLA-teema,1,3,2024-05-28,2024-05-28
+name:aging clinical and experimental research,Aging Clinical and Experimental Research,1,6,2024-11-11,2024-11-11
+name:alcohol clinical and experimental research,Alcohol Clinical and Experimental Research,1,6,2024-10-22,2024-10-22
+name:ampersand,Ampersand,1,3,2025-02-05,2025-02-05
+name:annual review of clinical psychology,Annual Review of Clinical Psychology,1,2,2016-01-16,2016-01-16
+name:annual review of organizational psychology and organizational behavior,Annual Review of Organizational Psychology and Organizational Behavior,1,1,2017-01-09,2017-01-09
+name:applied acoustics,Applied Acoustics,1,5,2023-10-06,2023-10-06
+name:applied ergonomics,Applied Ergonomics,1,4,2021-05-07,2021-05-07
+name:archives of clinical neuropsychology,Archives of Clinical Neuropsychology,1,4,2021-09-08,2021-09-08
+name:archives of sexual behavior,Archives of Sexual Behavior,1,6,2019-08-14,2019-08-14
+name:audiology research,Audiology Research,1,2,2025-02-08,2025-02-08
+name:augmentative and alternative communication,Augmentative and Alternative Communication,1,4,2024-07-11,2024-07-11
+name:autism,Autism,1,4,2025-06-25,2025-12-30
+name:behaviormetrika,Behaviormetrika,1,2,2023-01-20,2023-01-20
+name:behavioural brain research,Behavioural Brain Research,1,1,2024-11-06,2025-09-22
+name:behavioural public policy,Behavioural Public Policy,1,3,2026-02-16,2026-02-16
+name:big data and cognitive computing,Big Data and Cognitive Computing,1,3,2021-12-13,2021-12-13
+name:biological psychiatry cognitive neuroscience and neuroimaging,Biological Psychiatry Cognitive Neuroscience and Neuroimaging,1,6,2022-05-18,2022-05-18
+name:biological psychology,Biological Psychology,1,6,2023-10-16,2023-10-16
+name:biomedical optics express,Biomedical Optics Express,1,7,2019-12-12,2019-12-12
+name:biomedicines,Biomedicines,1,7,2025-06-21,2025-06-21
+name:biorxiv medrxiv,bioRxiv/medRxiv,1,5,2024-04-28,2024-04-28
+name:bmc bioinformatics,BMC Bioinformatics,1,2,2016-03-31,2016-03-31
+name:bmc medicine,BMC Medicine,1,5,2024-12-18,2024-12-18
+name:bmc research notes,BMC Research Notes,1,2,2023-05-11,2023-05-26
+name:bmj mental health,BMJ Mental Health,1,7,2024-01-01,2024-01-01
+name:bmj open sport exercise medicine,BMJ Open Sport & Exercise Medicine,1,10,2021-03-01,2021-03-01
+name:borderline personality disorder and emotion dysregulation,Borderline Personality Disorder and Emotion Dysregulation,1,3,2024-07-18,2024-07-18
+name:brazilian journal of psychiatry,Brazilian Journal of Psychiatry,1,11,2021-07-21,2021-07-21
+name:british journal of developmental psychology,British Journal of Developmental Psychology,1,2,2020-07-31,2021-02-07
+name:british journal of educational psychology,British Journal of Educational Psychology,1,11,2026-02-18,2026-02-18
+name:british journal of social psychology,British Journal of Social Psychology,1,4,2024-07-09,2024-07-09
+name:canadian journal of experimental psychology revue canadienne de psychologie expérimentale,Canadian Journal of Experimental Psychology/Revue canadienne de psychologie expérimentale,1,1,2021-05-06,2021-05-06
+name:caspian journal of neurological sciences,Caspian Journal of Neurological Sciences,1,3,2021-04-01,2021-04-01
+name:cell reports methods,Cell Reports Methods,1,20,2020-10-09,2021-06-01
+name:cerebral cortex,Cerebral Cortex,1,4,2022-09-10,2023-03-08
+name:chi conference on human factors in computing systems,CHI Conference on Human Factors in Computing Systems,1,4,2022-04-28,2022-04-28
+name:chimera revista de corpus de lenguas romances y estudios lingüísticos,CHIMERA Revista de Corpus de Lenguas Romances y Estudios Lingüísticos,1,4,2022-07-31,2022-07-31
+name:circle university of british columbia,cIRcle (University of British Columbia),1,1,2026-01-01,2026-01-01
+name:clinical child and family psychology review,Clinical Child and Family Psychology Review,1,4,2021-06-04,2021-06-04
+name:clinical linguistics phonetics,Clinical Linguistics & Phonetics,1,4,2021-11-22,2021-11-22
+name:clinical psychological science,Clinical Psychological Science,1,4,2025-01-06,2026-01-13
+name:clinical psychology in europe,Clinical Psychology in Europe,1,7,2020-12-23,2020-12-23
+name:cnr explora,CNR ExploRA,1,6,2020-01-01,2020-01-01
+name:cogent education,Cogent Education,1,3,2022-05-24,2022-05-24
+name:cogsci annual conference of the cognitive science society cognitive science society u s conference,CogSci ... Annual Conference of the Cognitive Science Society. Cognitive Science Society (U.S.). Conference,1,2,2021-07-01,2021-07-01
+name:collabra,Collabra,1,4,2016-01-01,2016-01-01
+name:comprehensive psychiatry,Comprehensive Psychiatry,1,6,2026-02-24,2026-02-24
+name:comprehensive results in social psychology,Comprehensive Results in Social Psychology,1,2,2016-09-01,2017-01-19
+name:computers and education artificial intelligence,Computers and Education Artificial Intelligence,1,5,2023-01-01,2025-03-08
+name:contemporary clinical trials,Contemporary Clinical Trials,1,9,2018-10-26,2018-10-26
+name:creative education,Creative Education,1,3,2022-01-01,2022-01-01
+name:cuadernos de la alfal,CUADERNOS DE LA ALFAL,1,1,2024-01-01,2024-01-01
+name:current biology cb,Current biology : CB,1,3,2018-12-01,2018-12-01
+name:decision,Decision,1,4,2022-04-04,2022-04-04
+name:designing interactive systems conference,Designing Interactive Systems Conference,1,9,2022-06-12,2022-06-12
+name:developmental psychology,Developmental Psychology,1,2,2019-08-12,2019-08-12
+name:dialnet universidad de la rioja,Dialnet (Universidad de la Rioja),1,2,2026-01-01,2026-01-01
+name:discover psychology,Discover Psychology,1,3,2024-01-04,2024-01-04
+name:doaj doaj directory of open access journals,DOAJ (DOAJ: Directory of Open Access Journals),1,5,2021-11-01,2021-11-01
+name:dspace mit massachusetts institute of technology,DSpace@MIT (Massachusetts Institute of Technology),1,6,2021-03-29,2021-03-29
+name:duo research archive university of oslo,Duo Research Archive (University of Oslo),1,1,2019-01-01,2019-01-01
+name:ear and hearing,Ear and Hearing,1,2,2023-10-26,2023-10-26
+name:educational and psychological measurement,Educational and Psychological Measurement,1,1,2023-04-04,2023-04-04
+name:el servicio de difusión de la creación intelectual national university of la plata,El Servicio de Difusión de la Creación Intelectual (National University of La Plata),1,5,2025-01-01,2025-01-01
+name:empirical musicology review,Empirical Musicology Review,1,1,2020-10-22,2020-10-22
+name:engineering headway,Engineering headway,1,4,2025-10-13,2025-10-13
+name:english language and linguistics,English Language and Linguistics,1,3,2025-09-22,2025-09-22
+name:enlighten theses the university of glasgow,Enlighten: Theses (The University of Glasgow),1,1,2025-01-01,2025-01-01
+name:entropy,Entropy,1,3,2024-07-28,2024-07-28
+name:environmental and occupational health practice,Environmental and Occupational Health Practice,1,7,2025-01-01,2025-01-01
+name:eprints soton university of southampton,ePrints Soton (University of Southampton),1,1,2026-01-01,2026-01-01
+name:erciyes university avesis,Erciyes University - AVESIS,1,1,2025-01-01,2025-01-01
+name:ergonomics,Ergonomics,1,3,2021-05-06,2021-05-06
+name:escholarship mcgill mcgill,eScholarship@McGill (McGill),1,1,2025-01-01,2025-01-01
+name:estudios de lingüística aplicada,Estudios de Lingüística Aplicada,1,3,2020-02-20,2020-02-20
+name:european journal of personality,European Journal of Personality,1,3,2021-04-19,2021-06-09
+name:european journal of psychological assessment,European Journal of Psychological Assessment,1,2,2018-06-15,2018-06-15
+name:european radiology,European Radiology,1,9,2023-03-16,2023-03-16
+name:feast formal and experimental advances in sign language theory,FEAST Formal and Experimental Advances in Sign language Theory,1,2,2023-12-05,2023-12-05
+name:figshare,Figshare,1,1,2021-01-01,2021-01-01
+name:food quality and preference,Food Quality and Preference,1,1,2023-08-01,2023-08-01
+name:frontiers in aging neuroscience,Frontiers in Aging Neuroscience,1,7,2023-08-07,2023-08-07
+name:frontiers in artificial intelligence,Frontiers in Artificial Intelligence,1,6,2021-09-20,2021-12-07
+name:frontiers in audiology and otology,Frontiers in Audiology and Otology,1,5,2026-03-30,2026-03-30
+name:frontiers in developmental psychology,Frontiers in Developmental Psychology,1,4,2026-05-15,2026-05-15
+name:frontiers in education,Frontiers in Education,1,7,2025-11-19,2025-11-19
+name:frontiers in human dynamics,Frontiers in Human Dynamics,1,4,2021-04-26,2021-04-26
+name:frontiers in neuroscience,Frontiers in Neuroscience,1,7,2023-03-22,2023-03-22
+name:frontiers in signal processing,Frontiers in Signal Processing,1,3,2023-05-09,2023-05-09
+name:frontiers research topics,Frontiers research topics,1,0,2024-01-01,2024-01-01
+name:future internet,Future Internet,1,10,2021-09-24,2021-09-24
+name:geriatrics,Geriatrics,1,5,2024-03-22,2024-03-22
+name:gerontechnology,Gerontechnology,1,6,2022-10-23,2022-10-23
+name:ghent university academic bibliography ghent university,Ghent University Academic Bibliography (Ghent University),1,1,2025-01-01,2025-01-01
+name:health psychology,Health Psychology,1,0,2025-09-11,2025-09-11
+name:hearing research,Hearing Research,1,3,2025-03-07,2025-03-07
+name:herve infos,Herve infos,1,4,2024-03-30,2024-03-30
+name:holmes museum of anthropology wichita state university,Holmes Museum Of Anthropology (Wichita State University),1,1,2017-05-01,2017-05-01
+name:human brain mapping,Human Brain Mapping,1,4,2025-01-01,2025-01-01
+name:i com,i-com,1,2,2025-10-16,2025-10-16
+name:i perception,i-Perception,1,3,2023-11-01,2023-11-01
+name:ieee access,IEEE Access,1,1,2020-01-01,2020-01-01
+name:ieee transactions on affective computing,IEEE Transactions on Affective Computing,1,4,2021-06-16,2021-06-16
+name:ieee transactions on cognitive and developmental systems,IEEE Transactions on Cognitive and Developmental Systems,1,11,2023-01-30,2023-01-30
+name:iet intelligent transport systems,IET Intelligent Transport Systems,1,5,2022-10-10,2022-10-10
+name:ilha do desterro a journal of english language literatures in english and cultural studies,Ilha do Desterro A Journal of English Language Literatures in English and Cultural Studies,1,2,2023-11-30,2023-11-30
+name:impact assessment and project appraisal,Impact Assessment and Project Appraisal,1,5,2022-07-14,2022-07-14
+name:infancy,Infancy,1,35,2023-01-23,2023-10-18
+name:international gambling studies,International Gambling Studies,1,4,2022-11-10,2022-11-10
+name:international journal of advanced computer science and applications,International Journal of Advanced Computer Science and Applications,1,8,2019-01-01,2019-01-01
+name:international journal of behavioral nutrition and physical activity,International Journal of Behavioral Nutrition and Physical Activity,1,10,2021-03-31,2021-03-31
+name:international journal of clinical and health psychology,International Journal of Clinical and Health Psychology,1,6,2026-01-01,2026-01-01
+name:international journal of cognitive informatics and natural intelligence,International Journal of Cognitive Informatics and Natural Intelligence,1,4,2019-09-05,2019-09-05
+name:international journal of comparative psychology,International Journal of Comparative Psychology,1,6,2017-01-01,2017-01-01
+name:international journal of computer assisted radiology and surgery,International Journal of Computer Assisted Radiology and Surgery,1,4,2019-08-07,2019-08-07
+name:international journal of digital humanities,International Journal of Digital Humanities,1,2,2024-07-03,2024-07-03
+name:international journal of environmental research and public health,International Journal of Environmental Research and Public Health,1,7,2022-08-13,2022-08-13
+name:international journal of hospitality management,International Journal of Hospitality Management,1,3,2021-10-26,2021-10-26
+name:international journal of methods in psychiatric research,International Journal of Methods in Psychiatric Research,1,4,2022-09-17,2022-09-17
+name:international journal of multilingualism,International Journal of Multilingualism,1,2,2024-09-11,2024-09-11
+name:international journal of psychology,International Journal of Psychology,1,8,2025-09-18,2025-09-18
+name:international journal of serious games,International Journal of Serious Games,1,4,2025-10-30,2025-10-30
+name:international journal of sociology and social policy,International Journal of Sociology and Social Policy,1,3,2026-02-16,2026-02-16
+name:international research journal of multidisciplinary scope,International Research Journal of Multidisciplinary Scope,1,5,2024-01-01,2024-01-01
+name:interspeech,Interspeech,1,10,2021-08-01,2021-08-01
+name:isprs international journal of geo information,ISPRS International Journal of Geo-Information,1,3,2017-12-20,2017-12-20
+name:itm web of conferences,ITM Web of Conferences,1,5,2018-01-01,2018-01-01
+name:iuscholarworks indiana university,IUScholarWorks (Indiana University),1,1,2015-09-04,2015-09-04
+name:jmir mhealth and uhealth,JMIR mhealth and uhealth,1,4,2025-11-26,2025-11-26
+name:jmir serious games,JMIR Serious Games,1,3,2021-02-12,2021-02-12
+name:journal of affective disorders,Journal of Affective Disorders,1,5,2024-01-24,2024-01-24
+name:journal of applied developmental psychology,Journal of Applied Developmental Psychology,1,3,2023-04-05,2023-04-05
+name:journal of applied research in memory and cognition,Journal of Applied Research in Memory and Cognition,1,2,2021-11-15,2021-11-15
+name:journal of attention disorders,Journal of Attention Disorders,1,4,2023-12-12,2023-12-12
+name:journal of autism and developmental disorders,Journal of Autism and Developmental Disorders,1,5,2023-02-07,2023-02-07
+name:journal of behavioral and experimental finance,Journal of Behavioral and Experimental Finance,1,4,2019-05-09,2019-05-09
+name:journal of behavioral education,Journal of Behavioral Education,1,4,2026-01-31,2026-01-31
+name:journal of clinical child adolescent psychology,Journal of Clinical Child & Adolescent Psychology,1,7,2022-05-26,2022-05-26
+name:journal of clinical psychology,Journal of Clinical Psychology,1,2,2026-07-03,2026-07-03
+name:journal of cognitive engineering and decision making,Journal of Cognitive Engineering and Decision Making,1,4,2022-06-03,2022-06-03
+name:journal of cognitive enhancement,Journal of Cognitive Enhancement,1,4,2018-02-23,2018-02-23
+name:journal of cognitive psychology,Journal of Cognitive Psychology,1,2,2024-07-29,2024-07-29
+name:journal of computational and graphical statistics,Journal of Computational and Graphical Statistics,1,4,2023-08-11,2024-04-22
+name:journal of consulting and clinical psychology,Journal of Consulting and Clinical Psychology,1,6,2019-07-18,2019-07-18
+name:journal of cultural cognitive science,Journal of Cultural Cognitive Science,1,8,2020-12-04,2021-01-10
+name:journal of digital contents society,Journal of Digital Contents Society,1,3,2021-12-31,2021-12-31
+name:journal of economic psychology,Journal of Economic Psychology,1,3,2024-02-28,2024-02-28
+name:journal of educational and management studies,Journal of Educational and Management Studies,1,2,2022-03-25,2022-03-25
+name:journal of educational psychology,Journal of Educational Psychology,1,2,2018-01-25,2018-01-25
+name:journal of emerging computer technologies,Journal of Emerging Computer Technologies,1,2,2025-12-31,2025-12-31
+name:journal of english for academic purposes,Journal of English for Academic Purposes,1,2,2020-08-21,2020-08-21
+name:journal of experimental phonetics,Journal of Experimental Phonetics,1,1,2026-01-30,2026-01-30
+name:journal of experimental psychology applied,Journal of Experimental Psychology Applied,1,3,2022-07-26,2023-03-02
+name:journal of experimental psychology human perception and performance,Journal of experimental psychology. Human perception and performance,1,2,2026-02-16,2026-02-16
+name:journal of experimental psychopathology,Journal of Experimental Psychopathology,1,12,2023-04-17,2023-10-01
+name:journal of gambling studies,Journal of Gambling Studies,1,5,2023-03-13,2023-06-03
+name:journal of germanic linguistics,Journal of Germanic Linguistics,1,2,2021-11-11,2021-11-11
+name:journal of human environmental studies,Journal of Human Environmental Studies,1,5,2025-01-01,2025-01-01
+name:journal of intellectual disability research,Journal of Intellectual Disability Research,1,3,2023-09-18,2023-09-18
+name:journal of international crisis and risk communication research,Journal of International Crisis and Risk Communication Research,1,1,2019-01-01,2019-01-01
+name:journal of japan society for fuzzy theory and intelligent informatics,Journal of Japan Society for Fuzzy Theory and Intelligent Informatics,1,1,2020-06-15,2020-06-15
+name:journal of learning analytics,Journal of Learning Analytics,1,4,2018-08-05,2018-08-05
+name:journal of marketing,Journal of Marketing,1,3,2025-08-13,2025-08-13
+name:journal of mathematical psychology,Journal of Mathematical Psychology,1,3,2025-02-07,2025-02-07
+name:journal of medical imaging,Journal of Medical Imaging,1,7,2020-01-03,2020-01-03
+name:journal of medical internet research,Journal of Medical Internet Research,1,11,2021-07-27,2021-07-27
+name:journal of multilingual and multicultural development,Journal of Multilingual and Multicultural Development,1,2,2020-10-07,2020-10-07
+name:journal of neurolinguistics,Journal of Neurolinguistics,1,7,2022-02-24,2022-02-24
+name:journal of neurophysiology,Journal of Neurophysiology,1,3,2023-10-11,2023-10-11
+name:journal of open research software,Journal of Open Research Software,1,3,2017-09-21,2018-01-26
+name:journal of pacific rim psychology,Journal of Pacific Rim Psychology,1,7,2023-01-01,2023-07-18
+name:journal of pain research,Journal of Pain Research,1,4,2024-07-01,2024-07-01
+name:journal of parkinson s disease,Journal of Parkinson s Disease,1,5,2025-05-04,2025-05-04
+name:journal of personality,Journal of Personality,1,2,2022-02-05,2022-02-05
+name:journal of personality assessment,Journal of Personality Assessment,1,3,2019-09-23,2019-09-23
+name:journal of research in personality,Journal of Research in Personality,1,3,2024-05-05,2025-04-25
+name:journal of research on adolescence,Journal of Research on Adolescence,1,5,2024-06-18,2024-06-18
+name:journal of risk research,Journal of Risk Research,1,2,2021-05-03,2021-05-03
+name:journal of sleep research,Journal of Sleep Research,1,4,2025-06-02,2025-06-02
+name:journal of social and clinical psychology,Journal of Social and Clinical Psychology,1,3,2022-02-01,2022-02-01
+name:journal of the economic science association,Journal of the Economic Science Association,1,2,2024-09-24,2024-09-24
+name:journal of the european academy of dermatology and venereology,Journal of the European Academy of Dermatology and Venereology,1,2,2023-03-23,2023-03-23
+name:journal of undergraduate neuroscience education,Journal of Undergraduate Neuroscience Education,1,9,2023-05-19,2023-05-19
+name:journal of vestibular research,Journal of Vestibular Research,1,4,2026-01-19,2026-01-19
+name:journal of visualized experiments,Journal of Visualized Experiments,1,4,2020-06-30,2020-06-30
+name:justc,JUSTC,1,3,2023-01-01,2023-01-01
+name:knowledge uchicago university of chicago,Knowledge@UChicago (University of Chicago),1,1,2021-03-01,2021-03-01
+name:l année psychologique,L’Année psychologique,1,4,2024-03-11,2024-03-11
+name:language and information,Language and Information,1,3,2025-12-31,2025-12-31
+name:language and linguistics compass,Language and Linguistics Compass,1,2,2025-08-19,2025-08-19
+name:language faculty and beyond,Language faculty and beyond,1,2,2025-11-13,2025-11-13
+name:language internet,Language Internet,1,4,2024-12-19,2024-12-19
+name:language resources and evaluation,Language Resources and Evaluation,1,3,2022-11-28,2022-11-28
+name:language teaching research,Language Teaching Research,1,1,2021-10-11,2021-10-11
+name:law and human behavior,Law and Human Behavior,1,2,2018-07-31,2019-05-23
+name:learning and individual differences,Learning and Individual Differences,1,7,2025-07-17,2025-07-17
+name:learning and motivation,Learning and Motivation,1,2,2022-01-20,2022-01-20
+name:learning behavior,Learning & Behavior,1,3,2025-07-15,2025-07-15
+name:lecture notes in networks and systems,Lecture notes in networks and systems,1,3,2025-10-15,2025-10-15
+name:letters on evolutionary behavioral science,Letters on Evolutionary Behavioral Science,1,3,2023-05-19,2023-05-19
+name:linguistic inquiry,Linguistic Inquiry,1,2,2020-08-03,2020-09-02
+name:lund university publications student papers lund university,Lund University Publications Student Papers (Lund University),1,1,2021-01-01,2021-01-01
+name:madoc university of mannheim,MADOC (University of Mannheim),1,1,2018-01-01,2018-01-01
+name:mathematics and visualization,Mathematics and visualization,1,4,2017-01-01,2017-01-01
+name:medeniyet medical journal,Medeniyet Medical Journal,1,2,2023-12-18,2023-12-18
+name:media https www suub uni bremen de,Media (https://www.suub.uni-bremen.de/),1,1,2026-03-30,2026-03-30
+name:medical physics,Medical Physics,1,5,2025-03-30,2025-03-30
+name:meta psychology,Meta-Psychology,1,1,2019-11-12,2019-11-12
+name:metacognition and learning,Metacognition and Learning,1,9,2026-01-16,2026-01-16
+name:motivation and emotion,Motivation and Emotion,1,2,2024-04-09,2024-04-09
+name:nature reviews psychology,Nature Reviews Psychology,1,4,2023-07-17,2023-07-17
+name:neurobiology of aging,Neurobiology of Aging,1,8,2023-09-20,2023-09-20
+name:neuron,Neuron,1,3,2020-10-08,2021-07-14
+name:neuropsychology,Neuropsychology,1,5,2023-10-23,2023-10-23
+name:new media society,New Media & Society,1,7,2021-12-07,2021-12-07
+name:noise con proceedings,NOISE-CON proceedings,1,5,2024-10-04,2024-10-04
+name:npj vaccines,npj Vaccines,1,3,2024-09-13,2024-09-13
+name:npp digital psychiatry and neuroscience,NPP—Digital Psychiatry and Neuroscience,1,12,2025-01-03,2025-01-03
+name:nutrients,Nutrients,1,5,2024-07-09,2024-07-09
+name:ohiolink etd center ohio library and information network,OhioLink ETD Center (Ohio Library and Information Network),1,1,2016-01-01,2016-01-01
+name:omega journal of death and dying,OMEGA - Journal of Death and Dying,1,1,2021-12-07,2021-12-07
+name:open mind discoveries in cognitive science,Open mind : discoveries in cognitive science,1,2,2026-06-02,2026-06-02
+name:open psychology,Open Psychology,1,6,2021-01-01,2021-01-01
+name:open repository and bibliography university of liège,Open Repository and Bibliography (University of Liège),1,1,2026-01-23,2026-01-23
+name:ophthalmic and physiological optics,Ophthalmic and Physiological Optics,1,8,2024-02-20,2024-09-11
+name:orca online research cardiff cardiff university,ORCA Online Research @Cardiff (Cardiff University),1,1,2021-09-10,2021-09-10
+name:organizational psychology review,Organizational Psychology Review,1,4,2022-05-09,2022-05-09
+name:pain,Pain,1,3,2016-05-27,2016-05-27
+name:parkinsonism related disorders,Parkinsonism & Related Disorders,1,4,2024-11-08,2024-11-08
+name:personal and ubiquitous computing,Personal and Ubiquitous Computing,1,2,2020-04-19,2020-04-19
+name:perspectives on psychological science,Perspectives on Psychological Science,1,2,2022-11-26,2024-04-22
+name:physiology behavior,Physiology & Behavior,1,6,2022-03-31,2022-03-31
+name:political communication,Political Communication,1,2,2023-12-20,2023-12-20
+name:possibility studies society,Possibility Studies & Society,1,2,2024-02-29,2024-02-29
+name:pragmatics quarterly publication of the international pragmatics association ipra,Pragmatics Quarterly Publication of the International Pragmatics Association (IPrA),1,1,2025-08-01,2025-08-01
+name:proceedings from semantics and linguistic theory,Proceedings from Semantics and Linguistic Theory,1,2,2025-02-12,2025-02-12
+name:proceedings of the 60th annual meeting of the association for computational linguistics volume 1 long papers,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),1,4,2022-01-01,2022-01-01
+name:proceedings of the amsterdam colloquium,Proceedings of the Amsterdam Colloquium,1,3,2022-12-01,2022-12-01
+name:proceedings of the annual hawaii international conference on system sciences proceedings of the annual hawaii international conference on system sciences,Proceedings of the ... Annual Hawaii International Conference on System Sciences/Proceedings of the Annual Hawaii International Conference on System Sciences,1,2,2022-01-01,2022-01-01
+name:proceedings of the royal society b biological sciences,Proceedings of the Royal Society B Biological Sciences,1,3,2023-10-02,2024-07-01
+name:psych,Psych,1,1,2020-07-01,2020-07-01
+name:psych journal,PsyCh Journal,1,7,2023-07-16,2023-07-16
+name:psychiatry and clinical neurosciences,Psychiatry and clinical neurosciences,1,4,2026-03-05,2026-03-05
+name:psychologica belgica,Psychologica Belgica,1,6,2019-08-20,2019-08-20
+name:psychological assessment,Psychological assessment,1,6,2025-12-04,2025-12-04
+name:psychological methods,Psychological Methods,1,3,2022-04-19,2023-07-27
+name:psychological reports,Psychological Reports,1,6,2025-09-15,2025-09-15
+name:psychological science and education,Psychological Science and Education,1,3,2024-12-28,2024-12-28
+name:psychology and marketing,Psychology and Marketing,1,4,2022-12-19,2022-12-19
+name:psychology of aesthetics creativity and the arts,Psychology of Aesthetics Creativity and the Arts,1,3,2021-05-14,2023-12-14
+name:psychology of sport and exercise,Psychology of sport and exercise,1,6,2022-05-30,2022-05-30
+name:psychophysiology,Psychophysiology,1,13,2025-03-11,2025-12-01
+name:psychosomatic medicine,Psychosomatic Medicine,1,2,2017-10-10,2017-10-10
+name:publication of the american dialect society,Publication of the American Dialect Society,1,1,2024-07-10,2024-07-10
+name:pucrs repository pontifical catholic university of rio grande do sul,PUCRS Repository (Pontifical Catholic University of Rio Grande do Sul),1,4,2022-01-01,2022-01-01
+name:qeios,Qeios,1,1,2026-06-15,2026-06-15
+name:quaderni di linguistica e studi orientali,Quaderni di Linguistica e Studi Orientali,1,3,2023-09-30,2023-09-30
+name:quality and user experience,Quality and User Experience,1,4,2023-06-30,2023-06-30
+name:quarterly journal of experimental psychology 2006,Quarterly journal of experimental psychology (2006),1,3,2025-01-13,2025-01-13
+name:refubium universitätsbibliothek der freien universität berlin,Refubium (Universitätsbibliothek der Freien Universität Berlin),1,6,2025-01-01,2025-01-01
+name:repositori digital de la upf universitat pompeu fabra,Repositori digital de la UPF (Universitat Pompeu Fabra),1,1,2025-01-01,2025-01-01
+name:research in developmental disabilities,Research in Developmental Disabilities,1,4,2019-01-29,2019-01-29
+name:research repository delft university of technology,Research Repository (Delft University of Technology),1,1,2018-01-01,2018-01-01
+name:review of philosophy and psychology,Review of Philosophy and Psychology,1,2,2020-07-31,2021-06-03
+name:revista de estudos da linguagem,Revista de Estudos da Linguagem,1,1,2017-06-13,2017-06-13
+name:revista de tecnologías computacionales,Revista de Tecnologías Computacionales,1,3,2024-12-30,2024-12-30
+name:revista docentes 2 0,Revista Docentes 2 0,1,1,2022-08-29,2022-08-29
+name:revista linguagem em foco,Revista Linguagem em Foco,1,3,2022-03-11,2022-03-11
+name:revista neuropsicologia latinoamericana,Revista Neuropsicologia Latinoamericana,1,3,2021-04-30,2021-04-30
+name:risk analysis,Risk Analysis,1,4,2023-05-03,2023-05-03
+name:safety,Safety,1,2,2025-06-18,2025-06-18
+name:sage open,SAGE Open,1,1,2017-01-01,2017-01-01
+name:scandinavian journal of psychology,Scandinavian journal of psychology,1,12,2025-03-07,2025-03-07
+name:schizophrenia,Schizophrenia,1,3,2025-03-08,2025-07-19
+name:schizophrenia bulletin,Schizophrenia Bulletin,1,5,2025-09-01,2026-03-19
+name:schizophrenia research,Schizophrenia Research,1,3,2024-05-03,2024-05-03
+name:scholarship western western university,Scholarship@Western (Western University),1,1,2021-01-01,2021-01-01
+name:scholarworks walden university,ScholarWorks (Walden University),1,1,2016-01-01,2016-01-01
+name:scholarworks wmu western michigan university,ScholarWorks - WMU (Western Michigan University),1,1,2017-01-01,2017-01-01
+name:scientometrics,Scientometrics,1,4,2018-02-01,2018-02-01
+name:second language research,Second language Research,1,4,2026-06-15,2026-06-15
+name:self and identity,Self and Identity,1,2,2017-07-25,2017-07-25
+name:sensors basel switzerland,"Sensors (Basel, Switzerland)",1,6,2021-10-28,2021-10-28
+name:sign language linguistics,Sign Language & Linguistics,1,1,2023-05-16,2023-05-16
+name:social and personality psychology compass,Social and Personality Psychology Compass,1,3,2016-04-01,2016-04-01
+name:social networking,Social Networking,1,4,2023-01-01,2023-01-01
+name:social psychology,Social Psychology,1,2,2025-07-01,2025-07-01
+name:speech language and hearing,Speech Language and Hearing,1,2,2023-07-30,2024-07-07
+name:speech prosody 2022,Speech Prosody 2022,1,5,2022-05-18,2022-05-18
+name:stress,Stress,1,6,2017-10-12,2017-10-12
+name:summit simon fraser university,Summit (Simon Fraser University),1,1,2016-12-13,2016-12-13
+name:symmetry,Symmetry,1,4,2024-11-06,2024-11-06
+name:teaching of psychology,Teaching of Psychology,1,1,2016-11-15,2016-11-15
+name:technology in society,Technology in society,1,4,2026-03-18,2026-03-18
+name:tesis doctorals en xarxa consorci de serveis universitaris de catalunya,Tesis Doctorals en Xarxa (Consorci de Serveis Universitaris de Catalunya),1,1,2017-01-17,2017-01-17
+name:the astronomical journal,The Astronomical Journal,1,3,2024-02-15,2024-03-13
+name:the baltic international yearbook of cognition logic and communication,The Baltic International Yearbook of Cognition Logic and Communication,1,3,2019-12-19,2019-12-19
+name:the canadian journal of linguistics la revue canadienne de linguistique,The Canadian Journal of Linguistics / La revue canadienne de linguistique,1,2,2024-03-01,2024-03-01
+name:the clinical neuropsychologist,The Clinical Neuropsychologist,1,3,2019-01-06,2019-01-06
+name:the encyclopedia of applied linguistics,The Encyclopedia of Applied Linguistics,1,2,2025-12-02,2025-12-02
+name:the international journal of translation and interpreting research,The International Journal of Translation and Interpreting Research,1,2,2022-07-29,2022-07-29
+name:the journal of creative behavior,The Journal of Creative Behavior,1,2,2017-06-02,2017-06-02
+name:the journal of machine learning for biomedical imaging,The Journal of Machine Learning for Biomedical Imaging,1,20,2021-03-10,2023-05-03
+name:the knowledge bank the ohio state university,The Knowledge Bank (The Ohio State University),1,1,2018-03-01,2018-03-01
+name:the korean data analysis society,The Korean Data Analysis Society,1,1,2019-08-31,2019-08-31
+name:the linguistic review,The Linguistic Review,1,2,2021-11-26,2021-11-26
+name:the psychological record,The Psychological Record,1,4,2024-11-20,2024-11-20
+name:thinking skills and creativity,Thinking Skills and Creativity,1,3,2024-08-09,2024-08-09
+name:translational issues in psychological science,Translational Issues in Psychological Science,1,5,2022-09-30,2023-06-08
+name:trends in cognitive sciences,Trends in Cognitive Sciences,1,3,2017-08-10,2017-08-10
+name:trends in hearing,Trends in Hearing,1,8,2023-01-01,2023-01-01
+name:trends in neuroscience and education,Trends in Neuroscience and Education,1,1,2026-01-09,2026-01-09
+name:trials,Trials,1,12,2019-01-22,2019-04-02
+name:türkiye sağlık enstitüleri başkanlığı dergisi,Türkiye Sağlık Enstitüleri Başkanlığı Dergisi,1,3,2023-04-22,2023-04-22
+name:uf journal of undergraduate research,UF Journal of Undergraduate Research,1,5,2022-12-01,2022-12-01
+name:uknowledge university of kentucky,UKnowledge (University of Kentucky),1,1,2019-01-01,2019-01-01
+name:user modeling and user adapted interaction,User Modeling and User-Adapted Interaction,1,4,2023-09-19,2023-09-19
+name:uvic s research and learning repository university of victoria,UVic’s Research and Learning Repository (University of Victoria),1,1,2018-01-01,2018-01-01
+name:world psychiatry,World Psychiatry,1,3,2020-05-11,2020-05-11
+name:مجلة البحث في التربية وعلم النفس,مجلة البحث في التربية وعلم النفس,1,1,2023-04-01,2023-04-01
+name:مجلة بحوث و دراسات نفسية,مجلة بحوث و دراسات نفسية,1,1,2022-10-01,2022-10-01

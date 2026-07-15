@@ -5,6 +5,7 @@ Reads data/papers.csv and data/authors.csv and writes:
 
   analysis/authors.csv       one row per unique author
   analysis/institutions.csv  one row per unique institution
+  analysis/journals.csv      one row per unique venue (normalized name)
 
 Papers whose `exclude` column is the string "True" in data/papers.csv are
 excluded from both summaries, as are papers whose `type` is one of the
@@ -41,6 +42,7 @@ AUTHORS_IN_CSV = os.path.join(REPO, "data", "authors.csv")
 
 AUTHORS_OUT_CSV = os.path.join(HERE, "authors.csv")
 INSTITUTIONS_OUT_CSV = os.path.join(HERE, "institutions.csv")
+JOURNALS_OUT_CSV = os.path.join(HERE, "journals.csv")
 
 # Work types excluded from the analysis (the raw data CSVs keep everything).
 # A paper is skipped only when its WHOLE lowercased `type` string equals one
@@ -57,11 +59,57 @@ INSTITUTION_OUT_COLUMNS = [
     "institution_key", "institution_name", "ror", "country",
     "n_papers", "n_authors", "first_use", "last_use",
 ]
+JOURNAL_OUT_COLUMNS = [
+    "journal_key", "journal_name", "n_papers", "n_authors",
+    "first_use", "last_use",
+]
+
+# Venue fallback for works whose canonical member has a blank venue: infer
+# the venue from the DOI registrant prefix. OpenAlex leaves the venue blank
+# on most PsyArXiv/OSF preprint records, so without this the biggest preprint
+# servers vanish from the journals table. Used ONLY in the journals
+# aggregation — the raw data is never modified. 10.1101 is shared by bioRxiv
+# and medRxiv and cannot be distinguished by prefix alone; it is labeled
+# jointly (and only applies when the venue is blank, which is rare there).
+DOI_PREFIX_VENUES = {
+    "10.31234": "PsyArXiv",
+    "10.31219": "OSF Preprints",
+    "10.31235": "SocArXiv",
+    "10.35542": "EdArXiv",
+    "10.48550": "arXiv",
+    "10.21203": "Research Square",
+    "10.20944": "Preprints.org",
+    "10.2139": "SSRN",
+    "10.1101": "bioRxiv/medRxiv",
+}
+
+# Alternate venue spellings (normalized key -> display name) merged into the
+# DOI_PREFIX_VENUES fallback rows above, so a server whose works arrive both
+# with an OpenAlex venue string and via the blank-venue fallback doesn't
+# split into two rows. Only ACTUAL splits observed in the data are listed —
+# venues are not renamed for their own sake. (bioRxiv (Cold Spring Harbor
+# Laboratory), medRxiv, and arXiv (Cornell University) are deliberately NOT
+# aliased: the "bioRxiv/medRxiv" fallback row is ambiguous between two
+# servers, and arXiv has no fallback row to merge with.)
+VENUE_ALIASES = {
+    "psyarxiv osf preprints": "PsyArXiv",
+    "osf preprints osf preprints": "OSF Preprints",
+}
 
 
 def norm_name(name):
     """Normalize a name for matching: lowercase, strip periods, collapse ws."""
     name = name.lower().replace(".", " ")
+    return re.sub(r"\s+", " ", name).strip()
+
+
+def norm_venue(name):
+    """Normalize a venue name for keying: lowercase, collapse runs of
+    punctuation and whitespace to single spaces, trim. This merges
+    MEDLINE-style variants ('Journal of experimental psychology. General'
+    vs 'Journal of Experimental Psychology General') without merging venues
+    whose words actually differ. We have no ISSNs to key on."""
+    name = re.sub(r"[\W_]+", " ", (name or "").lower())
     return re.sub(r"\s+", " ", name).strip()
 
 
@@ -147,6 +195,52 @@ def main():
     multi_member_groups = sum(1 for gid in group_dates if group_size[gid] > 1)
 
     # ------------------------------------------------------------------ #
+    # Journals: one entry per unique venue, keyed by normalized name (no
+    # ISSNs in the data). A work's venue is its CANONICAL member's venue,
+    # so a preprint linked to its published article counts for the journal,
+    # not the preprint server; preprint-only works count under their server.
+    # ------------------------------------------------------------------ #
+    by_id = {r["id"]: r for r in raw_papers}
+    # journal_key -> {"names": Counter, "papers": set(gid), "authors": set}
+    journals = {}
+    group_journal = {}  # gid -> journal_key (only for works with a venue)
+    skipped_no_venue = 0
+    venue_from_doi_prefix = 0
+    for gid in group_dates:  # active works only (>=1 non-excluded member)
+        crow = by_id.get(gid)
+        if crow is None:
+            # Dangling duplicate_of target — should not happen (rows are
+            # never deleted), but stay consistent with canonical()'s
+            # defensive posture rather than KeyError-ing.
+            print(f"  WARNING: canonical id {gid} not found in papers.csv; "
+                  f"skipping its journal attribution")
+            skipped_no_venue += 1
+            continue
+        venue = (crow.get("venue") or "").strip()
+        if not venue:
+            # Blank venue: infer the preprint server from the canonical
+            # member's DOI registrant prefix (journals-table only).
+            doi = (crow.get("doi") or "").strip()
+            prefix = doi.split("/", 1)[0] if doi else ""
+            venue = DOI_PREFIX_VENUES.get(prefix, "")
+            if venue:
+                venue_from_doi_prefix += 1
+        nvenue = norm_venue(venue)
+        if not nvenue:
+            skipped_no_venue += 1
+            continue
+        alias_display = VENUE_ALIASES.get(nvenue)
+        if alias_display:
+            venue = alias_display  # merged rows display the server name
+            nvenue = norm_venue(venue)
+        j_key = f"name:{nvenue}"
+        jentry = journals.setdefault(
+            j_key, {"names": Counter(), "papers": set(), "authors": set()})
+        jentry["names"][venue] += 1  # one spelling vote per work
+        jentry["papers"].add(gid)
+        group_journal[gid] = j_key
+
+    # ------------------------------------------------------------------ #
     # Aggregate authors and institutions
     # ------------------------------------------------------------------ #
     # author_key -> {"names": Counter, "orcid": str, "papers": set}
@@ -200,6 +294,12 @@ def main():
             if name:
                 entry["names"][name] += 1
             entry["papers"].add(gid)
+
+            # Journal attribution: union of author keys across the work's
+            # members (same semantics as institutions' n_authors).
+            j_key = group_journal.get(gid)
+            if j_key:
+                journals[j_key]["authors"].add(a_key)
 
             # -------------------------------------------------------- #
             # Institutions: positionally parallel semicolon-joined
@@ -286,11 +386,15 @@ def main():
             target["authors"] |= source["authors"]
             merged_institutions += 1
 
-    # Remap author keys inside institution author sets so n_authors doesn't
-    # double-count people whose name-only rows were merged above.
+    # Remap author keys inside institution and journal author sets so
+    # n_authors doesn't double-count people whose name-only rows were
+    # merged above.
     for ientry in institutions.values():
         ientry["authors"] = {author_key_remap.get(k, k)
                              for k in ientry["authors"]}
+    for jentry in journals.values():
+        jentry["authors"] = {author_key_remap.get(k, k)
+                             for k in jentry["authors"]}
 
     # ------------------------------------------------------------------ #
     # Helpers for output rows
@@ -354,6 +458,27 @@ def main():
         writer.writerows(inst_rows)
 
     # ------------------------------------------------------------------ #
+    # Write journals.csv
+    # ------------------------------------------------------------------ #
+    journal_rows = []
+    for key, entry in journals.items():
+        first, last = date_range(entry["papers"])
+        journal_rows.append({
+            "journal_key": key,
+            "journal_name": most_frequent(entry["names"]),
+            "n_papers": len(entry["papers"]),
+            "n_authors": len(entry["authors"]),
+            "first_use": first,
+            "last_use": last,
+        })
+    journal_rows.sort(key=lambda r: (-r["n_papers"], r["journal_key"]))
+
+    with open(JOURNALS_OUT_CSV, "w", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(fh, fieldnames=JOURNAL_OUT_COLUMNS)
+        writer.writeheader()
+        writer.writerows(journal_rows)
+
+    # ------------------------------------------------------------------ #
     # Summary
     # ------------------------------------------------------------------ #
     print("Analysis summary")
@@ -373,6 +498,9 @@ def main():
     print(f"  Name-only institution groups merged into ROR groups: {merged_institutions}")
     print(f"  Unique authors: {len(author_rows)}")
     print(f"  Unique institutions: {len(inst_rows)}")
+    print(f"  Unique journals: {len(journal_rows)} "
+          f"(venues recovered from DOI prefix: {venue_from_doi_prefix}, "
+          f"works skipped for empty venue: {skipped_no_venue})")
     print("  Top 5 authors by n_papers:")
     for r in author_rows[:5]:
         print(f"    {r['n_papers']:>4}  {r['author_name']}  ({r['author_key']})")
@@ -380,6 +508,10 @@ def main():
     for r in inst_rows[:5]:
         print(f"    {r['n_papers']:>4}  {r['institution_name']} "
               f"[{r['country']}]  ({r['institution_key']})")
+    print("  Top 5 journals by n_papers:")
+    for r in journal_rows[:5]:
+        print(f"    {r['n_papers']:>4}  {r['journal_name']}  "
+              f"({r['journal_key']})")
 
 
 if __name__ == "__main__":
