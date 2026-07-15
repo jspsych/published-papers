@@ -6,6 +6,7 @@ Reads data/papers.csv and data/authors.csv and writes:
   analysis/authors.csv       one row per unique author
   analysis/institutions.csv  one row per unique institution
   analysis/journals.csv      one row per unique venue (normalized name)
+  analysis/fields.csv        one row per OpenAlex field (with manual fixes)
   analysis/dashboard.json    compact summary consumed by the Pages dashboard
 
 Papers whose `exclude` column is the string "True" in data/papers.csv are
@@ -46,7 +47,15 @@ AUTHORS_IN_CSV = os.path.join(REPO, "data", "authors.csv")
 AUTHORS_OUT_CSV = os.path.join(HERE, "authors.csv")
 INSTITUTIONS_OUT_CSV = os.path.join(HERE, "institutions.csv")
 JOURNALS_OUT_CSV = os.path.join(HERE, "journals.csv")
+FIELDS_OUT_CSV = os.path.join(HERE, "fields.csv")
 DASHBOARD_OUT_JSON = os.path.join(HERE, "dashboard.json")
+
+# Manual field corrections for journals (curated by hand, never regenerated).
+# OpenAlex systematically files experimental-psychology works under the
+# Neuroscience field (subfield "Cognitive Neuroscience"), which mislabels
+# venues like Cognition or Memory & Cognition; this file corrects the
+# journal-level field. journal_key must match journals.csv.
+FIELD_OVERRIDES_CSV = os.path.join(REPO, "data", "journal_field_overrides.csv")
 
 # Work types excluded from the analysis (the raw data CSVs keep everything).
 # A paper is skipped only when its WHOLE lowercased `type` string equals one
@@ -107,6 +116,26 @@ def modal_value(counter):
     if not counter:
         return ""
     return min(counter.items(), key=lambda kv: (-kv[1], kv[0]))[0]
+
+
+def load_field_overrides(path):
+    """journal_key -> field from the manual overrides CSV ({} if absent)."""
+    overrides = {}
+    if os.path.exists(path):
+        with open(path, newline="", encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                key = (row.get("journal_key") or "").strip()
+                field = (row.get("field") or "").strip()
+                if key and field:
+                    overrides[key] = field
+    return overrides
+
+
+def attribute_work_field(journal_override, own_field, journal_field):
+    """Field attribution for one work, strongest source first: the manual
+    journal override, else the work's own (modal) topic_field, else the
+    journal's post-override field, else '' (uncounted)."""
+    return journal_override or own_field or journal_field or ""
 
 
 def norm_name(name):
@@ -268,6 +297,19 @@ def main():
             jentry["fields"][wf] += 1  # one field vote per classified work
         group_journal[gid] = j_key
 
+    # Manual journal-field overrides (see FIELD_OVERRIDES_CSV note above).
+    field_overrides = load_field_overrides(FIELD_OVERRIDES_CSV)
+    for key in sorted(field_overrides):
+        if key not in journals:
+            print(f"  WARNING: field override for unknown journal_key "
+                  f"{key!r}; skipping")
+    field_overrides = {k: v for k, v in field_overrides.items()
+                       if k in journals}
+    # Final per-journal field: override wins over the modal topic_field.
+    journal_final_field = {
+        j_key: field_overrides.get(j_key) or modal_value(entry["fields"])
+        for j_key, entry in journals.items()}
+
     # ------------------------------------------------------------------ #
     # Aggregate authors and institutions
     # ------------------------------------------------------------------ #
@@ -281,6 +323,9 @@ def main():
     # orcid:/ror: keys that name has been seen with.
     name_to_orcid_keys = {}
     name_to_ror_keys = {}
+
+    # gid -> set of author keys, for the per-field author counts.
+    work_authors = {}
 
     skipped_unnamed = 0
     skipped_empty_norm = 0
@@ -328,6 +373,7 @@ def main():
             j_key = group_journal.get(gid)
             if j_key:
                 journals[j_key]["authors"].add(a_key)
+            work_authors.setdefault(gid, set()).add(a_key)
 
             # -------------------------------------------------------- #
             # Institutions: positionally parallel semicolon-joined
@@ -423,6 +469,9 @@ def main():
     for jentry in journals.values():
         jentry["authors"] = {author_key_remap.get(k, k)
                              for k in jentry["authors"]}
+    for gid in work_authors:
+        work_authors[gid] = {author_key_remap.get(k, k)
+                             for k in work_authors[gid]}
 
     # ------------------------------------------------------------------ #
     # Helpers for output rows
@@ -494,9 +543,10 @@ def main():
         journal_rows.append({
             "journal_key": key,
             "journal_name": most_frequent(entry["names"]),
-            # Modal topic_field across the journal's classified works (ties:
-            # count then alphabetical); '' when no member work is classified.
-            "field": modal_value(entry["fields"]),
+            # Manual override when present, else the modal topic_field across
+            # the journal's classified works (ties: count then alphabetical);
+            # '' when no override and no member work is classified.
+            "field": journal_final_field[key],
             "n_papers": len(entry["papers"]),
             "n_authors": len(entry["authors"]),
             "first_use": first,
@@ -508,6 +558,50 @@ def main():
         writer = csv.DictWriter(fh, fieldnames=JOURNAL_OUT_COLUMNS)
         writer.writeheader()
         writer.writerows(journal_rows)
+
+    # ------------------------------------------------------------------ #
+    # Write fields.csv — one row per field, aggregating works. Per-work
+    # attribution (strongest first): manual journal override, else the
+    # work's own topic_field, else its journal's post-override field, else
+    # uncounted.
+    # ------------------------------------------------------------------ #
+    fields = {}  # field -> {"works": set, "authors": set}
+    field_uncounted = 0
+    for gid in group_dates:
+        j_key = group_journal.get(gid, "")
+        f = attribute_work_field(
+            field_overrides.get(j_key, ""),
+            work_field.get(gid, ""),
+            journal_final_field.get(j_key, ""))
+        if not f:
+            field_uncounted += 1
+            continue
+        fentry = fields.setdefault(f, {"works": set(), "authors": set()})
+        fentry["works"].add(gid)
+        fentry["authors"] |= work_authors.get(gid, set())
+
+    field_journal_counts = Counter(
+        f for f in journal_final_field.values() if f)
+
+    field_rows = []
+    for f, entry in fields.items():
+        first, last = date_range(entry["works"])
+        field_rows.append({
+            "field": f,
+            "n_works": len(entry["works"]),
+            "n_journals": field_journal_counts.get(f, 0),
+            "n_authors": len(entry["authors"]),
+            "first_use": first,
+            "last_use": last,
+        })
+    field_rows.sort(key=lambda r: (-r["n_works"], r["field"]))
+
+    with open(FIELDS_OUT_CSV, "w", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(
+            fh, fieldnames=["field", "n_works", "n_journals", "n_authors",
+                            "first_use", "last_use"])
+        writer.writeheader()
+        writer.writerows(field_rows)
 
     # ------------------------------------------------------------------ #
     # Write dashboard.json (everything the GitHub Pages dashboard needs
@@ -551,6 +645,7 @@ def main():
             "preprints_linked": preprints_linked,
         },
         "works_by_year": works_by_year,
+        "fields": field_rows,
         "top_journals": top_entries(journal_rows, "journal_name",
                                     extra_keys=("field",)),
         "top_institutions": top_entries(inst_rows, "institution_name"),
@@ -601,6 +696,13 @@ def main():
           f"classified ({classified_journals}/{len(journal_rows)}); "
           f"{pct(covered, n_works)} of works in a classified journal or "
           f"classified directly ({covered}/{n_works})")
+    print(f"  Journal field overrides applied: {len(field_overrides)}")
+    print(f"  Works uncounted in fields.csv (no attributable field): "
+          f"{field_uncounted}")
+    print("  Top 5 fields by n_works:")
+    for r in field_rows[:5]:
+        print(f"    {r['n_works']:>4}  {r['field']}  "
+              f"(journals {r['n_journals']}, authors {r['n_authors']})")
     print("  Top 5 authors by n_papers:")
     for r in author_rows[:5]:
         print(f"    {r['n_papers']:>4}  {r['author_name']}  ({r['author_key']})")

@@ -107,6 +107,10 @@ So it is safe to edit `notes` and `exclude` by hand; the monthly job will not
 clobber them. (Author rows are fully replaced per paper on each run to pick up
 affiliation backfill.)
 
+[`data/journal_field_overrides.csv`](data/journal_field_overrides.csv) is
+also fully manual — the update script never touches it (see the Analysis
+section for what it does).
+
 ## Preprint → published linking
 
 Many works appear twice in the dataset: once as a preprint and once as the
@@ -182,7 +186,24 @@ only) derives two summary tables from the data CSVs:
   works. Expect the large majority of works to sit in a classified journal
   once the monthly fetch has backfilled `topic_field`, with a residual
   blank tail (unclassified OpenAlex records and journals seen only via
-  Europe PMC). The script prints the exact coverage each run. Venues are keyed by normalized name
+  Europe PMC). The script prints the exact coverage each run.
+  **Manual corrections:**
+  [`data/journal_field_overrides.csv`](data/journal_field_overrides.csv)
+  (columns `journal_key`, `field`, `note`) is a hand-curated file that is
+  never regenerated — it survives updates like `notes`/`exclude`. An
+  override replaces the modal field for that journal in both the journals
+  table and the fields aggregate; `journal_key` must match a key in
+  `journals.csv` (unknown keys are warned about and skipped). It exists
+  because OpenAlex systematically files experimental-psychology works under
+  the **Neuroscience** field (subfield "Cognitive Neuroscience"), which
+  would mislabel venues like *Cognition* or *Memory & Cognition*.
+- **`analysis/fields.csv`** — one row per field: `field`, `n_works`,
+  `n_journals` (journals whose post-override field is this field),
+  `n_authors`, `first_use`, `last_use`. Per-work attribution, strongest
+  source first: the work's journal has a manual override → that field;
+  else the work's own `topic_field` (modal across linked members); else its
+  journal's (post-override) field; else the work is uncounted (the script
+  prints how many). Venues are keyed by normalized name
   (lowercased, runs of punctuation/whitespace collapsed to single spaces —
   this merges MEDLINE-style variants like *Journal of experimental
   psychology. General*) since the sources provide no ISSNs; `journal_name`

@@ -197,5 +197,42 @@ class ModalValueTests(unittest.TestCase):
         self.assertEqual(gs.modal_value(c1), "A Field")
 
 
+class AttributeWorkFieldTests(unittest.TestCase):
+    def test_override_beats_everything(self):
+        self.assertEqual(
+            gs.attribute_work_field("Psychology", "Neuroscience", "Medicine"),
+            "Psychology")
+
+    def test_own_field_beats_journal_field(self):
+        self.assertEqual(
+            gs.attribute_work_field("", "Computer Science", "Psychology"),
+            "Computer Science")
+
+    def test_journal_field_when_no_own_field(self):
+        self.assertEqual(
+            gs.attribute_work_field("", "", "Psychology"), "Psychology")
+
+    def test_uncounted_when_nothing(self):
+        self.assertEqual(gs.attribute_work_field("", "", ""), "")
+
+
+class LoadFieldOverridesTests(unittest.TestCase):
+    def test_missing_file_is_empty(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(
+                gs.load_field_overrides(os.path.join(td, "nope.csv")), {})
+
+    def test_loads_and_skips_blank_rows(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = os.path.join(td, "o.csv")
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write("journal_key,field,note\n"
+                         "name:cognition,Psychology,expt psych venue\n"
+                         "name:blankfield,,missing field skipped\n"
+                         ",Psychology,missing key skipped\n")
+            self.assertEqual(gs.load_field_overrides(path),
+                             {"name:cognition": "Psychology"})
+
+
 if __name__ == "__main__":
     unittest.main()

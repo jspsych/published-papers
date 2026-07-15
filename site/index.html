@@ -234,6 +234,16 @@
     <div class="tile"><div class="lbl">Unique journals</div><div class="val" id="tile3-val"></div></div>
   </section>
 
+  <section class="table-section" aria-labelledby="h-fields">
+    <h2 id="h-fields">Fields</h2>
+    <div class="table-card">
+      <div class="table-wrap" id="table-fields"></div>
+    </div>
+    <p class="more">OpenAlex field classification with
+      <a href="https://github.com/jspsych/published-papers/blob/main/data/journal_field_overrides.csv">manual corrections</a> &middot;
+      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/fields.csv">fields.csv on GitHub</a></p>
+  </section>
+
   <section class="table-section" aria-labelledby="h-journals">
     <h2 id="h-journals">Journals</h2>
     <div class="table-controls">
@@ -388,10 +398,11 @@
   // spec.searchKeys: row fields matched by the search box.
   function makeTable(sectionId, data, spec) {
     var wrap = document.getElementById("table-" + sectionId);
+    // search box / count / show-all are optional (small tables omit them)
     var searchInput = document.getElementById("q-" + sectionId);
     var countEl = document.getElementById("count-" + sectionId);
     var showAllWrap = document.getElementById("showall-" + sectionId);
-    var showAllBtn = showAllWrap.querySelector("button");
+    var showAllBtn = showAllWrap ? showAllWrap.querySelector("button") : null;
 
     var state = {
       sortIdx: spec.defaultSortIdx,
@@ -527,34 +538,42 @@
       tbody.appendChild(frag);
 
       // count ("N of M" when filtered by search and/or the select filter)
-      countEl.textContent = (q || fv)
-        ? numFmt.format(sorted.length) + " of " + numFmt.format(data.length)
-        : "";
+      if (countEl) {
+        countEl.textContent = (q || fv)
+          ? numFmt.format(sorted.length) + " of " + numFmt.format(data.length)
+          : "";
+      }
 
       // show-all button
-      if (sorted.length > shown) {
-        showAllWrap.hidden = false;
-        showAllBtn.textContent =
-          "Show all " + numFmt.format(sorted.length) + " rows";
-      } else {
-        showAllWrap.hidden = true;
+      if (showAllWrap) {
+        if (sorted.length > shown) {
+          showAllWrap.hidden = false;
+          showAllBtn.textContent =
+            "Show all " + numFmt.format(sorted.length) + " rows";
+        } else {
+          showAllWrap.hidden = true;
+        }
       }
     }
 
-    searchInput.addEventListener("input", function () {
-      state.query = searchInput.value.trim();
-      render();
-    });
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        state.query = searchInput.value.trim();
+        render();
+      });
+    }
     if (filterSelect) {
       filterSelect.addEventListener("change", function () {
         state.filterValue = filterSelect.value;
         render();
       });
     }
-    showAllBtn.addEventListener("click", function () {
-      state.showAll = true;
-      render();
-    });
+    if (showAllBtn) {
+      showAllBtn.addEventListener("click", function () {
+        state.showAll = true;
+        render();
+      });
+    }
 
     render();
   }
@@ -593,6 +612,26 @@
     fetchText("analysis/authors.csv")
   ]).then(function (results) {
     renderHero(results[0]);
+
+    makeTable("fields", results[0].fields || [], {
+      caption: "Works per OpenAlex field, sortable",
+      defaultSortIdx: 1,
+      searchKeys: [],
+      columns: [
+        { label: "Field", key: "field", type: "name",
+          cell: function (r) { return textCell("name", r.field); } },
+        { label: "Works", key: "n_works", type: "num",
+          cell: function (r) { return numCell(r.n_works); } },
+        { label: "Journals", key: "n_journals", type: "num",
+          cell: function (r) { return numCell(r.n_journals); } },
+        { label: "Authors", key: "n_authors", type: "num",
+          cell: function (r) { return numCell(r.n_authors); } },
+        { label: "First use", key: "first_use", type: "date",
+          cell: function (r) { return textCell("date", r.first_use); } },
+        { label: "Last use", key: "last_use", type: "date",
+          cell: function (r) { return textCell("date", r.last_use); } }
+      ]
+    });
 
     makeTable("journals", csvToObjects(results[1]), {
       caption: "All journals in the dataset, sortable and searchable",

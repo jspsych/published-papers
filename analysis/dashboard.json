@@ -66,6 +66,160 @@
    "n": 227
   }
  ],
+ "fields": [
+  {
+   "field": "Psychology",
+   "n_works": 1018,
+   "n_journals": 186,
+   "n_authors": 2720,
+   "first_use": "2014-01-01",
+   "last_use": "2026-07-13"
+  },
+  {
+   "field": "Neuroscience",
+   "n_works": 565,
+   "n_journals": 122,
+   "n_authors": 1916,
+   "first_use": "2015-01-01",
+   "last_use": "2026-07-02"
+  },
+  {
+   "field": "Computer Science",
+   "n_works": 337,
+   "n_journals": 97,
+   "n_authors": 1136,
+   "first_use": "2013-01-01",
+   "last_use": "2026-07-06"
+  },
+  {
+   "field": "Social Sciences",
+   "n_works": 137,
+   "n_journals": 37,
+   "n_authors": 439,
+   "first_use": "2015-11-11",
+   "last_use": "2026-07-01"
+  },
+  {
+   "field": "Decision Sciences",
+   "n_works": 77,
+   "n_journals": 23,
+   "n_authors": 251,
+   "first_use": "2016-01-01",
+   "last_use": "2026-06-30"
+  },
+  {
+   "field": "Medicine",
+   "n_works": 71,
+   "n_journals": 28,
+   "n_authors": 335,
+   "first_use": "2016-05-27",
+   "last_use": "2026-03-19"
+  },
+  {
+   "field": "Arts and Humanities",
+   "n_works": 43,
+   "n_journals": 15,
+   "n_authors": 135,
+   "first_use": "2018-08-06",
+   "last_use": "2026-07-01"
+  },
+  {
+   "field": "Engineering",
+   "n_works": 40,
+   "n_journals": 10,
+   "n_authors": 123,
+   "first_use": "2016-12-13",
+   "last_use": "2026-07-02"
+  },
+  {
+   "field": "Mathematics",
+   "n_works": 27,
+   "n_journals": 6,
+   "n_authors": 89,
+   "first_use": "2018-01-01",
+   "last_use": "2026-05-20"
+  },
+  {
+   "field": "Health Professions",
+   "n_works": 24,
+   "n_journals": 6,
+   "n_authors": 99,
+   "first_use": "2016-07-05",
+   "last_use": "2026-05-01"
+  },
+  {
+   "field": "Business, Management and Accounting",
+   "n_works": 13,
+   "n_journals": 9,
+   "n_authors": 47,
+   "first_use": "2014-01-01",
+   "last_use": "2026-02-16"
+  },
+  {
+   "field": "Economics, Econometrics and Finance",
+   "n_works": 12,
+   "n_journals": 1,
+   "n_authors": 41,
+   "first_use": "2018-10-01",
+   "last_use": "2026-07-02"
+  },
+  {
+   "field": "Biochemistry, Genetics and Molecular Biology",
+   "n_works": 10,
+   "n_journals": 4,
+   "n_authors": 107,
+   "first_use": "2017-09-21",
+   "last_use": "2026-07-09"
+  },
+  {
+   "field": "Physics and Astronomy",
+   "n_works": 10,
+   "n_journals": 4,
+   "n_authors": 30,
+   "first_use": "2016-03-31",
+   "last_use": "2024-09-10"
+  },
+  {
+   "field": "Environmental Science",
+   "n_works": 7,
+   "n_journals": 2,
+   "n_authors": 25,
+   "first_use": "2021-03-17",
+   "last_use": "2024-09-25"
+  },
+  {
+   "field": "Agricultural and Biological Sciences",
+   "n_works": 3,
+   "n_journals": 0,
+   "n_authors": 9,
+   "first_use": "2019-07-24",
+   "last_use": "2025-05-29"
+  },
+  {
+   "field": "Chemistry",
+   "n_works": 3,
+   "n_journals": 1,
+   "n_authors": 10,
+   "first_use": "2020-11-02",
+   "last_use": "2026-03-18"
+  },
+  {
+   "field": "Veterinary",
+   "n_works": 2,
+   "n_journals": 1,
+   "n_authors": 16,
+   "first_use": "2022-12-01",
+   "last_use": "2025-06-06"
+  },
+  {
+   "field": "Nursing",
+   "n_works": 1,
+   "n_journals": 0,
+   "n_authors": 5,
+   "first_use": "2022-11-04",
+   "last_use": "2023-08-23"
+  }
+ ],
  "top_journals": [
   {
    "name": "PsyArXiv",
@@ -86,7 +240,7 @@
    "n_papers": 64,
    "first_use": "2017-02-15",
    "last_use": "2026-05-25",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "OSF Preprints",
@@ -121,7 +275,7 @@
    "n_papers": 44,
    "first_use": "2016-02-04",
    "last_use": "2026-07-13",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "arXiv (Cornell University)",
@@ -135,7 +289,7 @@
    "n_papers": 39,
    "first_use": "2018-04-30",
    "last_use": "2026-05-29",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "PLoS ONE",
@@ -149,14 +303,14 @@
    "n_papers": 37,
    "first_use": "2016-07-06",
    "last_use": "2026-07-13",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "Quarterly Journal of Experimental Psychology",
    "n_papers": 31,
    "first_use": "2020-01-14",
    "last_use": "2026-05-03",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "Cognitive Science",
@@ -170,7 +324,7 @@
    "n_papers": 24,
    "first_use": "2019-01-01",
    "last_use": "2026-01-09",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "Open Mind",
@@ -198,7 +352,7 @@
    "n_papers": 20,
    "first_use": "2018-06-11",
    "last_use": "2026-06-20",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "Psychological Research",
@@ -219,7 +373,7 @@
    "n_papers": 17,
    "first_use": "2019-09-12",
    "last_use": "2026-03-12",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "eScholarship (California Digital Library)",
@@ -233,7 +387,7 @@
    "n_papers": 17,
    "first_use": "2018-11-28",
    "last_use": "2026-01-26",
-   "field": "Neuroscience"
+   "field": "Psychology"
   },
   {
    "name": "Nature Communications",
