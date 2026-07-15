@@ -59,6 +59,11 @@ One row per author-paper pair.
 | `institution_countries` | Semicolon-joined ISO country codes (OpenAlex only). |
 | `institution_rors` | Semicolon-joined [ROR](https://ror.org/) ids (OpenAlex only). |
 
+The three institution columns are **positionally parallel lists**: the n-th
+entry of each refers to the same institution. Empty slots are kept (e.g.
+`US; ; GB`) so alignment survives institutions that lack a country code or
+ROR id.
+
 Europe PMC-only records provide free-text affiliation strings but no country
 codes or ROR ids, so those two columns are empty for them.
 
@@ -93,11 +98,49 @@ So it is safe to edit `notes` and `exclude` by hand; the monthly job will not
 clobber them. (Author rows are fully replaced per paper on each run to pick up
 affiliation backfill.)
 
+## Analysis
+
+[`analysis/generate_summaries.py`](analysis/generate_summaries.py) (stdlib
+only) derives two summary tables from the data CSVs:
+
+- **`analysis/authors.csv`** — one row per unique author: `author_key`,
+  `author_name`, `orcid`, `n_papers` (distinct papers), `first_use` /
+  `last_use` (min/max publication date of that author's papers; falls back to
+  the year when the full date is missing).
+- **`analysis/institutions.csv`** — one row per unique institution:
+  `institution_key`, `institution_name`, `ror`, `country`, `n_papers`
+  (distinct papers), `n_authors` (distinct author keys), `first_use`,
+  `last_use`.
+
+**Dedup rules and their limits.** Authors are keyed by ORCID when present,
+otherwise by normalized name (lowercase, whitespace collapsed, periods
+stripped); when an ORCID group has several name spellings the most frequent
+one is shown. Because ORCID coverage is inconsistent in the sources, a
+name-only group is **merged into an ORCID group when its normalized name
+unambiguously matches exactly one ORCID** seen in the data; it stays a
+separate row when the name matches two or more different ORCIDs (ambiguous)
+or is genuinely never seen with an ORCID. Institutions are keyed by ROR id
+when present, else normalized name, with the same unambiguous-match merge.
+Even so, name-only matching cannot distinguish two different people (or
+institutions) that share an identical name, nor unify variant spellings of
+the same one — so counts for records lacking identifiers are approximate.
+Note also that Europe PMC affiliations are free text and noisy: they can
+contain department strings, addresses, and embedded semicolons; obvious
+email fragments are dropped during aggregation, but other free-text variants
+of the same institution may appear as separate `name:` rows.
+
+Papers with `exclude` set to `True` in `data/papers.csv` are omitted from
+both tables. The tables are **regenerated from scratch every monthly run** —
+manual edits to files under `analysis/` will be overwritten. Notes and
+exclusions belong in `data/papers.csv`, which is the only place manual edits
+persist.
+
 ## Running locally
 
 ```bash
 pip install -r requirements.txt
 python update_papers.py
+python analysis/generate_summaries.py
 ```
 
 This reads any existing CSVs, fetches all four sources, and rewrites

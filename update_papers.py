@@ -248,12 +248,19 @@ def build_openalex_paper(work, flag):
             "author_position": a.get("author_position") or "",
             "author_name": author.get("display_name") or "",
             "orcid": norm_orcid(author.get("orcid")),
-            "institutions": "; ".join(n for n in inst_names if n),
-            "institution_countries": "; ".join(c for c in inst_countries if c),
-            "institution_rors": "; ".join(r for r in inst_rors if r),
+            # Join WITHOUT dropping empty entries so the three columns stay
+            # positionally parallel (an institution may lack a country/ROR).
+            "institutions": join_parallel(inst_names),
+            "institution_countries": join_parallel(inst_countries),
+            "institution_rors": join_parallel(inst_rors),
         })
 
     return paper, authors
+
+
+def join_parallel(items):
+    """Semicolon-join a parallel list, keeping empty slots for alignment."""
+    return "; ".join(items) if any(items) else ""
 
 
 def short_ror(ror):

@@ -138,7 +138,7 @@ W2606861369,10.3758/s13428-017-0882-x,2017,first,John H. Krantz,,Hanover College
 W2606861369,10.3758/s13428-017-0882-x,2017,last,Ulf‐Dietrich Reips,0000-0002-1566-4745,University of Konstanz,DE,0546hnb39
 W2608490515,10.1080/23743603.2017.1298356,2016,first,Janis Zickfeld,0000-0001-7660-2719,University of Oslo,NO,01xtthb56
 W2608490515,10.1080/23743603.2017.1298356,2016,last,Thomas W. Schubert,0000-0002-3797-4568,Iscte – Instituto Universitário de Lisboa,PT,014837179
-W2609444433,10.1111/cdev.12812,2017,first,Linda Forssman,0000-0003-0208-4212,Uppsala University; Tampere University; Tampere University,SE; FI; FI,048a87296; 033003e23
+W2609444433,10.1111/cdev.12812,2017,first,Linda Forssman,0000-0003-0208-4212,Uppsala University; Tampere University; Tampere University,SE; FI; FI,048a87296; 033003e23; 
 W2609444433,10.1111/cdev.12812,2017,last,Sam Wass,0000-0002-7421-3493,University of East London,GB,057jrqr44
 W2612491298,10.17851/2237-2083.25.3.971-1010,2017,first,Thiago Oliveira da Motta Sampaio,0000-0003-4153-0772,Universidade Estadual de Campinas (UNICAMP),BR,04wffgt70
 W2612821194,10.1037/xlm0000609,2018,first,Ryan M Best,0000-0003-3108-4166,,,
@@ -1066,7 +1066,7 @@ W3081808476,10.1109/icdl-epirob48136.2020.9278047,2020,middle,Francesco Rea,0000
 W3081808476,10.1109/icdl-epirob48136.2020.9278047,2020,middle,Erik Billing,0000-0002-6568-9342,University of Skövde,SE,051mrsz47
 W3081808476,10.1109/icdl-epirob48136.2020.9278047,2020,middle,Francesca Odone,0000-0002-3463-2263,University of Genoa,IT,0107c5v14
 W3081808476,10.1109/icdl-epirob48136.2020.9278047,2020,last,Giulio Sandini,0000-0003-3324-985X,Italian Institute of Technology,IT,042t93s57
-W3082232638,10.1162/ling_a_00406,2020,first,Mora Maldonado,0000-0003-4421-2614,Laboratoire de Linguistique de Nantes; Nantes Université; University of Edinburgh,FR; GB,0009eec40; 03gnr7b55; 01nrxwf90
+W3082232638,10.1162/ling_a_00406,2020,first,Mora Maldonado,0000-0003-4421-2614,Laboratoire de Linguistique de Nantes; Nantes Université; University of Edinburgh,; FR; GB,0009eec40; 03gnr7b55; 01nrxwf90
 W3082232638,10.1162/ling_a_00406,2020,last,Jennifer Culbertson,0000-0002-1737-6296,University of Edinburgh,GB,01nrxwf90
 W3082957318,10.3758/s13428-020-01436-x,2020,first,Matti Vuorre,0000-0001-5052-066X,University of Oxford,GB,052gg0110
 W3082957318,10.3758/s13428-020-01436-x,2020,last,Matthew J. C. Crump,0000-0002-5612-0090,Brooklyn College,US,019k4jq75
@@ -1590,7 +1590,7 @@ W3163880120,10.3758/s13428-019-01283-5,2021,first,Felix Henninger,0000-0002-7730
 W3163880120,10.3758/s13428-019-01283-5,2021,middle,Yury Shevchenko,0000-0002-3397-8465,University of Konstanz,DE,0546hnb39
 W3163880120,10.3758/s13428-019-01283-5,2021,middle,Ulf K. Mertens,0000-0001-6827-0582,Heidelberg University,DE,038t36y30
 W3163880120,10.3758/s13428-019-01283-5,2021,middle,Pascal J. Kieslich,0000-0002-0853-9364,University of Mannheim; Mannheim Centre for European Social Research,DE; DE,031bsb921; 05bv91d86
-W3163880120,10.3758/s13428-019-01283-5,2021,last,Benjamin E. Hilbig,0000-0002-1470-1882,University of Koblenz and Landau; Universität Koblenz,DE,01j9f6752; 0433e6t24
+W3163880120,10.3758/s13428-019-01283-5,2021,last,Benjamin E. Hilbig,0000-0002-1470-1882,University of Koblenz and Landau; Universität Koblenz,DE; ,01j9f6752; 0433e6t24
 W3163913909,10.31234/osf.io/jfeca,2020,first,Alexander Leslie Anwyl-Irvine,0000-0002-3792-7745,,,
 W3163913909,10.31234/osf.io/jfeca,2020,middle,Edwin S. Dalmaijer,0000-0003-3241-0760,,,
 W3163913909,10.31234/osf.io/jfeca,2020,middle,Nick Hodges,,,,
@@ -1961,7 +1961,7 @@ W3205982606,,2020,middle,"Knox, D.",,"Harvard University; University of Californ
 W3205982606,,2020,middle,"Glowacki, L.",,Harvard University; University of Amsterdam,US; NL,03vek6s52; 04dkp9463
 W3205982606,,2020,middle,"Galbarczyk, A.",,University of Pennsylvania,US,00b30xv10
 W3205982606,,2020,middle,"Jasienska, G.",,Boston University,US,05qwgg493
-W3205982606,,2020,middle,"Ross, C.",,Max Planck Society; Max Planck Institute for Evolutionary Anthropology; Jinka University,DE; DE,01hhn8329; 02a33b393; 05gt9yw23
+W3205982606,,2020,middle,"Ross, C.",,Max Planck Society; Max Planck Institute for Evolutionary Anthropology; Jinka University,DE; DE; ,01hhn8329; 02a33b393; 05gt9yw23
 W3205982606,,2020,middle,"Neff, M.",,Jagiellonian University,PL,03bqmcz70
 W3205982606,,2020,middle,"Martin, A.",,Jagiellonian University,PL,03bqmcz70
 W3205982606,,2020,middle,"Cirelli, L.",,Max Planck Institute for Evolutionary Anthropology,DE,02a33b393
@@ -2049,7 +2049,7 @@ W3215696157,10.1007/s00426-021-01620-4,2021,middle,Carolin Dudschig,0000-0002-70
 W3215696157,10.1007/s00426-021-01620-4,2021,last,Barbara Kaup,0000-0002-7400-0789,University of Tübingen,DE,03a1kwz48
 W3216046583,10.1057/s41599-021-00982-9,2021,first,Justin Sulik,0000-0002-0978-9496,Ludwig-Maximilians-Universität München,DE,05591te55
 W3216046583,10.1057/s41599-021-00982-9,2021,middle,Ophélia Deroy,0000-0001-9431-3136,School of Advanced Study; Ludwig-Maximilians-Universität München,GB; DE,039594g80; 05591te55
-W3216046583,10.1057/s41599-021-00982-9,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; 01t4k8953
+W3216046583,10.1057/s41599-021-00982-9,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; ; 01t4k8953
 W3216046583,10.1057/s41599-021-00982-9,2021,middle,Martha Newson,0000-0001-7700-9562,University of Kent; University of Oxford,GB; GB,00xkeyj56; 052gg0110
 W3216046583,10.1057/s41599-021-00982-9,2021,middle,Yi Zhao,0000-0003-4766-5934,Indiana University Bloomington,US,02k40bc56
 W3216046583,10.1057/s41599-021-00982-9,2021,middle,Marwa El Zein,0000-0002-6052-6210,Max Planck Institute for Human Development; University College London,DE; GB,02pp7px91; 02jx3x895
@@ -2101,7 +2101,7 @@ W4200104492,10.1177/14614448211062164,2021,first,Martha Newson,0000-0001-7700-95
 W4200104492,10.1177/14614448211062164,2021,middle,Yi Zhao,0000-0003-4766-5934,Indiana University,US,01kg8sb98
 W4200104492,10.1177/14614448211062164,2021,middle,Marwa El Zein,0000-0002-6052-6210,Max Planck Institute for Human Development; University College London,DE; GB,02pp7px91; 02jx3x895
 W4200104492,10.1177/14614448211062164,2021,middle,Justin Sulik,0000-0002-0978-9496,Ludwig-Maximilians-Universität München,DE,05591te55
-W4200104492,10.1177/14614448211062164,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; 01t4k8953
+W4200104492,10.1177/14614448211062164,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; ; 01t4k8953
 W4200104492,10.1177/14614448211062164,2021,middle,Ophélia Deroy,0000-0001-9431-3136,University of London; Ludwig-Maximilians-Universität München,GB; DE,04cw6st05; 05591te55
 W4200104492,10.1177/14614448211062164,2021,last,Bahar Tunçgenç,0000-0002-1135-1004,University of Nottingham; University of Oxford,GB; GB,01ee9ar58; 052gg0110
 W4200107456,10.33774/coe-2021-fv5gt-v2,2021,first,Francesca M. Branzi,0000-0002-3780-9693,University of Liverpool,GB,04xs57h96
@@ -2240,7 +2240,7 @@ W4206928479,10.31234/osf.io/gcthj,2021,last,Peter N. C. Mohr,0000-0002-5179-060X
 W4207044807,10.1016/j.cognition.2022.105025,2022,first,Marina Dubova,0000-0001-5264-0489,Indiana University Bloomington,US,02k40bc56
 W4207044807,10.1016/j.cognition.2022.105025,2022,last,Robert L. Goldstone,0000-0001-8357-8358,Indiana University Bloomington,US,02k40bc56
 W4207078118,10.31234/osf.io/gw7nm,2022,first,Jiří Lukavský,0000-0002-1082-229X,"Czech Academy of Sciences; Czech Academy of Sciences, Institute of Psychology",CZ; CZ,053avzc18; 03aba6h29
-W4207078118,10.31234/osf.io/gw7nm,2022,middle,Lauri Oksama,,Finnish Defence Forces; Finnish Medicines Agency Fimea; Puolustusvoimien tutkimuslaitos,FI; FI,04avm2781; 04mjpp490; 02kpw7e71
+W4207078118,10.31234/osf.io/gw7nm,2022,middle,Lauri Oksama,,Finnish Defence Forces; Finnish Medicines Agency Fimea; Puolustusvoimien tutkimuslaitos,FI; FI; ,04avm2781; 04mjpp490; 02kpw7e71
 W4207078118,10.31234/osf.io/gw7nm,2022,last,Filip Děchtěrenko,0000-0003-0472-915X,"Czech Academy of Sciences; Czech Academy of Sciences, Institute of Psychology",CZ; CZ,053avzc18; 03aba6h29
 W4210286451,10.1371/journal.pone.0262876,2022,first,Aleksandrs Berdičevskis,0000-0003-3290-7179,UiT The Arctic University of Norway,NO,00wge5k78
 W4210286451,10.1371/journal.pone.0262876,2022,last,Arturs Semenuks,,University of California San Diego,US,0168r3w48
@@ -2316,7 +2316,7 @@ W4212970364,10.1167/jov.22.2.11,2022,middle,Peter Kok,0000-0001-5153-4959,Nation
 W4212970364,10.1167/jov.22.2.11,2022,last,Stephen M. Fleming,0000-0003-0233-4891,Fleming College; Wellcome Centre for Human Neuroimaging; University College London; National Hospital for Neurology and Neurosurgery,CA; GB; GB; GB,0581b6d66; 02704qw51; 02jx3x895; 048b34d51
 W4212987609,10.31234/osf.io/edw47,2021,first,Justin Sulik,0000-0002-0978-9496,Ludwig-Maximilians-Universität München,DE,05591te55
 W4212987609,10.31234/osf.io/edw47,2021,middle,Ophélia Deroy,0000-0001-9431-3136,University of London; School of Advanced Study; Ludwig-Maximilians-Universität München,GB; GB; DE,04cw6st05; 039594g80; 05591te55
-W4212987609,10.31234/osf.io/edw47,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; 01t4k8953
+W4212987609,10.31234/osf.io/edw47,2021,middle,Guillaume Dezecache,0000-0002-9366-6287,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; ; 01t4k8953
 W4212987609,10.31234/osf.io/edw47,2021,middle,Martha Newson,0000-0001-7700-9562,University of Kent; University of Oxford,GB; GB,00xkeyj56; 052gg0110
 W4212987609,10.31234/osf.io/edw47,2021,middle,Yi Zhao,0000-0003-4766-5934,Indiana University,US,01kg8sb98
 W4212987609,10.31234/osf.io/edw47,2021,middle,Marwa El Zein,0000-0002-6052-6210,Max Planck Institute for Human Development; University College London,DE; GB,02pp7px91; 02jx3x895
@@ -2358,11 +2358,11 @@ W4214873078,10.1007/s42113-022-00127-4,2022,first,Kevin D. Shabahang,0000-0002-5
 W4214873078,10.1007/s42113-022-00127-4,2022,middle,Hyungwook Yim,0000-0002-9276-3544,The University of Melbourne; Hanyang University,AU; KR,01ej9dk98; 046865y68
 W4214873078,10.1007/s42113-022-00127-4,2022,last,Simon Dennis,0000-0002-1890-1187,The University of Melbourne,AU,01ej9dk98
 W4214882718,10.3758/s13428-021-01776-2,2022,first,Yury Shevchenko,0000-0002-3397-8465,University of Konstanz,DE,0546hnb39
-W4214888092,10.31234/osf.io/fqr49,2019,first,Felix Henninger,0000-0002-7730-9511,University of Mannheim; University of Koblenz and Landau; Universität Koblenz; Mannheim Centre for European Social Research,DE; DE; DE,031bsb921; 01j9f6752; 0433e6t24; 05bv91d86
+W4214888092,10.31234/osf.io/fqr49,2019,first,Felix Henninger,0000-0002-7730-9511,University of Mannheim; University of Koblenz and Landau; Universität Koblenz; Mannheim Centre for European Social Research,DE; DE; ; DE,031bsb921; 01j9f6752; 0433e6t24; 05bv91d86
 W4214888092,10.31234/osf.io/fqr49,2019,middle,Yury Shevchenko,0000-0002-3397-8465,University of Konstanz; Central Institute of Mental Health,DE; DE,0546hnb39; 01hynnt93
 W4214888092,10.31234/osf.io/fqr49,2019,middle,Ulf K. Mertens,0000-0001-6827-0582,Heidelberg University,DE,038t36y30
 W4214888092,10.31234/osf.io/fqr49,2019,middle,Pascal J. Kieslich,0000-0002-0853-9364,University of Mannheim,DE,031bsb921
-W4214888092,10.31234/osf.io/fqr49,2019,last,Benjamin E. Hilbig,0000-0002-1470-1882,University of Koblenz and Landau; Universität Koblenz,DE,01j9f6752; 0433e6t24
+W4214888092,10.31234/osf.io/fqr49,2019,last,Benjamin E. Hilbig,0000-0002-1470-1882,University of Koblenz and Landau; Universität Koblenz,DE; ,01j9f6752; 0433e6t24
 W4214911869,10.1121/10.0005917.4,2021,first,Brad H. Story,0000-0002-6530-8781,University of Arizona,US,03m2x1q45
 W4214911869,10.1121/10.0005917.4,2021,last,Kate Bunton,,University of Arizona,US,03m2x1q45
 W4214921260,10.3758/s13421-022-01294-2,2022,first,Neil Cohn,0000-0003-0074-1995,Tilburg University; Digital Science (United Kingdom),NL; GB,04b8v1s79; 02ktfc112
@@ -2723,7 +2723,7 @@ W4235558172,10.31234/osf.io/4wbgc,2020,middle,André Alemán,0000-0001-5372-0886
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Paul Allen,0000-0001-8510-878X,King's College London; University of Roehampton,GB; GB,0220mzb33; 043071f54
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Vaughan Bell,0000-0001-8616-4847,University College London,GB,02jx3x895
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Josef J. Bless,0000-0002-3719-4449,University of Bergen,NO,03zga2b32
-W4235558172,10.31234/osf.io/4wbgc,2020,middle,Catherine Bortolon,0000-0002-5118-7827,"Laboratoire Inter-universitaire de Psychologie: Personnalité, Cognition, Changement Social; Université Grenoble Alpes",FR,03jrb0276; 02rx3b187
+W4235558172,10.31234/osf.io/4wbgc,2020,middle,Catherine Bortolon,0000-0002-5118-7827,"Laboratoire Inter-universitaire de Psychologie: Personnalité, Cognition, Changement Social; Université Grenoble Alpes",; FR,03jrb0276; 02rx3b187
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Matteo Cella,0000-0002-5701-0336,King's College London; South London and Maudsley NHS Foundation Trust; Maudsley Hospital,GB; GB; GB,0220mzb33; 015803449; 02788t795
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Jane Garrison,0000-0002-4004-5129,University of Cambridge,GB,013meh722
 W4235558172,10.31234/osf.io/4wbgc,2020,middle,Kenneth Hugdahl,0000-0002-0008-4326,Haukeland University Hospital; University of Bergen,NO; NO,03np4e098; 03zga2b32
@@ -3656,7 +3656,7 @@ W4296090904,10.31234/osf.io/xsdge,2022,middle,Patrick S. Cooper,0000-0002-0222-8
 W4296090904,10.31234/osf.io/xsdge,2022,middle,Trevor T.‐J. Chong,0000-0001-7764-3811,St Vincent's Hospital Melbourne; Alfred Health; Monash University,AU; AU; AU,001kjn539; 04scfb908; 02bfwt286
 W4296090904,10.31234/osf.io/xsdge,2022,last,Stefan Bode,0000-0002-0258-7795,The University of Melbourne; Australian Psychological Society,AU; AU,01ej9dk98; 038htga59
 W4296164253,10.1002/mpr.1946,2022,first,Matthias Feldmann,0000-0002-0493-4949,Philipps University of Marburg; Universitätsmedizin Greifswald; Universität Greifswald,DE; DE; DE,01rdrb571; 025vngs54; 00r1edq15
-W4296164253,10.1002/mpr.1946,2022,middle,Tobias Κube,0000-0002-5420-4506,University of Koblenz and Landau; Universität Koblenz,DE,01j9f6752; 0433e6t24
+W4296164253,10.1002/mpr.1946,2022,middle,Tobias Κube,0000-0002-5420-4506,University of Koblenz and Landau; Universität Koblenz,DE; ,01j9f6752; 0433e6t24
 W4296164253,10.1002/mpr.1946,2022,middle,Winfried Rief,0000-0002-7019-2250,Philipps University of Marburg,DE,01rdrb571
 W4296164253,10.1002/mpr.1946,2022,last,Eva‐Lotta Brakemeier,0000-0001-9589-3697,Philipps University of Marburg; Universitätsmedizin Greifswald; Universität Greifswald,DE; DE; DE,01rdrb571; 025vngs54; 00r1edq15
 W4296733100,10.31234/osf.io/3zgrc,2022,first,Anne Vogt,0000-0001-6024-8516,Humboldt-Universität zu Berlin; Brain (Germany),DE; DE,01hcx6992; 01gamcy45
@@ -3791,7 +3791,7 @@ W4306318111,10.31234/osf.io/bk7sd,2022,middle,Elger Abrahamse,0000-0002-9361-291
 W4306318111,10.31234/osf.io/bk7sd,2022,last,Marcel Braß,0000-0002-3364-4019,Ghent University; Humboldt-Universität zu Berlin,BE; DE,00cv9y106; 01hcx6992
 W4306673987,10.31234/osf.io/73dja,2022,first,Simon Ciranka,0000-0002-2067-9781,Max Planck Institute for Human Development; Max Planck Institute for Biology of Ageing,DE; DE,02pp7px91; 04xx1tc24
 W4306673987,10.31234/osf.io/73dja,2022,last,Wouter van den Bos,0000-0002-8017-3790,Max Planck Institute for Human Development; University of Amsterdam,DE; NL,02pp7px91; 04dkp9463
-W4306873863,10.1038/s41598-022-22334-6,2022,first,Rocco Mennella,0000-0003-4153-8854,"Inserm; Université Paris Sciences et Lettres; École Normale Supérieure - PSL; Université Paris Nanterre; Laboratoire de Neurosciences Cognitives; Laboratoire sur les interactions cognition, action, émotion",FR; FR; FR; FR; FR,02vjkv261; 013cjyk83; 05a0dhs15; 013bkhk48; 02dg3n954; 0540s3083
+W4306873863,10.1038/s41598-022-22334-6,2022,first,Rocco Mennella,0000-0003-4153-8854,"Inserm; Université Paris Sciences et Lettres; École Normale Supérieure - PSL; Université Paris Nanterre; Laboratoire de Neurosciences Cognitives; Laboratoire sur les interactions cognition, action, émotion",FR; FR; FR; FR; FR; ,02vjkv261; 013cjyk83; 05a0dhs15; 013bkhk48; 02dg3n954; 0540s3083
 W4306873863,10.1038/s41598-022-22334-6,2022,middle,Sophie Bavard,0000-0002-9283-2976,Inserm; Universität Hamburg; Université Paris Sciences et Lettres; École Normale Supérieure - PSL; Laboratoire de Neurosciences Cognitives,FR; DE; FR; FR; FR,02vjkv261; 00g30e956; 013cjyk83; 05a0dhs15; 02dg3n954
 W4306873863,10.1038/s41598-022-22334-6,2022,middle,Inès Mentec,0000-0002-0756-3530,Inserm; Université Paris Sciences et Lettres; École Normale Supérieure - PSL; Laboratoire de Neurosciences Cognitives,FR; FR; FR; FR,02vjkv261; 013cjyk83; 05a0dhs15; 02dg3n954
 W4306873863,10.1038/s41598-022-22334-6,2022,last,Julie Grèzes,0000-0002-5066-9154,Inserm; Université Paris Sciences et Lettres; École Normale Supérieure - PSL; École Normale Supérieure; Laboratoire de Neurosciences Cognitives,FR; FR; FR; BI; FR,02vjkv261; 013cjyk83; 05a0dhs15; 01dp7jr64; 02dg3n954
@@ -5404,7 +5404,7 @@ W4385984273,10.31219/osf.io/hdzyv,2023,middle,Kiran Gadhave,0000-0001-6916-2583,
 W4385984273,10.31219/osf.io/hdzyv,2023,middle,Carolina Nobre,0000-0002-2892-0509,,,
 W4385984273,10.31219/osf.io/hdzyv,2023,middle,Alexander Lex,0000-0001-6930-5468,Worcester Polytechnic Institute; University of Utah,US; US,05ejpqr48; 03r0ha626
 W4385984273,10.31219/osf.io/hdzyv,2023,last,Lane Harrison,0000-0003-3029-2799,Worcester Polytechnic Institute; University of Utah,US; US,05ejpqr48; 03r0ha626
-W4386022255,10.1523/jneurosci.0051-23.2023,2023,first,Sylvain L’Hermite,,Université Toulouse III - Paul Sabatier; Toulouse Mathematics Institute,FR; FR,02v6kpv12
+W4386022255,10.1523/jneurosci.0051-23.2023,2023,first,Sylvain L’Hermite,,Université Toulouse III - Paul Sabatier; Toulouse Mathematics Institute,FR; FR,02v6kpv12; 
 W4386022255,10.1523/jneurosci.0051-23.2023,2023,last,Benedikt Zoefel,0000-0002-9800-2551,Université Toulouse III - Paul Sabatier; Centre de recherche cerveau et cognition,FR; FR,02v6kpv12; 04fhrs205
 W4386084540,10.1177/17470218231198500,2023,first,Nan Zhang,0000-0002-1856-1880,"University of Maryland, College Park",US,047s2c258
 W4386084540,10.1177/17470218231198500,2023,middle,Jinglei Ren,0000-0003-4350-528X,"University of Maryland, College Park",US,047s2c258
@@ -6011,12 +6011,12 @@ W4389475442,10.1073/pnas.2221510120,2023,middle,Amitai Shenhav,0000-0002-0222-07
 W4389475442,10.1073/pnas.2221510120,2023,middle,Jonathan D. Cohen,0000-0003-2316-0763,Princeton University,US,00hx57361
 W4389475442,10.1073/pnas.2221510120,2023,last,Nathaniel D. Daw,0000-0001-5029-1430,Princeton University,US,00hx57361
 W4389505534,10.1016/j.appet.2023.107154,2023,first,Rebecca L. Elsworth,0000-0002-8671-3145,At Bristol; University of Bristol,GB; GB,039fp5n52; 0524sp257
-W4389505534,10.1016/j.appet.2023.107154,2023,middle,Elanor C. Hinton,0000-0003-2793-8552,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
+W4389505534,10.1016/j.appet.2023.107154,2023,middle,Elanor C. Hinton,0000-0003-2793-8552,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB; ,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
 W4389505534,10.1016/j.appet.2023.107154,2023,middle,Annika N. Flynn,0000-0002-8032-4448,University of Bristol,GB,0524sp257
 W4389505534,10.1016/j.appet.2023.107154,2023,middle,Lucy H. Merrell,0000-0001-7946-8201,University of Bath,GB,002h8g185
-W4389505534,10.1016/j.appet.2023.107154,2023,middle,Julian Hamilton‐Shield,0000-0003-2601-7575,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
+W4389505534,10.1016/j.appet.2023.107154,2023,middle,Julian Hamilton‐Shield,0000-0003-2601-7575,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB; ,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
 W4389505534,10.1016/j.appet.2023.107154,2023,middle,Natalia Lawrence,0000-0003-1969-6637,University of Exeter,GB,03yghzc09
-W4389505534,10.1016/j.appet.2023.107154,2023,last,Jeffrey M. Brunstrom,0000-0003-4657-7799,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
+W4389505534,10.1016/j.appet.2023.107154,2023,last,Jeffrey M. Brunstrom,0000-0003-4657-7799,University Hospitals Bristol NHS Foundation Trust; University of Bristol; NIHR Bristol Biomedical Research Centre; University Hospitals Bristol and Weston NHS Foundation Trust,GB; GB; GB; ,04nm1cv11; 0524sp257; 02mtt1z51; 03jzzxg14
 W4389542700,10.3758/s13421-023-01499-z,2023,first,Adam W. Broitman,0000-0003-0419-9128,Cornell University,US,05bnh6r87
 W4389542700,10.3758/s13421-023-01499-z,2023,last,Khena M. Swallow,0000-0001-7033-9825,Cornell University,US,05bnh6r87
 W4389568940,10.31234/osf.io/jqc69,2023,first,Hannah Dames,0000-0001-5800-9401,University of Zurich,CH,02crff812
@@ -6060,8 +6060,8 @@ W4389868990,10.31234/osf.io/4maqs,2023,last,Dietmar Heinke,0000-0003-3632-7569,U
 W4389870545,10.1098/rstb.2022.0414,2023,first,Aenne Brielmann,0000-0002-6742-2836,Max Planck Institute for Biological Cybernetics; University of Tübingen,DE; DE,026nmvv73; 03a1kwz48
 W4389870545,10.1098/rstb.2022.0414,2023,middle,Max Berentelg,0000-0001-8484-5761,Max Planck Institute for Biological Cybernetics,DE,026nmvv73
 W4389870545,10.1098/rstb.2022.0414,2023,last,Peter Dayan,0000-0003-3476-1839,Max Planck Institute for Biological Cybernetics; University of Tübingen,DE; DE,026nmvv73; 03a1kwz48
-W4389892623,10.4274/mmj.galenos.2023.73454,2023,first,Mustafa YUKSEL,,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR,037jwzz50; 01c9cnw16
-W4389892623,10.4274/mmj.galenos.2023.73454,2023,last,Sultan Nur Kaya,0000-0001-7265-9291,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR,037jwzz50; 01c9cnw16
+W4389892623,10.4274/mmj.galenos.2023.73454,2023,first,Mustafa YUKSEL,,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; ,037jwzz50; 01c9cnw16
+W4389892623,10.4274/mmj.galenos.2023.73454,2023,last,Sultan Nur Kaya,0000-0001-7265-9291,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; ,037jwzz50; 01c9cnw16
 W4389988670,10.1109/vis54172.2023.00015,2023,first,Yiren Ding,,Worcester Polytechnic Institute,US,05ejpqr48
 W4389988670,10.1109/vis54172.2023.00015,2023,middle,Jack Wilburn,0000-0002-7672-0798,University of Utah,US,03r0ha626
 W4389988670,10.1109/vis54172.2023.00015,2023,middle,Hilson Shrestha,0009-0006-6603-6606,Worcester Polytechnic Institute,US,05ejpqr48
@@ -6664,7 +6664,7 @@ W4396609773,10.1186/s41235-024-00553-x,2024,first,V. N. Vimal Rao,0000-0001-8295
 W4396609773,10.1186/s41235-024-00553-x,2024,middle,Jeffrey K. Bye,0000-0002-2636-3657,University of Minnesota,US,017zqws13
 W4396609773,10.1186/s41235-024-00553-x,2024,last,Sashank Varma,0000-0002-1107-0982,Georgia Institute of Technology,US,01zkghx44
 W4396614326,10.1016/j.schres.2024.04.028,2024,first,Michele Deodato,0000-0002-2624-1430,New York University Abu Dhabi,AE,00e5k0821
-W4396614326,10.1016/j.schres.2024.04.028,2024,middle,Luca Ronconi,0000-0002-4674-8917,Istituti di Ricovero e Cura a Carattere Scientifico; Vita-Salute San Raffaele University; Istituto di Ricovero e Cura a Carattere Scientifico San Raffaele,IT; IT,04tfzc498; 01gmqr298; 006x48140
+W4396614326,10.1016/j.schres.2024.04.028,2024,middle,Luca Ronconi,0000-0002-4674-8917,Istituti di Ricovero e Cura a Carattere Scientifico; Vita-Salute San Raffaele University; Istituto di Ricovero e Cura a Carattere Scientifico San Raffaele,IT; IT; ,04tfzc498; 01gmqr298; 006x48140
 W4396614326,10.1016/j.schres.2024.04.028,2024,last,David Melcher,0000-0003-0926-585X,New York University Abu Dhabi,AE,00e5k0821
 W4396653081,10.31234/osf.io/vpmh4,2024,first,Sandra Grinschgl,0000-0001-6666-9426,University of Bern; University of Graz,CH; AT,02k7v4d05; 01faaaf77
 W4396653081,10.31234/osf.io/vpmh4,2024,middle,Gabriela Hofer,0000-0003-4407-1487,University of Graz,AT,01faaaf77
@@ -6703,7 +6703,7 @@ W4396780632,10.3758/s13428-024-02376-6,2024,middle,Laura Anna Ciaccio,0000-0001-
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Carolin Dudschig,0000-0002-7041-7798,University of Tübingen,DE,03a1kwz48
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Jon Andoni Duñabeitia,0000-0002-3312-8559,Universidad Nebrija,ES,03tzyrt94
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Fabio Fasoli,0000-0002-8043-1630,University of Surrey,GB,00ks66431
-W4396780632,10.3758/s13428-024-02376-6,2024,middle,Ludovic Ferrand,0000-0003-1631-7849,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; 01t4k8953
+W4396780632,10.3758/s13428-024-02376-6,2024,middle,Ludovic Ferrand,0000-0003-1631-7849,Centre National de la Recherche Scientifique; University of Clermont Auvergne; Laboratoire de Psychologie Sociale et Cognitive,FR; FR; FR,02feahw73; ; 01t4k8953
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Dušica Filipović Đurđević,0000-0001-5044-5428,University of Belgrade,RS,02qsmb048
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Ernesto Guerra,0000-0001-7403-5271,University of Chile,CL,047gc3g35
 W4396780632,10.3758/s13428-024-02376-6,2024,middle,Geoff Hollis,0000-0002-8922-1613,University of Alberta,CA,0160cpw27
@@ -7333,8 +7333,8 @@ W4402408319,10.7554/elife.96803.3.sa4,2024,first,Peter Kok,0000-0001-5153-4959,U
 W4402408392,10.7554/elife.96803.3,2024,first,Sara Z. Mehrhof,0000-0001-8267-3898,MRC Cognition and Brain Sciences Unit; University of Cambridge,GB; GB,055bpw879; 013meh722
 W4402408392,10.7554/elife.96803.3,2024,last,Camilla L. Nord,0000-0002-9281-3417,MRC Cognition and Brain Sciences Unit; University of Cambridge,GB; GB,055bpw879; 013meh722
 W4402426642,10.3397/in_2024_3585,2024,first,Matthieu Duroyon,,Université de Technologie de Compiègne,FR,04y5kwa70
-W4402426642,10.3397/in_2024_3585,2024,middle,Patrick Susini,,Institut de Recherche et Coordination Acoustique Musique; Sciences et Technologies de la Musique et du Son,FR,0121jnt59; 025xvn046
-W4402426642,10.3397/in_2024_3585,2024,middle,Nicolas Misdariis,,Institut de Recherche et Coordination Acoustique Musique; Sciences et Technologies de la Musique et du Son,FR,0121jnt59; 025xvn046
+W4402426642,10.3397/in_2024_3585,2024,middle,Patrick Susini,,Institut de Recherche et Coordination Acoustique Musique; Sciences et Technologies de la Musique et du Son,FR; ,0121jnt59; 025xvn046
+W4402426642,10.3397/in_2024_3585,2024,middle,Nicolas Misdariis,,Institut de Recherche et Coordination Acoustique Musique; Sciences et Technologies de la Musique et du Son,FR; ,0121jnt59; 025xvn046
 W4402426642,10.3397/in_2024_3585,2024,middle,Nicolas Dauchez,0000-0001-8958-2526,Université de Technologie de Compiègne,FR,04y5kwa70
 W4402426642,10.3397/in_2024_3585,2024,last,Louis-Ferdinand Pardo,,Renault (France),FR,04v98kq37
 W4402432717,10.1080/14790718.2024.2402330,2024,first,Katarina Woodman,0009-0003-9661-0865,Kyoto University; Kyoto University of Education,JP; JP,02kpeqv85; 03zhhr656
@@ -7356,7 +7356,7 @@ W4402481321,10.1080/02699931.2024.2400298,2024,last,Christopher G. Beevers,0000-
 W4402503317,10.1038/s41541-024-00951-8,2024,first,Kamil Fuławka,0000-0002-5343-7818,Max Planck Institute for Human Development,DE,02pp7px91
 W4402503317,10.1038/s41541-024-00951-8,2024,middle,Ralph Hertwig,0000-0002-9908-9556,Max Planck Institute for Human Development,DE,02pp7px91
 W4402503317,10.1038/s41541-024-00951-8,2024,last,Thorsten Pachur,0000-0001-6391-4107,Max Planck Institute for Human Development; Technical University of Munich,DE; DE,02pp7px91; 02kkvpp62
-W4402543376,10.1080/14992027.2024.2402825,2024,first,Mustafa Yüksel,0000-0002-9092-7541,Ankara University; Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; TR,01wntqw50; 037jwzz50; 01c9cnw16
+W4402543376,10.1080/14992027.2024.2402825,2024,first,Mustafa Yüksel,0000-0002-9092-7541,Ankara University; Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; TR; ,01wntqw50; 037jwzz50; 01c9cnw16
 W4402543376,10.1080/14992027.2024.2402825,2024,middle,Ayşenur Küçük Ceyhan,0000-0002-5836-9631,Sağlık Bilimleri Üniversitesi; University of Health Sciences Antigua,TR; AG,03k7bde87; 01wdhap14
 W4402543376,10.1080/14992027.2024.2402825,2024,last,Şengül Terlemez,0000-0002-1904-8990,Istanbul Aydın University,TR,00qsyw664
 W4402545845,10.1177/17470218241282404,2024,first,Jennifer Culbertson,0000-0002-1737-6296,University of Edinburgh,GB,01nrxwf90
@@ -8230,8 +8230,8 @@ W4408465746,10.1080/1612197x.2025.2477144,2025,middle,Gwénaëlle Joët,,Univers
 W4408465746,10.1080/1612197x.2025.2477144,2025,middle,Jean‐Baptiste Eichenlaub,0000-0002-4610-1566,Centre National de la Recherche Scientifique; Institut Universitaire de France; Université Savoie Mont Blanc; Université Grenoble Alpes,FR; FR; FR; FR,02feahw73; 055khg266; 04gqg1a07; 02rx3b187
 W4408465746,10.1080/1612197x.2025.2477144,2025,middle,Julien V. Brugniaux,0000-0001-8076-9861,Université Grenoble Alpes,FR,02rx3b187
 W4408465746,10.1080/1612197x.2025.2477144,2025,last,Estelle Palluel,0000-0002-0468-1398,Université Grenoble Alpes,FR,02rx3b187
-W4408471915,10.1080/14992027.2025.2473050,2025,first,Yağız Korkut,0000-0001-7318-3563,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR,037jwzz50; 01c9cnw16
-W4408471915,10.1080/14992027.2025.2473050,2025,last,Mustafa Yüksel,0000-0002-9092-7541,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR,037jwzz50; 01c9cnw16
+W4408471915,10.1080/14992027.2025.2473050,2025,first,Yağız Korkut,0000-0001-7318-3563,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; ,037jwzz50; 01c9cnw16
+W4408471915,10.1080/14992027.2025.2473050,2025,last,Mustafa Yüksel,0000-0002-9092-7541,Istanbul Medipol University; Ankara Medipol Üniversitesi,TR; ,037jwzz50; 01c9cnw16
 W4408505981,10.1002/erv.3192,2025,first,Vanessa Juergensen,0000-0002-1928-378X,Ruhr University Bochum,DE,04tsk2644
 W4408505981,10.1002/erv.3192,2025,middle,Georg Halbeisen,0000-0002-9529-2215,Ruhr University Bochum,DE,04tsk2644
 W4408505981,10.1002/erv.3192,2025,middle,Martin S. Lehe,0000-0003-0467-7361,Ruhr University Bochum; University of Bamberg,DE; DE,04tsk2644; 01c1w6d29
@@ -8416,7 +8416,7 @@ W4409689249,10.1177/03010066251328164,2025,middle,Angel DeLuna-Castruita,,Benem�
 W4409689249,10.1177/03010066251328164,2025,middle,Victoria Lizárraga-Cortés,,Benemérita Universidad Autónoma de Puebla,MX,03p2z7827
 W4409689249,10.1177/03010066251328164,2025,last,Amira Flores,0000-0001-9996-0762,Benemérita Universidad Autónoma de Puebla,MX,03p2z7827
 W4409737395,10.3758/s13423-025-02673-x,2025,first,Lynn J. Lohnas,0000-0002-1204-8760,Syracuse University,US,025r5qe02
-W4409749271,10.1145/3706598.3713482,2025,first,Jan Simson,0000-0002-9406-7761,Munich School of Philosophy; Munich Center for Machine Learning; Ludwig-Maximilians-Universität München,DE; DE,02kqy4228; 02nfy3535; 05591te55
+W4409749271,10.1145/3706598.3713482,2025,first,Jan Simson,0000-0002-9406-7761,Munich School of Philosophy; Munich Center for Machine Learning; Ludwig-Maximilians-Universität München,DE; ; DE,02kqy4228; 02nfy3535; 05591te55
 W4409749271,10.1145/3706598.3713482,2025,middle,Fiona Draxler,0000-0002-3112-6015,University of Mannheim,DE,031bsb921
 W4409749271,10.1145/3706598.3713482,2025,middle,Samuel A. Mehr,0000-0002-9400-7718,University of Auckland; Yale University,NZ; US,03b94tp07; 03v76x132
 W4409749271,10.1145/3706598.3713482,2025,last,Christoph Kern,0000-0001-7363-4299,University of Mannheim; Ludwig-Maximilians-Universität München,DE; DE,031bsb921; 05591te55
@@ -10128,7 +10128,7 @@ W4415966353,10.1177/25152459251379432,2025,middle,Farrah Y. Sa’adullah,,Wester
 W4415966353,10.1177/25152459251379432,2025,middle,Suvi Saarikallio,0000-0002-4647-8048,University of Jyväskylä,FI,05n3dz165
 W4415966353,10.1177/25152459251379432,2025,middle,Daniela Sammler,0000-0001-7458-0229,Max Planck Institute for Empirical Aesthetics; Max Planck Institute for Human Cognitive and Brain Sciences,DE; DE,000rdbk18; 0387jng26
 W4415966353,10.1177/25152459251379432,2025,middle,Séverine Samson,,Centre National de la Recherche Scientifique; Inserm; Institut Pasteur; Université Paris Cité; Université de Lille; Assistance Publique – Hôpitaux de Paris,FR; FR; FR; FR; FR; FR,02feahw73; 02vjkv261; 0495fxg12; 05f82e368; 02kzqn938; 00pg5jh14
-W4415966353,10.1177/25152459251379432,2025,middle,E. Glenn Schellenberg,0000-0003-3681-6020,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087
+W4415966353,10.1177/25152459251379432,2025,middle,E. Glenn Schellenberg,0000-0003-3681-6020,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087; 
 W4415966353,10.1177/25152459251379432,2025,middle,Nora R. Serres,0000-0002-2294-741X,University of Oslo,NO,01xtthb56
 W4415966353,10.1177/25152459251379432,2025,middle,L. Robert Slevc,0000-0002-5183-6786,"University of Maryland, College Park",US,047s2c258
 W4415966353,10.1177/25152459251379432,2025,middle,Ragnya-Norasoa Souffiane,,Université Claude Bernard Lyon 1; Centre National de la Recherche Scientifique; Inserm; Centre de Recherche en Neurosciences de Lyon,FR; FR; FR; FR,029brtt94; 02feahw73; 02vjkv261; 00pdd0432
@@ -10179,7 +10179,7 @@ W4416321378,10.5406/19398298.138.2.10,2025,last,Matthew J. C. Crump,0000-0002-56
 W4416403439,10.3389/feduc.2025.1540817,2025,first,Mathieu Pinelli,0000-0002-8101-7829,Centre National de la Recherche Scientifique; Laboratoire de Psychologie et NeuroCognition; Université Savoie Mont Blanc; Université Grenoble Alpes,FR; FR; FR; FR,02feahw73; 014p6mg26; 04gqg1a07; 02rx3b187
 W4416403439,10.3389/feduc.2025.1540817,2025,middle,Estelle Palluel,0000-0002-0468-1398,Centre National de la Recherche Scientifique; Laboratoire de Biomécanique et Mécanique des Chocs; Université Grenoble Alpes,FR; FR; FR,02feahw73; 02awy7178; 02rx3b187
 W4416403439,10.3389/feduc.2025.1540817,2025,middle,Philippe Dessus,0000-0001-6076-5150,Université Grenoble Alpes,FR,02rx3b187
-W4416403439,10.3389/feduc.2025.1540817,2025,middle,Gwénaëlle Joët,,"Unité de Recherche Pluridisciplinaire Sport, Santé, Société; Sport et environnement social; Université Grenoble Alpes",FR; FR,03eq8fa86; 00t9pwh21; 02rx3b187
+W4416403439,10.3389/feduc.2025.1540817,2025,middle,Gwénaëlle Joët,,"Unité de Recherche Pluridisciplinaire Sport, Santé, Société; Sport et environnement social; Université Grenoble Alpes",FR; ; FR,03eq8fa86; 00t9pwh21; 02rx3b187
 W4416403439,10.3389/feduc.2025.1540817,2025,middle,Jean‐Baptiste Eichenlaub,0000-0002-4610-1566,Centre National de la Recherche Scientifique; Institut Universitaire de France; Laboratoire de Psychologie et NeuroCognition; Université Savoie Mont Blanc; Université Grenoble Alpes,FR; FR; FR; FR; FR,02feahw73; 055khg266; 014p6mg26; 04gqg1a07; 02rx3b187
 W4416403439,10.3389/feduc.2025.1540817,2025,middle,Julien V. Brugniaux,0000-0001-8076-9861,Inserm; Université Grenoble Alpes,FR; FR,02vjkv261; 02rx3b187
 W4416403439,10.3389/feduc.2025.1540817,2025,last,Sophie Portrat,0000-0001-8219-8062,Centre National de la Recherche Scientifique; Laboratoire de Psychologie et NeuroCognition; Université Savoie Mont Blanc; Université Grenoble Alpes,FR; FR; FR; FR,02feahw73; 014p6mg26; 04gqg1a07; 02rx3b187
@@ -10291,8 +10291,8 @@ W4416959320,10.1016/j.chb.2025.108878,2025,first,Krisztina Berta,,Eötvös Lorá
 W4416959320,10.1016/j.chb.2025.108878,2025,middle,Zsuzsanna Viktória Pesthy,,Eötvös Loránd University; Institute of Cognitive Neuroscience and Psychology; HUN-REN Research Centre for Natural Sciences,HU; HU; HU,01jsq2704; 04q42nz13; 03zwxja46
 W4416959320,10.1016/j.chb.2025.108878,2025,middle,Teodóra Vékony,0000-0002-8620-5685,Universidad de Las Palmas de Gran Canaria,ES,01teme464
 W4416959320,10.1016/j.chb.2025.108878,2025,middle,Bence Csaba Farkas,0000-0003-1815-5054,Inserm; Université de Versailles Saint-Quentin-en-Yvelines; Université Paris-Saclay; Centre de recherche en Epidémiologie et Santé des Populations; Direction Générale de l'Armement,FR; FR; FR; FR; FR,02vjkv261; 03mkjjy25; 03xjwb503; 01ed4t417; 04wsqd844
-W4416959320,10.1016/j.chb.2025.108878,2025,middle,Orsolya Király,0000-0001-9981-4212,Eötvös Loránd University; University of Gibraltar,HU,01jsq2704; 057a6gk14
-W4416959320,10.1016/j.chb.2025.108878,2025,middle,Zsolt Demetrovics,0000-0001-5604-7551,Eötvös Loránd University; Flinders University; University of Gibraltar,HU; AU,01jsq2704; 01kpzv902; 057a6gk14
+W4416959320,10.1016/j.chb.2025.108878,2025,middle,Orsolya Király,0000-0001-9981-4212,Eötvös Loránd University; University of Gibraltar,HU; ,01jsq2704; 057a6gk14
+W4416959320,10.1016/j.chb.2025.108878,2025,middle,Zsolt Demetrovics,0000-0001-5604-7551,Eötvös Loránd University; Flinders University; University of Gibraltar,HU; AU; ,01jsq2704; 01kpzv902; 057a6gk14
 W4416959320,10.1016/j.chb.2025.108878,2025,middle,Dezső Németh,0000-0002-9629-5856,Université Claude Bernard Lyon 1; Eötvös Loránd University; Universidad de Las Palmas de Gran Canaria; Centre National de la Recherche Scientifique; Inserm; Centre de Recherche en Neurosciences de Lyon; Institute of Cognitive Neuroscience and Psychology; HUN-REN Research Centre for Natural Sciences,FR; HU; ES; FR; FR; FR; HU; HU,029brtt94; 01jsq2704; 01teme464; 02feahw73; 02vjkv261; 00pdd0432; 04q42nz13; 03zwxja46
 W4416959320,10.1016/j.chb.2025.108878,2025,last,Bernadette Kun,0000-0003-1609-2977,Eötvös Loránd University,HU,01jsq2704
 W4417031673,10.1038/s41562-025-02345-9,2025,first,David Rosé,0000-0003-4035-4922,Stanford University,US,00f54p054
@@ -10613,7 +10613,7 @@ W7124818696,,2025,first,Martin S. Lehe,0000-0003-0467-7361,,,
 W7124818696,,2025,middle,Georg Halbeisen,0000-0002-9529-2215,,,
 W7124818696,,2025,last,Georgios (Prof. Dr. med.) Paslakis,,,,
 W7125200209,10.1098/rsos.251613,2026,first,Francesca Talamini,0000-0001-6083-0282,Universität Innsbruck,AT,054pv6659
-W7125200209,10.1098/rsos.251613,2026,middle,E. Glenn Schellenberg,,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087
+W7125200209,10.1098/rsos.251613,2026,middle,E. Glenn Schellenberg,,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087; 
 W7125200209,10.1098/rsos.251613,2026,middle,Massimo Grassi,0000-0002-3784-2784,University of Padua,IT,00240q980
 W7125200209,10.1098/rsos.251613,2026,last,César Lima,,Iscte – Instituto Universitário de Lisboa,PT,
 W7125369014,10.1016/j.xjmad.2026.100169,2026,first,Molly Sapperstein,,McLean Hospital,US,01kta7d96
@@ -10861,7 +10861,7 @@ W7130343187,10.1038/s41597-026-06654-0,2026,middle,Farrah Y.-A. Sa’adullah,,,,
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,Suvi Saarikallio,0000-0002-4647-8048,University of Jyväskylä,FI,05n3dz165
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,Daniela Sammler,0000-0001-7458-0229,Max Planck Institute for Empirical Aesthetics; Max Planck Institute for Human Cognitive and Brain Sciences,DE; DE,000rdbk18; 0387jng26
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,Séverine Samson,0000-0002-4507-9440,Centre National de la Recherche Scientifique; Inserm; Institut Pasteur; Université Paris Cité; Université de Lille; Assistance Publique – Hôpitaux de Paris,FR; FR; FR; FR; FR; FR,02feahw73; 02vjkv261; 0495fxg12; 05f82e368; 02kzqn938; 00pg5jh14
-W7130343187,10.1038/s41597-026-06654-0,2026,middle,E. Glenn Schellenberg,,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087
+W7130343187,10.1038/s41597-026-06654-0,2026,middle,E. Glenn Schellenberg,,University of Toronto; Iscte – Instituto Universitário de Lisboa,CA; PT,03dbr7087; 
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,Nora R. Serres,,University of Oslo,NO,01xtthb56
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,L. Robert Slevc,,"University of Maryland, College Park",US,047s2c258
 W7130343187,10.1038/s41597-026-06654-0,2026,middle,Ragnya-Norasoa Souffiane,,Université Claude Bernard Lyon 1; Centre National de la Recherche Scientifique; Inserm; Centre de Recherche en Neurosciences de Lyon,FR; FR; FR; FR,029brtt94; 02feahw73; 02vjkv261; 00pdd0432
@@ -11273,7 +11273,7 @@ W7160433791,10.5281/zenodo.20056079,2026,last,"Luchterhandt, Björn",0000-0002-9
 W7160457121,,2026,first,Hua Zhao,,,,
 W7160457121,,2026,middle,Jiapei Gu,,,,
 W7160457121,,2026,last,Michelle MingYue Gu,,,,
-W7160537857,10.1145/3806017,2026,first,Ka Hei Carrie Lau,0009-0005-8838-3230,CE Technologies (United Kingdom); Munich Center for Machine Learning; Technical University of Munich,GB; DE,02pw67e25; 02nfy3535; 02kkvpp62
+W7160537857,10.1145/3806017,2026,first,Ka Hei Carrie Lau,0009-0005-8838-3230,CE Technologies (United Kingdom); Munich Center for Machine Learning; Technical University of Munich,GB; ; DE,02pw67e25; 02nfy3535; 02kkvpp62
 W7160537857,10.1145/3806017,2026,last,Enkelejda Kasneci,,CE Technologies (United Kingdom); Technical University of Munich,GB; DE,02pw67e25; 02kkvpp62
 W7160628995,10.1007/978-3-032-25305-7_6,2026,first,Teodor Chiaburu,0009-0009-5336-2455,Berliner Hochschule für Technik,DE,00w7whj55
 W7160628995,10.1007/978-3-032-25305-7_6,2026,middle,Frank Haußer,0000-0002-8060-8897,Berliner Hochschule für Technik,DE,00w7whj55
