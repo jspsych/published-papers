@@ -15,7 +15,7 @@
     --baseline: #c3c2b7;
     --border: rgba(11, 11, 11, 0.10);
     --series: #2a78d6;
-    --series-partial: #86b6ef;
+    --row-hover: rgba(11, 11, 11, 0.035);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -28,7 +28,7 @@
       --baseline: #383835;
       --border: rgba(255, 255, 255, 0.10);
       --series: #3987e5;
-      --series-partial: #184f95;
+      --row-hover: rgba(255, 255, 255, 0.05);
     }
   }
   * { box-sizing: border-box; }
@@ -73,52 +73,107 @@
   .tile .lbl { color: var(--ink-2); font-size: 0.82rem; }
   .tile .val { font-weight: 600; font-size: 1.45rem; margin-top: 2px; }
 
-  section.chart-section { margin: 30px 0; }
-  section.chart-section h2 { font-size: 1.1rem; font-weight: 650; margin: 0 0 10px; }
-  .chart-card {
+  section.table-section { margin: 30px 0; }
+  section.table-section h2 { font-size: 1.1rem; font-weight: 650; margin: 0 0 10px; }
+  .table-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 14px 14px 10px;
+    overflow: hidden;
   }
-  .footnote, .more { color: var(--muted); font-size: 0.82rem; margin: 8px 2px 0; }
-
-  svg { display: block; }
-  svg text { font-family: inherit; }
-  .tick-label { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
-  .axis-label { fill: var(--muted); font-size: 11px; }
-  .gridline { stroke: var(--grid); stroke-width: 1; }
-  .baseline { stroke: var(--baseline); stroke-width: 1; }
-  .mark-fill { fill: var(--series); }
-  .mark-fill.partial { fill: var(--series-partial); }
-  .direct-label { fill: var(--ink); font-size: 11px; }
-  .bar-label { fill: var(--ink-2); font-size: 13px; }
-  .bar-value { fill: var(--ink); font-size: 12px; font-variant-numeric: tabular-nums; }
-  .hit { fill: transparent; }
-
-  g.mark { cursor: default; outline: none; }
-  g.mark:hover .mark-fill, g.mark:focus-visible .mark-fill { filter: brightness(1.18); }
-  g.mark:focus-visible .mark-fill { stroke: var(--ink); stroke-width: 1.5; }
-  @media (prefers-reduced-motion: no-preference) {
-    g.mark .mark-fill { transition: filter 80ms linear; }
+  .table-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 8px;
   }
-
-  #tooltip {
-    position: fixed;
-    z-index: 10;
-    pointer-events: none;
+  .table-controls input[type="search"] {
     background: var(--surface);
     color: var(--ink);
     border: 1px solid var(--border);
     border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
     padding: 6px 10px;
-    font-size: 13px;
-    max-width: 300px;
-    display: none;
+    font: inherit;
+    font-size: 0.9rem;
+    min-width: 0;
+    flex: 0 1 260px;
   }
-  #tooltip .t-val { font-weight: 600; }
-  #tooltip .t-lbl { color: var(--ink-2); font-size: 12px; }
+  .table-controls input[type="search"]:focus-visible {
+    outline: 2px solid var(--series);
+    outline-offset: 1px;
+  }
+  .table-controls .count { color: var(--muted); font-size: 0.82rem; }
+
+  .table-wrap {
+    overflow: auto;
+    max-height: 480px;
+  }
+  table.data {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  table.data th, table.data td {
+    padding: 7px 12px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--grid);
+  }
+  table.data thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--baseline);
+    padding: 0;
+  }
+  .th-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-2);
+    text-align: inherit;
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .th-btn:hover { color: var(--ink); }
+  .th-btn:focus-visible { outline: 2px solid var(--series); outline-offset: -2px; }
+  .th-btn .ind { color: var(--muted); font-size: 0.7rem; margin-left: 3px; }
+  th.sorted .th-btn { color: var(--ink); }
+
+  table.data th.num .th-btn { text-align: right; }
+  table.data td.num { text-align: right; }
+  table.data td.num, table.data td.date {
+    font-variant-numeric: tabular-nums;
+  }
+  table.data td.name { color: var(--ink); max-width: 340px; overflow: hidden; text-overflow: ellipsis; }
+  table.data td.date, table.data td.plain { color: var(--ink-2); }
+  table.data td.num { color: var(--ink); }
+  table.data tbody tr:hover { background: var(--row-hover); }
+  table.data tbody tr:last-child td { border-bottom: 0; }
+  .id-link { font-size: 0.78rem; }
+
+  .show-all-wrap { padding: 8px 12px; border-top: 1px solid var(--grid); }
+  .show-all {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--ink-2);
+    font: inherit;
+    font-size: 0.82rem;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  .show-all:hover { color: var(--ink); border-color: var(--baseline); }
+  .show-all:focus-visible { outline: 2px solid var(--series); outline-offset: 1px; }
+
+  .more { color: var(--muted); font-size: 0.82rem; margin: 8px 2px 0; }
 
   .visually-hidden {
     position: absolute;
@@ -165,32 +220,52 @@
     <div class="tile"><div class="lbl">Unique journals</div><div class="val" id="tile3-val"></div></div>
   </section>
 
-  <section class="chart-section" aria-labelledby="h-years">
-    <h2 id="h-years">Works per year</h2>
-    <div class="chart-card"><div id="chart-years"></div></div>
-    <p class="footnote" id="ytd-note"></p>
-    <div class="visually-hidden" id="years-table-wrap"></div>
+  <section class="table-section" aria-labelledby="h-journals">
+    <h2 id="h-journals">Journals</h2>
+    <div class="table-controls">
+      <label class="visually-hidden" for="q-journals">Search journals</label>
+      <input type="search" id="q-journals" placeholder="Search journals" autocomplete="off">
+      <span class="count" id="count-journals" role="status"></span>
+    </div>
+    <div class="table-card">
+      <div class="table-wrap" id="table-journals"></div>
+      <div class="show-all-wrap" id="showall-journals" hidden>
+        <button type="button" class="show-all"></button>
+      </div>
+    </div>
+    <p class="more"><a href="https://github.com/jspsych/published-papers/blob/main/analysis/journals.csv">journals.csv on GitHub</a></p>
   </section>
 
-  <section class="chart-section" aria-labelledby="h-journals">
-    <h2 id="h-journals">Top journals</h2>
-    <div class="chart-card"><div id="chart-journals"></div></div>
-    <p class="more">Top 15 shown &middot;
-      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/journals.csv">full list in journals.csv</a></p>
+  <section class="table-section" aria-labelledby="h-institutions">
+    <h2 id="h-institutions">Institutions</h2>
+    <div class="table-controls">
+      <label class="visually-hidden" for="q-institutions">Search institutions</label>
+      <input type="search" id="q-institutions" placeholder="Search institutions" autocomplete="off">
+      <span class="count" id="count-institutions" role="status"></span>
+    </div>
+    <div class="table-card">
+      <div class="table-wrap" id="table-institutions"></div>
+      <div class="show-all-wrap" id="showall-institutions" hidden>
+        <button type="button" class="show-all"></button>
+      </div>
+    </div>
+    <p class="more"><a href="https://github.com/jspsych/published-papers/blob/main/analysis/institutions.csv">institutions.csv on GitHub</a></p>
   </section>
 
-  <section class="chart-section" aria-labelledby="h-institutions">
-    <h2 id="h-institutions">Top institutions</h2>
-    <div class="chart-card"><div id="chart-institutions"></div></div>
-    <p class="more">Top 15 shown &middot;
-      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/institutions.csv">full list in institutions.csv</a></p>
-  </section>
-
-  <section class="chart-section" aria-labelledby="h-authors">
-    <h2 id="h-authors">Top authors</h2>
-    <div class="chart-card"><div id="chart-authors"></div></div>
-    <p class="more">Top 15 shown &middot;
-      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/authors.csv">full list in authors.csv</a></p>
+  <section class="table-section" aria-labelledby="h-authors">
+    <h2 id="h-authors">Authors</h2>
+    <div class="table-controls">
+      <label class="visually-hidden" for="q-authors">Search authors</label>
+      <input type="search" id="q-authors" placeholder="Search authors" autocomplete="off">
+      <span class="count" id="count-authors" role="status"></span>
+    </div>
+    <div class="table-card">
+      <div class="table-wrap" id="table-authors"></div>
+      <div class="show-all-wrap" id="showall-authors" hidden>
+        <button type="button" class="show-all"></button>
+      </div>
+    </div>
+    <p class="more"><a href="https://github.com/jspsych/published-papers/blob/main/analysis/authors.csv">authors.csv on GitHub</a></p>
   </section>
 </main>
 
@@ -203,350 +278,342 @@
     full dataset, methodology, and known coverage gaps.</p>
 </footer>
 
-<div id="tooltip" role="status" aria-hidden="true"></div>
-
 <script>
 (function () {
   "use strict";
 
-  var SVG_NS = "http://www.w3.org/2000/svg";
   var numFmt = new Intl.NumberFormat("en-US");
-
-  function el(name, attrs, parent) {
-    var node = document.createElementNS(SVG_NS, name);
-    if (attrs) {
-      for (var k in attrs) { node.setAttribute(k, attrs[k]); }
-    }
-    if (parent) { parent.appendChild(node); }
-    return node;
-  }
+  var PAGE_SIZE = 100;
 
   function fmtCompact(n) {
     if (n > 9999) { return (n / 1000).toFixed(1).replace(/\.0$/, "") + "K"; }
     return numFmt.format(n);
   }
 
-  // ---- tooltip -------------------------------------------------------- //
-  var tooltip = document.getElementById("tooltip");
-
-  function showTooltip(valueText, labelText, extraText, x, y) {
-    while (tooltip.firstChild) { tooltip.removeChild(tooltip.firstChild); }
-    var v = document.createElement("div");
-    v.className = "t-val";
-    v.textContent = valueText;               // data-derived: textContent only
-    tooltip.appendChild(v);
-    var l = document.createElement("div");
-    l.className = "t-lbl";
-    l.textContent = labelText;
-    tooltip.appendChild(l);
-    if (extraText) {
-      var e = document.createElement("div");
-      e.className = "t-lbl";
-      e.textContent = extraText;
-      tooltip.appendChild(e);
-    }
-    tooltip.style.display = "block";
-    tooltip.setAttribute("aria-hidden", "false");
-    var rect = tooltip.getBoundingClientRect();
-    var px = Math.min(Math.max(8, x + 12), window.innerWidth - rect.width - 8);
-    var py = y - rect.height - 10;
-    if (py < 8) { py = y + 16; }
-    tooltip.style.left = px + "px";
-    tooltip.style.top = py + "px";
-  }
-
-  function hideTooltip() {
-    tooltip.style.display = "none";
-    tooltip.setAttribute("aria-hidden", "true");
-  }
-
-  function attachMarkEvents(group, getTip) {
-    group.addEventListener("mousemove", function (ev) {
-      var t = getTip();
-      showTooltip(t.value, t.label, t.extra, ev.clientX, ev.clientY);
-    });
-    group.addEventListener("mouseleave", hideTooltip);
-    group.addEventListener("focus", function () {
-      var r = group.getBoundingClientRect();
-      var t = getTip();
-      showTooltip(t.value, t.label, t.extra, r.left + r.width / 2, r.top);
-    });
-    group.addEventListener("blur", hideTooltip);
-  }
-
-  // ---- shape helpers (rounded at the data end, square at baseline) ---- //
-  function topRoundedRect(x, y, w, h, r) {
-    r = Math.max(0, Math.min(r, w / 2, h));
-    return "M" + x + "," + (y + h) +
-      " L" + x + "," + (y + r) +
-      " Q" + x + "," + y + " " + (x + r) + "," + y +
-      " L" + (x + w - r) + "," + y +
-      " Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + r) +
-      " L" + (x + w) + "," + (y + h) + " Z";
-  }
-
-  function rightRoundedRect(x, y, w, h, r) {
-    r = Math.max(0, Math.min(r, h / 2, w));
-    return "M" + x + "," + y +
-      " L" + (x + w - r) + "," + y +
-      " Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + r) +
-      " L" + (x + w) + "," + (y + h - r) +
-      " Q" + (x + w) + "," + (y + h) + " " + (x + w - r) + "," + (y + h) +
-      " L" + x + "," + (y + h) + " Z";
-  }
-
-  function cleanTicks(maxValue) {
-    if (maxValue <= 0) { return { step: 1, top: 1 }; }
-    var steps = [1, 2, 5];
-    var mag = 1;
-    for (;;) {
-      for (var i = 0; i < steps.length; i++) {
-        var s = steps[i] * mag;
-        if (Math.ceil(maxValue / s) <= 5) {
-          return { step: s, top: Math.ceil(maxValue / s) * s };
+  // ---- CSV parser (quoted fields with commas / quotes / newlines) ------ //
+  function parseCSV(text) {
+    var rows = [], row = [], field = "", i = 0, inQuotes = false, c;
+    while (i < text.length) {
+      c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+          inQuotes = false; i += 1; continue;
         }
+        field += c; i += 1; continue;
       }
-      mag *= 10;
+      if (c === '"') { inQuotes = true; i += 1; continue; }
+      if (c === ",") { row.push(field); field = ""; i += 1; continue; }
+      if (c === "\r" || c === "\n") {
+        if (c === "\r" && text[i + 1] === "\n") { i += 1; }
+        row.push(field); field = "";
+        rows.push(row); row = [];
+        i += 1; continue;
+      }
+      field += c; i += 1;
     }
+    if (field !== "" || row.length) { row.push(field); rows.push(row); }
+    return rows;
   }
 
-  // ---- column chart: works per year ----------------------------------- //
-  function renderYears(container, data, partialYear) {
-    container.textContent = "";
-    var years = data.works_by_year;
-    if (!years.length) { return; }
-    var W = Math.max(280, container.clientWidth);
-    var H = 260;
-    var mL = 44, mR = 6, mT = 14, mB = 24;
-    var plotW = W - mL - mR, plotH = H - mT - mB;
-    var svg = el("svg", {
-      width: W, height: H, viewBox: "0 0 " + W + " " + H,
-      role: "img", "aria-label": "Column chart of works per year"
-    }, container);
-
-    var maxN = 0, maxIdx = 0;
-    years.forEach(function (d, i) {
-      if (d.n > maxN) { maxN = d.n; maxIdx = i; }
-    });
-    var ticks = cleanTicks(maxN);
-    var yScale = function (v) { return mT + plotH - (v / ticks.top) * plotH; };
-
-    // gridlines + y tick labels (behind marks)
-    for (var v = 0; v <= ticks.top; v += ticks.step) {
-      var gy = yScale(v);
-      if (v > 0) {
-        el("line", { x1: mL, y1: gy, x2: W - mR, y2: gy, "class": "gridline" }, svg);
+  function csvToObjects(text) {
+    var rows = parseCSV(text);
+    if (!rows.length) { return []; }
+    var header = rows[0];
+    var out = [];
+    for (var i = 1; i < rows.length; i++) {
+      if (rows[i].length === 1 && rows[i][0] === "") { continue; } // blank line
+      var obj = {};
+      for (var j = 0; j < header.length; j++) {
+        obj[header[j]] = rows[i][j] !== undefined ? rows[i][j] : "";
       }
-      var tl = el("text", {
-        x: mL - 6, y: gy + 3.5, "text-anchor": "end", "class": "tick-label"
-      }, svg);
-      tl.textContent = numFmt.format(v);
+      out.push(obj);
     }
-    // baseline
-    el("line", { x1: mL, y1: mT + plotH, x2: W - mR, y2: mT + plotH, "class": "baseline" }, svg);
-
-    var band = plotW / years.length;
-    var colW = Math.min(24, Math.max(3, band - 2));
-
-    years.forEach(function (d, i) {
-      var cx = mL + band * i + band / 2;
-      var x = cx - colW / 2;
-      var y = yScale(d.n);
-      var h = mT + plotH - y;
-      var isPartial = d.year === partialYear;
-
-      var g = el("g", { "class": "mark", tabindex: "0", role: "img" }, svg);
-      g.setAttribute("aria-label",
-        d.year + ": " + numFmt.format(d.n) + " works" +
-        (isPartial ? " (year to date)" : ""));
-      // transparent hit target, >= 24px wide
-      var hitW = Math.max(band, 24);
-      el("rect", {
-        x: cx - hitW / 2, y: mT, width: hitW, height: plotH, "class": "hit"
-      }, g);
-      el("path", {
-        d: topRoundedRect(x, y, colW, Math.max(h, 0), 4),
-        "class": "mark-fill" + (isPartial ? " partial" : "")
-      }, g);
-      attachMarkEvents(g, function () {
-        return {
-          value: numFmt.format(d.n) + " works",
-          label: String(d.year) + (isPartial ? " (year to date)" : ""),
-          extra: ""
-        };
-      });
-
-      // x labels: sparse — first, last, and every ~2nd depending on space
-      var labelEvery = band >= 34 ? 1 : (band >= 18 ? 2 : 3);
-      if (i % labelEvery === 0 || i === years.length - 1) {
-        var xl = el("text", {
-          x: cx, y: mT + plotH + 16, "text-anchor": "middle", "class": "tick-label"
-        }, svg);
-        xl.textContent = d.year;
-      }
-      // direct value labels only on the max year and the latest year
-      if (i === maxIdx || i === years.length - 1) {
-        var dl = el("text", {
-          x: cx, y: y - 5, "text-anchor": "middle", "class": "direct-label"
-        }, svg);
-        dl.textContent = numFmt.format(d.n);
-      }
-    });
+    return out;
   }
 
-  // ---- horizontal bar list -------------------------------------------- //
-  function truncateSvgText(textNode, maxWidth, full) {
-    textNode.textContent = full;
-    if (textNode.getComputedTextLength() <= maxWidth) { return; }
-    var s = full;
-    while (s.length > 1 &&
-           textNode.getComputedTextLength() > maxWidth) {
-      s = s.slice(0, -1);
-      textNode.textContent = s + "…";
+  // ---- cell builders --------------------------------------------------- //
+  // All data-derived strings are inserted via textContent; link hrefs are a
+  // fixed base + encodeURIComponent(id).
+  function textCell(cls, value) {
+    var td = document.createElement("td");
+    td.className = cls;
+    td.textContent = value;
+    if (cls === "name" && value) { td.title = value; }
+    return td;
+  }
+
+  function numCell(value) {
+    var td = document.createElement("td");
+    td.className = "num";
+    var n = Number(value);
+    td.textContent = isNaN(n) ? value : numFmt.format(n);
+    return td;
+  }
+
+  function linkCell(base, id, label) {
+    var td = document.createElement("td");
+    td.className = "plain";
+    if (id) {
+      var a = document.createElement("a");
+      a.className = "id-link";
+      a.href = base + encodeURIComponent(id);
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = label;
+      a.setAttribute("aria-label", label + " " + id);
+      td.appendChild(a);
     }
+    return td;
   }
 
-  function renderBars(container, entries, unitLabel) {
-    container.textContent = "";
-    var rows = entries.slice(0, 15);
-    if (!rows.length) { return; }
-    var W = Math.max(280, container.clientWidth);
-    var rowH = 28, barH = 18;
-    var H = rows.length * rowH;
-    var labelW = Math.max(96, Math.min(210, Math.floor(W * 0.34)));
-    var valueW = 52;
-    var x0 = labelW + 10;
-    var plotW = W - x0 - valueW;
-    var maxN = rows[0].n_papers; // rows arrive sorted desc
-    rows.forEach(function (r) { if (r.n_papers > maxN) { maxN = r.n_papers; } });
+  // ---- sortable / searchable table ------------------------------------- //
+  // spec.columns: [{label, key, type: name|num|date|id, cell(row)}]
+  // spec.searchKeys: row fields matched by the search box.
+  function makeTable(sectionId, data, spec) {
+    var wrap = document.getElementById("table-" + sectionId);
+    var searchInput = document.getElementById("q-" + sectionId);
+    var countEl = document.getElementById("count-" + sectionId);
+    var showAllWrap = document.getElementById("showall-" + sectionId);
+    var showAllBtn = showAllWrap.querySelector("button");
 
-    var svg = el("svg", {
-      width: W, height: H, viewBox: "0 0 " + W + " " + H,
-      role: "img", "aria-label": "Horizontal bar chart"
-    }, container);
+    var state = {
+      sortIdx: spec.defaultSortIdx,
+      sortDir: "desc",
+      query: "",
+      showAll: false
+    };
 
-    // single baseline all bars grow from
-    el("line", { x1: x0, y1: 0, x2: x0, y2: H, "class": "baseline" }, svg);
-
-    rows.forEach(function (r, i) {
-      var yMid = i * rowH + rowH / 2;
-      var w = maxN > 0 ? (r.n_papers / maxN) * plotW : 0;
-      var g = el("g", { "class": "mark", tabindex: "0", role: "img" }, svg);
-      var span = (r.first_use || "?") + " to " + (r.last_use || "?");
-      g.setAttribute("aria-label",
-        r.name + ": " + numFmt.format(r.n_papers) + " " + unitLabel +
-        ", " + span);
-
-      // hit target: full row (>= 24px tall/wide)
-      el("rect", { x: 0, y: i * rowH, width: W, height: rowH, "class": "hit" }, g);
-
-      var lbl = el("text", {
-        x: labelW, y: yMid + 4.5, "text-anchor": "end", "class": "bar-label"
-      }, g);
-      truncateSvgText(lbl, labelW - 4, r.name);
-
-      el("path", {
-        d: rightRoundedRect(x0, yMid - barH / 2, Math.max(w, 1), barH, 4),
-        "class": "mark-fill"
-      }, g);
-
-      var val = el("text", {
-        x: x0 + Math.max(w, 1) + 6, y: yMid + 4, "class": "bar-value"
-      }, g);
-      val.textContent = numFmt.format(r.n_papers);
-
-      attachMarkEvents(g, function () {
-        return {
-          value: numFmt.format(r.n_papers) + " " + unitLabel,
-          label: r.name,
-          extra: "First " + (r.first_use || "unknown") +
-                 " · latest " + (r.last_use || "unknown")
-        };
-      });
-    });
-  }
-
-  // ---- hidden data table for the year chart --------------------------- //
-  function renderYearsTable(wrap, years) {
-    wrap.textContent = "";
-    var caption = document.createElement("p");
-    caption.textContent = "Works per year (data table)";
-    wrap.appendChild(caption);
     var table = document.createElement("table");
-    var head = table.insertRow();
-    ["Year", "Works"].forEach(function (t) {
+    table.className = "data";
+    var caption = document.createElement("caption");
+    caption.className = "visually-hidden";
+    caption.textContent = spec.caption;
+    table.appendChild(caption);
+
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    var ths = [];
+    spec.columns.forEach(function (col, idx) {
       var th = document.createElement("th");
-      th.textContent = t;
-      head.appendChild(th);
+      th.scope = "col";
+      if (col.type === "num") { th.className = "num"; }
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "th-btn";
+      btn.appendChild(document.createTextNode(col.label + " "));
+      var ind = document.createElement("span");
+      ind.className = "ind";
+      ind.setAttribute("aria-hidden", "true");
+      btn.appendChild(ind);
+      btn.addEventListener("click", function () {
+        if (state.sortIdx === idx) {
+          state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+        } else {
+          state.sortIdx = idx;
+          state.sortDir = col.type === "num" ? "desc" : "asc";
+        }
+        render();
+      });
+      th.appendChild(btn);
+      headRow.appendChild(th);
+      ths.push({ th: th, ind: ind });
     });
-    years.forEach(function (d) {
-      var tr = table.insertRow();
-      tr.insertCell().textContent = String(d.year);
-      tr.insertCell().textContent = numFmt.format(d.n);
-    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    table.appendChild(tbody);
     wrap.appendChild(table);
+
+    function compareRows(a, b) {
+      var col = spec.columns[state.sortIdx];
+      var va = a[col.key], vb = b[col.key];
+      // empty values always sort last, regardless of direction
+      var ea = va === "" || va === undefined;
+      var eb = vb === "" || vb === undefined;
+      if (ea && eb) { return 0; }
+      if (ea) { return 1; }
+      if (eb) { return -1; }
+      var r = 0;
+      if (col.type === "num") {
+        r = Number(va) - Number(vb);
+      } else if (col.type === "name") {
+        va = va.toLowerCase(); vb = vb.toLowerCase();
+        r = va < vb ? -1 : (va > vb ? 1 : 0);
+      } else { // date / id: lexicographic (ISO dates sort correctly)
+        r = va < vb ? -1 : (va > vb ? 1 : 0);
+      }
+      return state.sortDir === "asc" ? r : -r;
+    }
+
+    function render() {
+      // filter
+      var q = state.query.toLowerCase();
+      var filtered = !q ? data.slice() : data.filter(function (row) {
+        return spec.searchKeys.some(function (k) {
+          return (row[k] || "").toLowerCase().indexOf(q) !== -1;
+        });
+      });
+      // stable sort: decorate with the original index as a tiebreak
+      var decorated = filtered.map(function (row, i) { return [row, i]; });
+      decorated.sort(function (x, y) {
+        return compareRows(x[0], y[0]) || (x[1] - y[1]);
+      });
+      var sorted = decorated.map(function (d) { return d[0]; });
+
+      // header indicators + aria-sort
+      ths.forEach(function (h, i) {
+        if (i === state.sortIdx) {
+          h.th.classList.add("sorted");
+          h.th.setAttribute("aria-sort",
+            state.sortDir === "asc" ? "ascending" : "descending");
+          h.ind.textContent = state.sortDir === "asc" ? "▲" : "▼";
+        } else {
+          h.th.classList.remove("sorted");
+          h.th.removeAttribute("aria-sort");
+          h.ind.textContent = "";
+        }
+      });
+
+      // rows (first PAGE_SIZE unless showAll) via a DocumentFragment
+      var limit = state.showAll ? sorted.length : PAGE_SIZE;
+      var frag = document.createDocumentFragment();
+      var shown = Math.min(sorted.length, limit);
+      for (var i = 0; i < shown; i++) {
+        var tr = document.createElement("tr");
+        for (var jc = 0; jc < spec.columns.length; jc++) {
+          tr.appendChild(spec.columns[jc].cell(sorted[i]));
+        }
+        frag.appendChild(tr);
+      }
+      tbody.textContent = "";
+      tbody.appendChild(frag);
+
+      // count ("N of M" when filtered)
+      countEl.textContent = q
+        ? numFmt.format(sorted.length) + " of " + numFmt.format(data.length)
+        : "";
+
+      // show-all button
+      if (sorted.length > shown) {
+        showAllWrap.hidden = false;
+        showAllBtn.textContent =
+          "Show all " + numFmt.format(sorted.length) + " rows";
+      } else {
+        showAllWrap.hidden = true;
+      }
+    }
+
+    searchInput.addEventListener("input", function () {
+      state.query = searchInput.value.trim();
+      render();
+    });
+    showAllBtn.addEventListener("click", function () {
+      state.showAll = true;
+      render();
+    });
+
+    render();
   }
 
-  // ---- page ------------------------------------------------------------ //
-  function renderAll(data) {
-    var generatedYear = parseInt(String(data.generated).slice(0, 4), 10);
-
-    document.getElementById("updated").textContent = "Updated " + data.generated;
+  // ---- hero + tiles ----------------------------------------------------- //
+  function renderHero(dash) {
+    var generatedYear = parseInt(String(dash.generated).slice(0, 4), 10);
+    document.getElementById("updated").textContent = "Updated " + dash.generated;
     document.getElementById("hero-n").textContent =
-      numFmt.format(data.totals.works);
-
+      numFmt.format(dash.totals.works);
     var thisYear = 0;
-    data.works_by_year.forEach(function (d) {
+    (dash.works_by_year || []).forEach(function (d) {
       if (d.year === generatedYear) { thisYear = d.n; }
     });
-    document.getElementById("tile0-lbl").textContent =
-      "Works in " + generatedYear;
+    document.getElementById("tile0-lbl").textContent = "Works in " + generatedYear;
     document.getElementById("tile0-val").textContent = fmtCompact(thisYear);
-    document.getElementById("tile1-val").textContent =
-      fmtCompact(data.totals.authors);
-    document.getElementById("tile2-val").textContent =
-      fmtCompact(data.totals.institutions);
-    document.getElementById("tile3-val").textContent =
-      fmtCompact(data.totals.journals);
-    document.getElementById("ytd-note").textContent =
-      generatedYear + " is year-to-date.";
-
-    renderYears(document.getElementById("chart-years"), data, generatedYear);
-    renderBars(document.getElementById("chart-journals"),
-               data.top_journals, "works");
-    renderBars(document.getElementById("chart-institutions"),
-               data.top_institutions, "works");
-    renderBars(document.getElementById("chart-authors"),
-               data.top_authors, "works");
-    renderYearsTable(document.getElementById("years-table-wrap"),
-                     data.works_by_year);
+    document.getElementById("tile1-val").textContent = fmtCompact(dash.totals.authors);
+    document.getElementById("tile2-val").textContent = fmtCompact(dash.totals.institutions);
+    document.getElementById("tile3-val").textContent = fmtCompact(dash.totals.journals);
   }
 
-  function debounce(fn, ms) {
-    var t = null;
-    return function () {
-      if (t) { clearTimeout(t); }
-      t = setTimeout(fn, ms);
-    };
-  }
-
-  fetch("analysis/dashboard.json")
-    .then(function (res) {
-      if (!res.ok) { throw new Error("HTTP " + res.status); }
-      return res.json();
-    })
-    .then(function (data) {
-      renderAll(data);
-      window.addEventListener("resize", debounce(function () {
-        renderAll(data);
-      }, 150));
-    })
-    .catch(function (err) {
-      var e = document.getElementById("load-error");
-      e.style.display = "block";
-      e.textContent = "Could not load the dashboard data (" + err.message +
-        "). Please try again later.";
+  function fetchText(url) {
+    return fetch(url).then(function (res) {
+      if (!res.ok) { throw new Error(url + ": HTTP " + res.status); }
+      return res.text();
     });
+  }
+
+  Promise.all([
+    fetch("analysis/dashboard.json").then(function (res) {
+      if (!res.ok) { throw new Error("dashboard.json: HTTP " + res.status); }
+      return res.json();
+    }),
+    fetchText("analysis/journals.csv"),
+    fetchText("analysis/institutions.csv"),
+    fetchText("analysis/authors.csv")
+  ]).then(function (results) {
+    renderHero(results[0]);
+
+    makeTable("journals", csvToObjects(results[1]), {
+      caption: "All journals in the dataset, sortable and searchable",
+      defaultSortIdx: 1,
+      searchKeys: ["journal_name"],
+      columns: [
+        { label: "Journal", key: "journal_name", type: "name",
+          cell: function (r) { return textCell("name", r.journal_name); } },
+        { label: "Works", key: "n_papers", type: "num",
+          cell: function (r) { return numCell(r.n_papers); } },
+        { label: "Authors", key: "n_authors", type: "num",
+          cell: function (r) { return numCell(r.n_authors); } },
+        { label: "First use", key: "first_use", type: "date",
+          cell: function (r) { return textCell("date", r.first_use); } },
+        { label: "Last use", key: "last_use", type: "date",
+          cell: function (r) { return textCell("date", r.last_use); } }
+      ]
+    });
+
+    makeTable("institutions", csvToObjects(results[2]), {
+      caption: "All institutions in the dataset, sortable and searchable",
+      defaultSortIdx: 3,
+      searchKeys: ["institution_name", "country"],
+      columns: [
+        { label: "Institution", key: "institution_name", type: "name",
+          cell: function (r) { return textCell("name", r.institution_name); } },
+        { label: "Country", key: "country", type: "id",
+          cell: function (r) { return textCell("plain", r.country); } },
+        { label: "ROR", key: "ror", type: "id",
+          cell: function (r) { return linkCell("https://ror.org/", r.ror, "ROR"); } },
+        { label: "Works", key: "n_papers", type: "num",
+          cell: function (r) { return numCell(r.n_papers); } },
+        { label: "Authors", key: "n_authors", type: "num",
+          cell: function (r) { return numCell(r.n_authors); } },
+        { label: "First use", key: "first_use", type: "date",
+          cell: function (r) { return textCell("date", r.first_use); } },
+        { label: "Last use", key: "last_use", type: "date",
+          cell: function (r) { return textCell("date", r.last_use); } }
+      ]
+    });
+
+    makeTable("authors", csvToObjects(results[3]), {
+      caption: "All authors in the dataset, sortable and searchable",
+      defaultSortIdx: 2,
+      searchKeys: ["author_name"],
+      columns: [
+        { label: "Author", key: "author_name", type: "name",
+          cell: function (r) { return textCell("name", r.author_name); } },
+        { label: "ORCID", key: "orcid", type: "id",
+          cell: function (r) { return linkCell("https://orcid.org/", r.orcid, "ORCID"); } },
+        { label: "Works", key: "n_papers", type: "num",
+          cell: function (r) { return numCell(r.n_papers); } },
+        { label: "First use", key: "first_use", type: "date",
+          cell: function (r) { return textCell("date", r.first_use); } },
+        { label: "Last use", key: "last_use", type: "date",
+          cell: function (r) { return textCell("date", r.last_use); } }
+      ]
+    });
+  }).catch(function (err) {
+    var e = document.getElementById("load-error");
+    e.style.display = "block";
+    e.textContent = "Could not load the dashboard data (" + err.message +
+      "). Please try again later.";
+  });
 })();
 </script>
 </body>

@@ -4,8 +4,9 @@ An automatically maintained dataset of academic papers that **cite or mention
 [jsPsych](https://www.jspsych.org/)**, the JavaScript library for running
 behavioral experiments in a web browser.
 
-**Dashboard: <https://jspsych.github.io/published-papers/>** — works per year,
-top journals/institutions/authors, rebuilt on every data update.
+**Dashboard: <https://jspsych.github.io/published-papers/>** — headline
+counts plus sortable, searchable tables of every journal, institution, and
+author in the dataset, rebuilt on every data update.
 
 The data lives in two CSV files under [`data/`](data/) and is refreshed monthly
 by a GitHub Actions workflow. No API keys are required to reproduce it.
