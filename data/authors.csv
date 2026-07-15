@@ -2489,12 +2489,6 @@ W4224986506,10.1016/j.cognition.2022.105129,2022,last,Brian J. Scholl,0000-0003-
 W4224988945,10.1038/s41467-022-29742-2,2022,first,David Melnikoff,0000-0002-7090-9995,Northeastern University,US,04t5xt781
 W4224988945,10.1038/s41467-022-29742-2,2022,middle,Ryan W. Carlson,0000-0002-6982-8274,Yale University,US,03v76x132
 W4224988945,10.1038/s41467-022-29742-2,2022,last,Paul E. Stillman,0000-0002-4413-0558,Yale University,US,03v76x132
-W4225009014,10.1038/s41467-022-30011-5,2022,first,Yaniv Abir,0000-0002-3725-9011,Columbia University,US,00hj8s172
-W4225009014,10.1038/s41467-022-30011-5,2022,middle,Caroline B Marvin,,Columbia University,US,00hj8s172
-W4225009014,10.1038/s41467-022-30011-5,2022,middle,Camilla van Geen,0000-0002-4948-5550,Columbia University; University of Pennsylvania,US; US,00hj8s172; 00b30xv10
-W4225009014,10.1038/s41467-022-30011-5,2022,middle,Maya Leshkowitz,0000-0003-1454-7034,Hebrew University of Jerusalem,IL,03qxff017
-W4225009014,10.1038/s41467-022-30011-5,2022,middle,Ran R. Hassin,0000-0002-5064-3720,Hebrew University of Jerusalem,IL,03qxff017
-W4225009014,10.1038/s41467-022-30011-5,2022,last,Daphna Shohamy,0000-0003-4239-4960,Allen Institute for Brain Science; Columbia University,US; US,00dcv1019; 00hj8s172
 W4225085525,10.1145/3491102.3501888,2022,first,Eunice Jun,0000-0002-4050-4284,University of Washington,US,00cvxb145
 W4225085525,10.1145/3491102.3501888,2022,middle,Audrey Seo,,University of Washington,US,00cvxb145
 W4225085525,10.1145/3491102.3501888,2022,middle,Jeffrey Heer,0000-0002-6175-1655,University of Washington,US,00cvxb145
@@ -9644,14 +9638,6 @@ W4414310772,10.1038/s41598-025-19246-6,2025,middle,Martin S. Lehe,0000-0003-0467
 W4414310772,10.1038/s41598-025-19246-6,2025,middle,Nora M. Laskowski,0000-0003-0213-5171,LWL-Universitätsklinikum Bochum,DE,04nkkrh90
 W4414310772,10.1038/s41598-025-19246-6,2025,middle,Georg Halbeisen,0000-0002-9529-2215,LWL-Universitätsklinikum Bochum,DE,04nkkrh90
 W4414310772,10.1038/s41598-025-19246-6,2025,last,Georgios Paslakis,0000-0002-2069-0024,LWL-Universitätsklinikum Bochum,DE,04nkkrh90
-W4414333052,10.1002/ijop.70111,2025,first,Rui Chen,0000-0002-1483-8694,Yunnan Normal University,CN,00sc9n023
-W4414333052,10.1002/ijop.70111,2025,middle,Yating Jin,,Yunnan Normal University,CN,00sc9n023
-W4414333052,10.1002/ijop.70111,2025,middle,Li Yu,0009-0002-7005-6811,Yunnan Normal University,CN,00sc9n023
-W4414333052,10.1002/ijop.70111,2025,middle,Tobias Tempel,0000-0002-6315-4555,Ludwigsburg University of Education,DE,02j0n6s98
-W4414333052,10.1002/ijop.70111,2025,middle,Peng Li,0000-0003-1925-3836,Yunnan Normal University,CN,00sc9n023
-W4414333052,10.1002/ijop.70111,2025,middle,Shi Zhang,0000-0002-1459-5215,South China Normal University,CN,01kq0pv72
-W4414333052,10.1002/ijop.70111,2025,middle,Anqi Li,0009-0003-5785-3960,Yunnan Normal University,CN,00sc9n023
-W4414333052,10.1002/ijop.70111,2025,last,Weijie He,0009-0007-6382-5738,Yunnan Normal University,CN,00sc9n023
 W4414334451,10.1007/s00426-025-02180-7,2025,first,V. Shah,0009-0007-5364-8395,University of Bremen,DE,04ers2y35
 W4414334451,10.1007/s00426-025-02180-7,2025,middle,René Schlegelmilch,0000-0003-0285-5291,University of Bremen,DE,04ers2y35
 W4414334451,10.1007/s00426-025-02180-7,2025,last,Bettina von Helversen,0000-0003-2004-6922,University of Bremen,DE,04ers2y35
@@ -11776,6 +11762,12 @@ epmc:MED:34770448,10.3390/s21217142,2021,middle,Goh JOS,0000-0001-7808-5452,"Dep
 epmc:MED:34770448,10.3390/s21217142,2021,last,Fu LC,,"Department of Computer Science and Information Engineering, National Taiwan University, Taipei 10617, Taiwan.; Department of Electrical Engineering, National Taiwan University, Taipei 10617, Taiwan.; MOST Joint Research Center for AI Technology and All Vista Healthcare, Taipei 10617, Taiwan.",,
 epmc:MED:34964045,,2021,first,Eckstein MK,,"Department of Psychology, 2121 Berkeley Way West, Berkeley, California 94720, USA.",,
 epmc:MED:34964045,,2021,last,Collins AGE,,"Department of Psychology, 2121 Berkeley Way West, Berkeley, California 94720, USA.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,first,Abir Y,0000-0002-3725-9011,"Department of Psychology, Columbia University, New York, NY, USA. yaniv.abir@columbia.edu.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,middle,Marvin CB,,"Department of Psychology, Columbia University, New York, NY, USA.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,middle,van Geen C,0000-0002-4948-5550,"Zuckerman Mind Brain Behavior Institute, Columbia University, New York, NY, USA.; Department of Psychology, University of Pennsylvania, Philadelphia, PA, USA.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,middle,Leshkowitz M,,"Department of Cognitive Sciences, The Hebrew University of Jerusalem, Jerusalem, Israel.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,middle,Hassin RR,,"Department of Psychology and The Federmann Center for the Study of Rationality, The Hebrew University of Jerusalem, Jerusalem, Israel.",,
+epmc:MED:35484153,10.1038/s41467-022-30011-5,2022,last,Shohamy D,,"Department of Psychology, Columbia University, New York, NY, USA.; Zuckerman Mind Brain Behavior Institute, Columbia University, New York, NY, USA.; Kavli Institute for Brain Science, Columbia University, New York, NY, USA.",,
 epmc:MED:35881803,10.1073/pnas.2202070119,2022,first,Nitsch FJ,0000-0002-7832-7498,"Comparative Psychology, Institute of Experimental Psychology, Heinrich-Heine-University Düsseldorf, Düsseldorf, Germany.; Marketing Area, INSEAD, Fontainebleau, France.; Control-Interoception-Attention Team, Paris Brain Institute, INSERM U 1127, CNRS UMR 7225, Sorbonne University, Paris, France.",,
 epmc:MED:35881803,10.1073/pnas.2202070119,2022,middle,Lüpken LM,0000-0001-7770-248X,"Comparative Psychology, Institute of Experimental Psychology, Heinrich-Heine-University Düsseldorf, Düsseldorf, Germany.",,
 epmc:MED:35881803,10.1073/pnas.2202070119,2022,middle,Lüschow N,0000-0003-3971-8426,"Comparative Psychology, Institute of Experimental Psychology, Heinrich-Heine-University Düsseldorf, Düsseldorf, Germany.",,
@@ -11883,6 +11875,14 @@ epmc:MED:40500379,10.1038/s41562-025-02232-3,2025,first,Ramadan M,0000-0002-6112
 epmc:MED:40500379,10.1038/s41562-025-02232-3,2025,middle,Tang C,,"Department of Brain and Cognitive Sciences, McGovern Institute for Brain Research, MIT Massachusetts Institute of Technology, Cambridge, MA, USA.",,
 epmc:MED:40500379,10.1038/s41562-025-02232-3,2025,middle,Watters N,,"Department of Brain and Cognitive Sciences, McGovern Institute for Brain Research, MIT Massachusetts Institute of Technology, Cambridge, MA, USA.",,
 epmc:MED:40500379,10.1038/s41562-025-02232-3,2025,last,Jazayeri M,0000-0002-9764-6961,"Department of Brain and Cognitive Sciences, McGovern Institute for Brain Research, MIT Massachusetts Institute of Technology, Cambridge, MA, USA. mjaz@mit.edu.; Howard Hughes Medical Institute, Cambridge, MA, USA. mjaz@mit.edu.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,first,Chen R,0000-0002-1483-8694,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Jin Y,0009-0007-8423-4072,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Yu L,0009-0002-7005-6811,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Tempel T,0000-0002-6315-4555,"Special Education Department, Ludwigsburg University of Education, Ludwigsburg, Germany.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Li P,0000-0003-1925-3836,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Zhang S,,"Laboratory Assets Office, South China Normal University, Shanwei, Guangdong, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,middle,Li A,,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
+epmc:MED:40965285,10.1002/ijop.70111,2025,last,He W,,"Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,
 epmc:MED:41224979,10.1038/s41586-025-09631-6,2025,first,Muttenthaler L,0000-0002-0804-4687,"Google DeepMind, Berlin, Germany. lukas.muttenthaler@tu-berlin.de.; Machine Learning Group, Technische Universität Berlin, Berlin, Germany. lukas.muttenthaler@tu-berlin.de.; BIFOLD, Berlin Institute for the Foundations of Learning and Data, Berlin, Germany. lukas.muttenthaler@tu-berlin.de.; Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany. lukas.muttenthaler@tu-berlin.de.",,
 epmc:MED:41224979,10.1038/s41586-025-09631-6,2025,middle,Greff K,,"Google DeepMind, Berlin, Germany.",,
 epmc:MED:41224979,10.1038/s41586-025-09631-6,2025,middle,Born F,0009-0002-1214-4864,"Machine Learning Group, Technische Universität Berlin, Berlin, Germany.; BIFOLD, Berlin Institute for the Foundations of Learning and Data, Berlin, Germany.; Max Planck Institute for Human Development, Berlin, Germany.",,
