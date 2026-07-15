@@ -1,0 +1,48 @@
+name: Monthly paper update
+
+on:
+  schedule:
+    # 06:00 UTC on the 3rd of every month
+    - cron: "0 6 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Prevent a manual dispatch from racing the scheduled run into a
+# non-fast-forward push failure.
+concurrency:
+  group: update-papers
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run update
+        id: update
+        run: python update_papers.py
+
+      - name: Commit and push data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --quiet --cached; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          NEW="${{ steps.update.outputs.new_papers }}"
+          git commit -m "Monthly update: ${NEW:-0} new papers"
+          git push
