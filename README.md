@@ -23,6 +23,8 @@ One row per unique paper.
 | `publication_date` | Publication date (`YYYY-MM-DD`) when known. |
 | `type` | Work type (e.g. `article`, `preprint`). |
 | `is_preprint` | **Derived, recomputed every run** — manual edits will not stick (unlike `notes`/`exclude`). `True` only when a strong preprint signal fires: `type` is exactly `preprint`, the DOI prefix belongs to a known preprint server (PsyArXiv, OSF Preprints, bioRxiv/medRxiv, arXiv, Research Square, Preprints.org, SocArXiv, EdArXiv, SSRN), or the venue names one of those servers. `False` means "not confidently identified as a preprint", **not** "confirmed published". |
+| `duplicate_of` | **Derived, recomputed every run** — manual edits will not stick. When this row is a preprint (or earlier version) of another row in the dataset, the `id` of that canonical row; blank for canonical / unlinked rows. Chains are flattened (v1 → v2 → published becomes v1 → published), so a canonical row always has a blank `duplicate_of`. Rows are never deleted by linking — this column only annotates. See [Preprint → published linking](#preprint--published-linking). |
+| `match_method` | **Derived** — which signal produced the link: `crossref`, `doi_version`, or `title_author` (see below). Blank whenever `duplicate_of` is blank. |
 | `cited_by_count` | Citation count as reported by the source. |
 | `cited_2015` | *How found* — cites the 2015 jsPsych paper (OpenAlex `W2161418887`). |
 | `cited_joss` | *How found* — cites the 2023 jsPsych JOSS paper (OpenAlex `W4376138907`). |
@@ -99,19 +101,81 @@ So it is safe to edit `notes` and `exclude` by hand; the monthly job will not
 clobber them. (Author rows are fully replaced per paper on each run to pick up
 affiliation backfill.)
 
+## Preprint → published linking
+
+Many works appear twice in the dataset: once as a preprint and once as the
+published article (or as several numbered preprint versions). The update
+script links these rows via the derived `duplicate_of` / `match_method`
+columns so the analysis can count each *work* once. Only **very strong
+signals** are used — a missed link merely leaves two rows counted separately,
+whereas a wrong link silently merges two different papers, so precision is
+prioritized over recall. Three tiers, strongest first (a stronger match is
+never overwritten by a weaker one):
+
+1. **`crossref`** — the preprint's own Crossref record carries an
+   [`is-preprint-of`](https://www.crossref.org/documentation/schema-library/markup-guide-record-types/posted-content-includes-preprints/)
+   relation whose target DOI exists in this dataset. This is
+   publisher-asserted metadata, the strongest available signal. Results are
+   cached in [`data/crossref_links.json`](data/crossref_links.json), which is
+   committed to the repo: `links` maps normalized preprint DOI → published
+   DOI (positive links, reused without re-querying), and `checked` records
+   the date each preprint DOI was last queried. Negative results (404s,
+   records without the relation) can turn positive later when publishers
+   deposit the relation, so they are re-queried — but on a bounded schedule
+   to keep the monthly run from growing forever: a negative is re-queried
+   only when the preprint was published within the last **4 years** (recent
+   preprints are the ones still getting published) or its last check is more
+   than **365 days** old. A cached positive link whose target DOI is missing
+   from the dataset falls back to a live query as if uncached. An old-style
+   flat `{preprint_doi: published_doi}` cache file is migrated automatically
+   on load.
+2. **`doi_version`** — DOIs that differ only by a trailing `_vN` / `.vN`
+   version suffix (e.g. `10.31234/osf.io/abcde_v1` / `..._v2`) are the same
+   work by construction of the DOI itself. The canonical member is a
+   non-preprint member when one exists, else the one with the latest
+   publication date (ties: highest version number, then id).
+3. **`title_author`** — a preprint and a research-type non-preprint row are
+   linked only when **all** of the following hold: their normalized titles
+   are identical (lowercased, punctuation collapsed) and the title is long
+   enough to be distinctive (≥ 3 words and ≥ 15 characters); their first
+   authors share the same normalized surname; and at least 50% of the smaller
+   paper's author surnames appear on the other paper. A preprint matching
+   more than one published candidate is left unlinked (ambiguous — logged,
+   never guessed).
+
+Chains are resolved transitively (v1 → v2 → published article collapses to
+v1 → published article; the `match_method` still records the tier that linked
+each row). Linking never deletes rows and, like `is_preprint`, both columns
+are **recomputed from scratch every run** — manual edits to them will not
+stick. `python update_papers.py --relink` reruns *only* this linking step
+against the existing CSVs (Crossref is the only network dependency) and then
+regenerates the analysis summaries, which is useful for testing without a
+full refetch.
+
 ## Analysis
 
 [`analysis/generate_summaries.py`](analysis/generate_summaries.py) (stdlib
 only) derives two summary tables from the data CSVs:
 
 - **`analysis/authors.csv`** — one row per unique author: `author_key`,
-  `author_name`, `orcid`, `n_papers` (distinct papers), `first_use` /
-  `last_use` (min/max publication date of that author's papers; falls back to
+  `author_name`, `orcid`, `n_papers` (distinct works), `first_use` /
+  `last_use` (min/max publication date of that author's works; falls back to
   the year when the full date is missing).
 - **`analysis/institutions.csv`** — one row per unique institution:
   `institution_key`, `institution_name`, `ror`, `country`, `n_papers`
-  (distinct papers), `n_authors` (distinct author keys), `first_use`,
+  (distinct works), `n_authors` (distinct author keys), `first_use`,
   `last_use`.
+
+**Works, not rows.** Rows linked through `duplicate_of` (a preprint and its
+published version, or several preprint versions) are collapsed into a single
+*work* keyed by the canonical row's id. Each work counts once toward
+`n_papers`; its authors and institutions are the union across its members;
+its `first_use` is the earliest publication date among its non-excluded
+members (so a preprint correctly marks when the work first appeared) and its
+`last_use` the latest. Members with `exclude` set to `True` (or a
+non-research type) are skipped individually, and a work whose members are
+*all* excluded disappears from the analysis entirely. The summary printed by
+the script reports how many analyzed works have more than one linked member.
 
 **Dedup rules and their limits.** Authors are keyed by ORCID when present,
 otherwise by normalized name (lowercase, whitespace collapsed, periods
@@ -151,7 +215,17 @@ python analysis/generate_summaries.py
 
 This reads any existing CSVs, fetches all four sources, and rewrites
 `data/papers.csv` and `data/authors.csv`. A fresh run takes a few minutes and
-prints a summary (per-source counts, new papers this run, totals).
+prints a summary (per-source counts, new papers this run, totals, links per
+method). `python update_papers.py --relink` skips all fetching, reruns only
+the preprint-linking step against the existing CSVs, and regenerates the
+analysis summaries. Unit tests: `python3 -m unittest discover tests`.
+
+**Rate-limit behavior.** HTTP 429/5xx responses are retried with backoff, but
+any single wait (including a server-sent `Retry-After`) is capped at **300
+seconds**. If a server demands a longer wait (OpenAlex has been observed
+requesting ~8 hours), the script aborts immediately with a clear error
+instead of hanging — a failed run is safe because the CI commit step only
+commits when the data actually changed.
 
 ## Monthly schedule
 

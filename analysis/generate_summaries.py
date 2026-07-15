@@ -84,22 +84,67 @@ def paper_date(paper):
 
 def main():
     # ------------------------------------------------------------------ #
-    # Load papers; build id -> date and the excluded set
+    # Load papers. Preprints linked to their published version (via the
+    # duplicate_of column in data/papers.csv) are collapsed into one "work":
+    # every row is mapped to its canonical group id, and each group counts
+    # once. A group's date range spans its NON-excluded members (so a
+    # preprint date correctly marks first use); excluded members are dropped,
+    # and a group whose members are ALL excluded disappears entirely.
     # ------------------------------------------------------------------ #
-    dates = {}
-    excluded = set()
-    type_filtered = 0
+    raw_papers = []
     with open(PAPERS_CSV, newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
-            pid = row["id"]
-            if (row.get("exclude") or "").strip() == "True":
-                excluded.add(pid)
-                continue
-            if (row.get("type") or "").strip().lower() in NON_RESEARCH_TYPES:
-                excluded.add(pid)
-                type_filtered += 1
-                continue
-            dates[pid] = paper_date(row)
+            raw_papers.append(row)
+
+    # Resolve duplicate_of transitively to a canonical group id. The update
+    # script already flattens chains, but resolve defensively (and guard
+    # against cycles) so this script is robust on its own.
+    dup = {r["id"]: (r.get("duplicate_of") or "").strip() for r in raw_papers}
+
+    def canonical(pid):
+        seen = set()
+        cur = pid
+        while dup.get(cur) and cur not in seen:
+            seen.add(cur)
+            cur = dup[cur]
+        return cur
+
+    group_of = {r["id"]: canonical(r["id"]) for r in raw_papers}
+    group_size = Counter(group_of.values())  # total members per group
+
+    # Per-member exclusion; non-excluded members contribute a date to their
+    # group. `excluded` holds paper ids skipped during author aggregation.
+    excluded = set()
+    type_filtered = 0
+    group_dates = {}  # group id -> list of member date strings (non-excluded)
+    for row in raw_papers:
+        pid = row["id"]
+        if (row.get("exclude") or "").strip() == "True":
+            excluded.add(pid)
+            continue
+        if (row.get("type") or "").strip().lower() in NON_RESEARCH_TYPES:
+            excluded.add(pid)
+            type_filtered += 1
+            continue
+        group_dates.setdefault(group_of[pid], []).append(paper_date(row))
+
+    # first/last use per active group (min/max across its non-excluded members)
+    group_span = {}
+    for gid, ds in group_dates.items():
+        ordered = sorted(d for d in ds if d)
+        group_span[gid] = (ordered[0], ordered[-1]) if ordered else ("", "")
+
+    # `dates` maps a paper id to its group id, but ONLY for non-excluded
+    # members of active groups — used below to accept/skip author rows and to
+    # collapse an author's papers onto distinct works.
+    dates = {}
+    for row in raw_papers:
+        pid = row["id"]
+        if pid in excluded:
+            continue
+        dates[pid] = group_of[pid]
+
+    multi_member_groups = sum(1 for gid in group_dates if group_size[gid] > 1)
 
     # ------------------------------------------------------------------ #
     # Aggregate authors and institutions
@@ -125,6 +170,9 @@ def main():
             pid = row["paper_id"]
             if pid in excluded or pid not in dates:
                 continue
+            # Collapse this member onto its canonical work: authors and
+            # institutions are counted once per WORK, not once per member row.
+            gid = dates[pid]
 
             name = (row.get("author_name") or "").strip()
             orcid = (row.get("orcid") or "").strip()
@@ -151,7 +199,7 @@ def main():
                 a_key, {"names": Counter(), "orcid": orcid, "papers": set()})
             if name:
                 entry["names"][name] += 1
-            entry["papers"].add(pid)
+            entry["papers"].add(gid)
 
             # -------------------------------------------------------- #
             # Institutions: positionally parallel semicolon-joined
@@ -204,7 +252,7 @@ def main():
                     ientry["names"][inst_name] += 1
                 if country:
                     ientry["countries"][country] += 1
-                ientry["papers"].add(pid)
+                ientry["papers"].add(gid)
                 ientry["authors"].add(a_key)
 
     # ------------------------------------------------------------------ #
@@ -253,11 +301,13 @@ def main():
             return ""
         return min(counter.items(), key=lambda kv: (-kv[1], kv[0]))[0]
 
-    def date_range(paper_ids):
-        ds = sorted(d for d in (dates[p] for p in paper_ids) if d)
-        if not ds:
+    def date_range(group_ids):
+        """Min first_use / max last_use across a set of canonical works."""
+        firsts = [group_span[g][0] for g in group_ids if group_span.get(g, ("", ""))[0]]
+        lasts = [group_span[g][1] for g in group_ids if group_span.get(g, ("", ""))[1]]
+        if not firsts:
             return "", ""
-        return ds[0], ds[-1]
+        return min(firsts), max(lasts)
 
     # ------------------------------------------------------------------ #
     # Write authors.csv
@@ -309,7 +359,9 @@ def main():
     print("Analysis summary")
     print(f"  Papers excluded (exclude == True): {len(excluded) - type_filtered}")
     print(f"  Papers filtered by non-research type: {type_filtered}")
-    print(f"  Papers analyzed: {len(dates)}")
+    print(f"  Papers analyzed (non-excluded members): {len(dates)}")
+    print(f"  Distinct works (after linking): {len(group_dates)}")
+    print(f"  Multi-member works (>1 linked member): {multi_member_groups}")
     print(f"  Author rows skipped (no name, no ORCID): {skipped_unnamed}")
     if skipped_empty_norm:
         print(f"  Entries skipped (degenerate name): {skipped_empty_norm}")
