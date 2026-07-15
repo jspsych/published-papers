@@ -7,7 +7,8 @@ Reads data/papers.csv and data/authors.csv and writes:
   analysis/institutions.csv  one row per unique institution
 
 Papers whose `exclude` column is the string "True" in data/papers.csv are
-excluded from both summaries.
+excluded from both summaries, as are papers whose `type` is one of the
+non-research types in NON_RESEARCH_TYPES (the raw data keeps everything).
 
 Deduplication caveats
 ---------------------
@@ -40,6 +41,14 @@ AUTHORS_IN_CSV = os.path.join(REPO, "data", "authors.csv")
 
 AUTHORS_OUT_CSV = os.path.join(HERE, "authors.csv")
 INSTITUTIONS_OUT_CSV = os.path.join(HERE, "institutions.csv")
+
+# Work types excluded from the analysis (the raw data CSVs keep everything).
+# A paper is skipped only when its WHOLE lowercased `type` string equals one
+# of these values — compound EPMC type strings like
+# "research-article; Journal Article" must NOT match. These types are not
+# research papers using jsPsych: software releases, peer-review records,
+# paratext (covers/edboards), errata, and datasets.
+NON_RESEARCH_TYPES = {"software", "peer-review", "paratext", "erratum", "dataset"}
 
 AUTHOR_OUT_COLUMNS = [
     "author_key", "author_name", "orcid", "n_papers", "first_use", "last_use",
@@ -79,11 +88,16 @@ def main():
     # ------------------------------------------------------------------ #
     dates = {}
     excluded = set()
+    type_filtered = 0
     with open(PAPERS_CSV, newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
             pid = row["id"]
             if (row.get("exclude") or "").strip() == "True":
                 excluded.add(pid)
+                continue
+            if (row.get("type") or "").strip().lower() in NON_RESEARCH_TYPES:
+                excluded.add(pid)
+                type_filtered += 1
                 continue
             dates[pid] = paper_date(row)
 
@@ -293,7 +307,9 @@ def main():
     # Summary
     # ------------------------------------------------------------------ #
     print("Analysis summary")
-    print(f"  Papers excluded (exclude == True): {len(excluded)}")
+    print(f"  Papers excluded (exclude == True): {len(excluded) - type_filtered}")
+    print(f"  Papers filtered by non-research type: {type_filtered}")
+    print(f"  Papers analyzed: {len(dates)}")
     print(f"  Author rows skipped (no name, no ORCID): {skipped_unnamed}")
     if skipped_empty_norm:
         print(f"  Entries skipped (degenerate name): {skipped_empty_norm}")

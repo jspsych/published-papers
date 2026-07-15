@@ -1,10 +1,10 @@
 institution_key,institution_name,ror,country,n_papers,n_authors,first_use,last_use
-ror:02jx3x895,University College London,02jx3x895,GB,92,97,2016-03-31,2026-06-17
+ror:02jx3x895,University College London,02jx3x895,GB,89,96,2016-03-31,2026-06-17
 ror:03a1kwz48,University of Tübingen,03a1kwz48,DE,85,72,2018-07-01,2026-03-11
 ror:00cv9y106,Ghent University,00cv9y106,BE,82,70,2019-06-26,2026-05-27
 ror:00hx57361,Princeton University,00hx57361,US,81,70,2018-03-02,2026-04-04
-ror:02feahw73,Centre National de la Recherche Scientifique,02feahw73,FR,81,111,2016-07-13,2026-06-22
-ror:013meh722,University of Cambridge,013meh722,GB,70,84,2017-11-21,2026-07-06
+ror:02feahw73,Centre National de la Recherche Scientifique,02feahw73,FR,80,111,2016-07-13,2026-06-22
+ror:013meh722,University of Cambridge,013meh722,GB,67,84,2017-11-21,2026-07-06
 ror:052gg0110,University of Oxford,052gg0110,GB,65,65,2015-07-23,2026-06-26
 ror:03r8z3t63,UNSW Sydney,03r8z3t63,AU,62,47,2018-08-24,2026-05-26
 ror:01nrxwf90,University of Edinburgh,01nrxwf90,GB,55,54,2017-02-15,2026-04-16
@@ -12,14 +12,14 @@ ror:03dbr7087,University of Toronto,03dbr7087,CA,53,49,2017-08-17,2026-06-10
 ror:00f54p054,Stanford University,00f54p054,US,51,75,2016-04-26,2026-05-20
 ror:01hcx6992,Humboldt-Universität zu Berlin,01hcx6992,DE,49,46,2020-11-01,2026-05-27
 ror:024mw5h28,University of Chicago,024mw5h28,US,48,43,2016-07-06,2026-03-06
-ror:02vjkv261,Inserm,02vjkv261,FR,47,53,2020-07-31,2026-06-22
 ror:03vek6s52,Harvard University,03vek6s52,US,47,64,2016-02-04,2026-05-15
-ror:0190ak572,New York University,0190ak572,US,46,45,2017-10-01,2026-07-06
+ror:02vjkv261,Inserm,02vjkv261,FR,46,53,2020-07-31,2026-06-22
+ror:0190ak572,New York University,0190ak572,US,45,44,2017-10-01,2026-06-26
 ror:01ej9dk98,The University of Melbourne,01ej9dk98,AU,43,50,2019-01-01,2026-05-27
 ror:02crff812,University of Zurich,02crff812,CH,43,42,2019-09-17,2026-05-15
 ror:03v76x132,Yale University,03v76x132,US,43,43,2018-12-16,2026-04-29
-ror:055bpw879,MRC Cognition and Brain Sciences Unit,055bpw879,GB,43,45,2018-01-03,2026-03-19
 ror:02grkyz14,Western University,02grkyz14,CA,42,39,2020-11-23,2026-03-28
+ror:055bpw879,MRC Cognition and Brain Sciences Unit,055bpw879,GB,42,45,2018-01-03,2026-03-19
 ror:016xsfp80,Radboud University Nijmegen,016xsfp80,NL,39,64,2016-12-07,2026-05-20
 ror:04dkp9463,University of Amsterdam,04dkp9463,NL,38,41,2018-04-25,2025-09-02
 ror:012p63287,University of Groningen,012p63287,NL,37,42,2018-04-25,2026-05-29
@@ -28,14 +28,14 @@ ror:0384j8v12,The University of Sydney,0384j8v12,AU,34,30,2020-03-18,2026-06-03
 ror:01yc7t268,Washington University in St. Louis,01yc7t268,US,30,71,2018-11-21,2026-06-20
 ror:029brtt94,Université Claude Bernard Lyon 1,029brtt94,FR,30,18,2022-05-05,2026-06-22
 ror:02n2fzt79,Boston College,02n2fzt79,US,30,37,2017-05-04,2025-06-24
+ror:00hj8s172,Columbia University,00hj8s172,US,29,38,2020-09-22,2026-03-27
 ror:042nb2s44,Massachusetts Institute of Technology,042nb2s44,US,29,40,2017-03-03,2025-07-31
-ror:00hj8s172,Columbia University,00hj8s172,US,28,37,2020-09-22,2026-03-27
+ror:00dcv1019,Allen Institute for Brain Science,00dcv1019,US,28,23,2020-09-16,2026-04-14
 ror:00pdd0432,Centre de Recherche en Neurosciences de Lyon,00pdd0432,FR,28,19,2022-05-05,2026-06-22
 ror:013cjyk83,Université Paris Sciences et Lettres,013cjyk83,FR,28,32,2020-04-07,2026-05-01
 ror:02k40bc56,Indiana University Bloomington,02k40bc56,US,28,29,2014-03-28,2026-05-01
 ror:02pp7px91,Max Planck Institute for Human Development,02pp7px91,DE,28,25,2015-06-26,2026-02-10
 ror:05591te55,Ludwig-Maximilians-Universität München,05591te55,DE,28,27,2018-03-21,2025-09-12
-ror:00dcv1019,Allen Institute for Brain Science,00dcv1019,US,27,23,2020-09-16,2026-04-14
 ror:0168r3w48,University of California San Diego,0168r3w48,US,27,33,2017-08-20,2026-04-04
 ror:02bfwt286,Monash University,02bfwt286,AU,27,24,2021-04-12,2026-02-16
 ror:00240q980,University of Padua,00240q980,IT,26,41,2022-05-31,2026-06-15
@@ -43,11 +43,11 @@ ror:00p4k0j84,Kyushu University,00p4k0j84,JP,26,27,2019-01-01,2025-01-31
 ror:01jsq2704,Eötvös Loránd University,01jsq2704,HU,26,23,2016-07-05,2026-06-22
 ror:02704qw51,Wellcome Centre for Human Neuroimaging,02704qw51,GB,26,21,2017-07-03,2026-01-28
 ror:00xmkp704,Ghent University Hospital,00xmkp704,BE,25,24,2020-06-10,2025-09-28
+ror:00b30xv10,University of Pennsylvania,00b30xv10,US,24,46,2016-01-01,2026-06-11
 ror:01y2jtd41,University of Wisconsin–Madison,01y2jtd41,US,24,25,2018-03-02,2026-02-23
 ror:03gp5b411,Baycrest Hospital,03gp5b411,CA,24,11,2021-02-11,2026-05-21
 ror:03t52dk35,Western Sydney University,03t52dk35,AU,24,14,2021-04-27,2026-02-18
 ror:046rm7j60,"University of California, Los Angeles",046rm7j60,US,24,40,2017-09-21,2026-06-29
-ror:00b30xv10,University of Pennsylvania,00b30xv10,US,23,46,2016-01-01,2026-06-11
 ror:01kvpec59,Rotman Research Institute,01kvpec59,CA,23,11,2021-02-11,2026-05-21
 ror:05a0dhs15,École Normale Supérieure - PSL,05a0dhs15,FR,23,24,2020-04-07,2026-02-24
 ror:0245cg223,University of Freiburg,0245cg223,DE,22,20,2018-07-01,2025-07-10
@@ -64,9 +64,6 @@ ror:057zh3y96,The University of Tokyo,057zh3y96,JP,20,26,2020-03-23,2025-08-26
 ror:00ayhx656,University of Sussex,00ayhx656,GB,19,15,2019-08-12,2026-02-14
 ror:00wge5k78,UiT The Arctic University of Norway,00wge5k78,NO,19,21,2021-05-03,2026-06-12
 ror:01zkghx44,Georgia Institute of Technology,01zkghx44,US,19,13,2017-09-15,2026-05-25
-ror:022x6qg61,Vassar College,022x6qg61,US,19,50,2014-01-01,2026-05-22
-ror:02zx40v98,Central European University,02zx40v98,AT,19,14,2021-03-11,2026-04-01
-ror:04ers2y35,University of Bremen,04ers2y35,DE,19,17,2017-06-02,2026-03-30
 ror:05f82e368,Université Paris Cité,05f82e368,FR,19,19,2020-04-07,2026-02-19
 ror:00cvxb145,University of Washington,00cvxb145,US,18,21,2018-11-01,2026-03-05
 ror:00hhkn466,Japan Society for the Promotion of Science,00hhkn466,JP,18,11,2019-01-01,2025-10-16
@@ -74,6 +71,7 @@ ror:00mkhxb43,University of Notre Dame,00mkhxb43,US,18,18,2018-06-11,2025-06-02
 ror:01ryk1543,University of Southampton,01ryk1543,GB,18,26,2017-01-01,2026-04-29
 ror:01xtthb56,University of Oslo,01xtthb56,NO,18,22,2016-09-01,2026-02-18
 ror:02vm5rt34,Vanderbilt University,02vm5rt34,US,18,21,2017-02-20,2026-03-18
+ror:04ers2y35,University of Bremen,04ers2y35,DE,18,16,2017-06-02,2026-03-30
 ror:04pp8hn57,Utrecht University,04pp8hn57,NL,18,25,2021-03-08,2026-02-01
 ror:04q42nz13,Institute of Cognitive Neuroscience and Psychology,04q42nz13,HU,18,8,2022-05-05,2026-06-22
 ror:04tsk2644,Ruhr University Bochum,04tsk2644,DE,18,29,2021-11-10,2026-05-11
@@ -84,7 +82,7 @@ ror:00rs6vg23,The Ohio State University,00rs6vg23,US,17,21,2016-01-01,2026-06-29
 ror:01an7q238,"University of California, Berkeley",01an7q238,US,17,19,2017-07-25,2026-02-14
 ror:01y9bpm73,University of Göttingen,01y9bpm73,DE,17,19,2018-09-04,2025-11-26
 ror:01ynf4891,University of Milano-Bicocca,01ynf4891,IT,17,12,2019-12-05,2026-05-29
-ror:026nmvv73,Max Planck Institute for Biological Cybernetics,026nmvv73,DE,17,11,2019-03-08,2025-05-21
+ror:022x6qg61,Vassar College,022x6qg61,US,17,50,2014-01-01,2025-09-11
 ror:027bh9e22,Leiden University,027bh9e22,NL,17,22,2014-11-19,2026-02-18
 ror:03xjwb503,Université Paris-Saclay,03xjwb503,FR,17,14,2020-07-31,2026-02-24
 ror:00za53h95,Johns Hopkins University,00za53h95,US,16,19,2019-03-11,2025-11-13
@@ -93,7 +91,8 @@ ror:03v4gjf40,Technische Universität Berlin,03v4gjf40,DE,16,16,2021-01-01,2026-
 ror:01qfab443,Institut Jean Nicod,01qfab443,FR,15,11,2020-04-07,2026-01-08
 ror:01sf06y89,Macquarie University,01sf06y89,AU,15,22,2021-07-17,2025-05-06
 ror:022k4wk35,Beijing Normal University,022k4wk35,CN,15,30,2020-07-09,2026-06-09
-ror:03aba6h29,"Czech Academy of Sciences, Institute of Psychology",03aba6h29,CZ,15,15,2020-03-26,2026-03-10
+ror:026nmvv73,Max Planck Institute for Biological Cybernetics,026nmvv73,DE,15,11,2019-03-08,2025-05-21
+ror:02zx40v98,Central European University,02zx40v98,AT,15,13,2021-03-11,2026-04-01
 ror:03b94tp07,University of Auckland,03b94tp07,NZ,15,16,2020-04-11,2026-03-19
 ror:03prydq77,University of Vienna,03prydq77,AT,15,15,2021-12-09,2026-05-29
 ror:04gyf1771,"University of California, Irvine",04gyf1771,US,15,23,2021-07-05,2026-02-25
@@ -102,23 +101,22 @@ ror:00t7fmg72,Centre for Research on Brain Language and Music,00t7fmg72,CA,14,24
 ror:01aff2v68,University of Waterloo,01aff2v68,CA,14,18,2022-12-02,2026-04-22
 ror:01h9v1373,Language Science (South Korea),01h9v1373,KR,14,25,2024-02-13,2026-02-20
 ror:02e7b5302,Nanyang Technological University,02e7b5302,SG,14,30,2020-08-09,2026-07-06
-ror:035xkbk20,Aix-Marseille Université,035xkbk20,FR,14,18,2016-07-13,2025-12-23
 ror:03kk7td41,Cardiff University,03kk7td41,GB,14,14,2021-03-16,2026-01-09
 ror:0546hnb39,University of Konstanz,0546hnb39,DE,14,9,2017-04-13,2025-04-12
 ror:0040r6f76,Victoria University of Wellington,0040r6f76,NZ,13,11,2019-11-22,2026-01-01
 ror:01a77tt86,University of Warwick,01a77tt86,GB,13,12,2016-07-15,2025-11-26
 ror:01aj84f44,Aarhus University,01aj84f44,DK,13,16,2021-05-12,2026-02-18
 ror:026zzn846,Queen Mary University of London,026zzn846,GB,13,12,2020-01-12,2026-06-17
-ror:02dg3n954,Laboratoire de Neurosciences Cognitives,02dg3n954,FR,13,12,2016-07-13,2026-02-06
-ror:03m2x1q45,University of Arizona,03m2x1q45,US,13,11,2018-03-03,2025-12-07
+ror:035xkbk20,Aix-Marseille Université,035xkbk20,FR,13,18,2016-07-13,2025-12-23
+ror:03aba6h29,"Czech Academy of Sciences, Institute of Psychology",03aba6h29,CZ,13,15,2020-03-26,2025-11-01
 ror:03rmrcq20,University of British Columbia,03rmrcq20,CA,13,9,2020-05-29,2026-02-01
 ror:03taz7m60,University of Southern California,03taz7m60,US,13,21,2018-01-01,2026-05-24
-ror:046ak2485,Freie Universität Berlin,046ak2485,DE,13,17,2019-09-04,2025-06-06
 ror:01gamcy45,Brain (Germany),01gamcy45,DE,12,15,2020-11-01,2023-11-17
 ror:01kg8sb98,Indiana University,01kg8sb98,US,12,13,2014-01-01,2024-08-19
+ror:02dg3n954,Laboratoire de Neurosciences Cognitives,02dg3n954,FR,12,12,2016-07-13,2026-02-06
+ror:046ak2485,Freie Universität Berlin,046ak2485,DE,12,16,2020-12-23,2025-06-06
 ror:047s2c258,"University of Maryland, College Park",047s2c258,US,12,19,2020-12-21,2026-07-01
 ror:0524sp257,University of Bristol,0524sp257,GB,12,16,2020-12-22,2026-02-16
-ror:056d84691,Karolinska Institutet,056d84691,SE,12,27,2020-11-30,2026-05-27
 ror:05vt9qd57,"Rutgers, The State University of New Jersey",05vt9qd57,US,12,15,2020-08-09,2026-05-29
 ror:008xxew50,Vrije Universiteit Amsterdam,008xxew50,NL,11,16,2020-09-24,2025-07-07
 ror:00hj54h04,The University of Texas at Austin,00hj54h04,US,11,19,2014-08-06,2026-03-19
@@ -131,11 +129,9 @@ ror:03zhhr656,Kyoto University of Education,03zhhr656,JP,11,10,2021-12-06,2026-0
 ror:045c7t348,VIB-KU Leuven Center for Brain & Disease Research,045c7t348,BE,11,8,2022-07-21,2025-07-03
 ror:048b34d51,National Hospital for Neurology and Neurosurgery,048b34d51,GB,11,13,2020-09-28,2026-01-28
 ror:05bnh6r87,Cornell University,05bnh6r87,US,11,16,2018-02-12,2026-02-04
-ror:05krs5044,University of Sheffield,05krs5044,GB,11,8,2014-11-19,2026-04-15
 ror:002h8g185,University of Bath,002h8g185,GB,10,15,2016-05-27,2025-12-30
 ror:0061rmm93,Laboratoire d’Étude des Mécanismes Cognitifs,0061rmm93,FR,10,11,2023-01-01,2026-02-04
 ror:006w34k90,Howard Hughes Medical Institute,006w34k90,US,10,4,2020-10-16,2026-03-27
-ror:008n7pv89,University of Plymouth,008n7pv89,GB,10,10,2019-06-26,2025-02-25
 ror:00kx1jb78,Temple University,00kx1jb78,US,10,24,2019-08-12,2025-06-27
 ror:017zqws13,University of Minnesota,017zqws13,US,10,18,2022-05-01,2026-05-15
 ror:01c3w3270,Institute of Cognitive and Brain Sciences,01c3w3270,US,10,17,2018-04-10,2025-07-01
@@ -143,7 +139,6 @@ ror:01cc3fy72,Ikerbasque,01cc3fy72,ES,10,6,2022-08-05,2026-04-09
 ror:01v29qb04,Durham University,01v29qb04,GB,10,14,2019-08-12,2026-05-30
 ror:01wm3c497,Prostate Cancer Research,01wm3c497,GB,10,11,2020-07-31,2026-04-22
 ror:02ct41q97,John Brown University,02ct41q97,US,10,12,2021-07-21,2026-01-01
-ror:02hpadn98,Bielefeld University,02hpadn98,DE,10,15,2014-01-01,2026-02-10
 ror:02kkvpp62,Technical University of Munich,02kkvpp62,DE,10,32,2023-03-16,2026-05-29
 ror:02nkf1q06,University of Essex,02nkf1q06,GB,10,12,2018-12-10,2025-05-13
 ror:03angcq70,University of Birmingham,03angcq70,GB,10,12,2019-01-22,2026-06-09
@@ -154,19 +149,19 @@ ror:04a9tmd77,Icahn School of Medicine at Mount Sinai,04a9tmd77,US,10,29,2020-09
 ror:04b8v1s79,Tilburg University,04b8v1s79,NL,10,12,2020-10-06,2026-02-18
 ror:04g2vpn86,Royal Holloway University of London,04g2vpn86,GB,10,14,2019-09-17,2025-04-12
 ror:04xx1tc24,Max Planck Institute for Biology of Ageing,04xx1tc24,DE,10,10,2019-03-08,2025-06-26
+ror:056d84691,Karolinska Institutet,056d84691,SE,10,27,2020-11-30,2026-05-27
 ror:05dxps055,California Institute of Technology,05dxps055,US,10,22,2018-04-10,2026-06-12
 ror:000xsnr85,University of the Basque Country,000xsnr85,ES,9,10,2023-01-12,2026-04-09
+ror:008n7pv89,University of Plymouth,008n7pv89,GB,9,9,2019-06-26,2025-02-25
 ror:00a208s56,Chemnitz University of Technology,00a208s56,DE,9,17,2022-05-05,2026-01-01
-ror:00pd74e08,University of Münster,00pd74e08,DE,9,11,2018-09-04,2026-03-10
 ror:019whta54,University of Lausanne,019whta54,CH,9,8,2016-07-05,2025-08-14
 ror:01c1w6d29,University of Bamberg,01c1w6d29,DE,9,3,2023-01-01,2026-03-09
 ror:01hynnt93,Central Institute of Mental Health,01hynnt93,DE,9,17,2019-01-16,2025-07-01
 ror:01r9htc13,Université Libre de Bruxelles,01r9htc13,BE,9,10,2023-08-17,2026-04-16
 ror:01swzsf04,University of Geneva,01swzsf04,CH,9,10,2023-06-15,2026-01-27
 ror:01tgyzw49,National University of Singapore,01tgyzw49,SG,9,15,2021-09-08,2026-04-04
-ror:024d6js02,Charles University,024d6js02,CZ,9,12,2020-05-29,2026-05-01
 ror:02d9dg697,École des hautes études en sciences sociales,02d9dg697,FR,9,12,2020-04-07,2026-01-01
-ror:02e2c7k09,Delft University of Technology,02e2c7k09,NL,9,15,2018-07-23,2023-10-06
+ror:02hpadn98,Bielefeld University,02hpadn98,DE,9,14,2014-01-01,2026-02-10
 ror:02kpeqv85,Kyoto University,02kpeqv85,JP,9,11,2021-12-06,2025-07-29
 ror:036trcv74,Nanjing Normal University,036trcv74,CN,9,12,2022-08-04,2026-01-07
 ror:038htga59,Australian Psychological Society,038htga59,AU,9,12,2020-03-21,2025-01-22
@@ -176,6 +171,7 @@ ror:03yghzc09,University of Exeter,03yghzc09,GB,9,8,2018-10-13,2025-12-06
 ror:047272k79,The University of Western Australia,047272k79,AU,9,11,2019-05-09,2025-10-03
 ror:055khg266,Institut Universitaire de France,055khg266,FR,9,7,2023-01-01,2026-04-01
 ror:05f950310,KU Leuven,05f950310,BE,9,9,2017-05-01,2024-01-01
+ror:05krs5044,University of Sheffield,05krs5044,GB,9,7,2014-11-19,2026-02-18
 ror:05v62cm79,University of Reading,05v62cm79,GB,9,12,2019-08-12,2025-07-18
 ror:000rdbk18,Max Planck Institute for Empirical Aesthetics,000rdbk18,DE,8,7,2018-11-21,2026-02-18
 ror:00671me87,Max Planck Institute for Psycholinguistics,00671me87,NL,8,13,2021-03-12,2025-09-17
@@ -190,9 +186,11 @@ ror:01jvdtb95,Royal Academy of Music,01jvdtb95,DK,8,10,2021-05-12,2026-02-18
 ror:01y64my43,"University at Buffalo, State University of New York",01y64my43,US,8,11,2019-12-10,2025-05-23
 ror:0220mzb33,King's College London,0220mzb33,GB,8,15,2016-03-31,2024-01-29
 ror:02778hg05,Universität Trier,02778hg05,DE,8,9,2021-09-01,2026-01-27
+ror:02e2c7k09,Delft University of Technology,02e2c7k09,NL,8,14,2018-07-23,2023-10-06
 ror:02mb95055,"Birkbeck, University of London",02mb95055,GB,8,12,2018-10-13,2026-06-17
 ror:033eqas34,Justus-Liebig-Universität Gießen,033eqas34,DE,8,12,2023-04-17,2026-01-30
 ror:03bnmw459,University of Potsdam,03bnmw459,DE,8,11,2022-10-01,2025-09-01
+ror:03m2x1q45,University of Arizona,03m2x1q45,US,8,11,2018-03-03,2025-12-07
 ror:03rth4p18,Université Lumière Lyon 2,03rth4p18,FR,8,9,2023-01-01,2025-09-08
 ror:03xg1f311,Kansai University,03xg1f311,JP,8,6,2022-04-08,2026-03-12
 ror:04cvxnb49,Goethe University Frankfurt,04cvxnb49,DE,8,10,2021-05-17,2026-06-29
@@ -204,6 +202,7 @@ ror:001w7jn25,Charité - Universitätsmedizin Berlin,001w7jn25,DE,7,8,2021-05-28
 ror:0072zz521,University of Massachusetts Amherst,0072zz521,US,7,11,2019-09-17,2025-01-09
 ror:00berct97,NTT (Japan),00berct97,JP,7,7,2021-01-22,2022-10-18
 ror:00d9ah105,"University of California, Merced",00d9ah105,US,7,9,2020-04-11,2025-01-01
+ror:00pd74e08,University of Münster,00pd74e08,DE,7,9,2018-09-04,2026-01-31
 ror:00s6t1f81,University of Pavia,00s6t1f81,IT,7,5,2023-01-01,2026-02-18
 ror:00t33hh48,Chinese University of Hong Kong,00t33hh48,HK,7,9,2019-12-19,2026-01-16
 ror:00vtgdb53,University of Glasgow,00vtgdb53,GB,7,8,2022-07-22,2024-07-17
@@ -216,6 +215,7 @@ ror:01kj2bm70,Newcastle University,01kj2bm70,GB,7,11,2022-11-26,2026-06-22
 ror:01kj4z117,Southwest University,01kj4z117,CN,7,16,2024-12-18,2026-05-01
 ror:01kta7d96,McLean Hospital,01kta7d96,US,7,8,2018-10-26,2026-01-22
 ror:01sbq1a82,University of Delaware,01sbq1a82,US,7,15,2017-11-20,2023-02-07
+ror:024d6js02,Charles University,024d6js02,CZ,7,11,2020-05-29,2026-05-01
 ror:02jet3w32,LMU Klinikum,02jet3w32,DE,7,5,2021-10-28,2024-06-05
 ror:02t0qr014,University of North Carolina Wilmington,02t0qr014,US,7,4,2020-07-09,2025-01-10
 ror:02zhqgq86,University of Hong Kong,02zhqgq86,HK,7,4,2017-09-21,2022-09-07
@@ -275,9 +275,7 @@ ror:04s5mat29,University of Victoria,04s5mat29,CA,6,9,2018-09-26,2025-12-02
 ror:056wdpc91,Cognitive Neuroimaging Lab,056wdpc91,FR,6,14,2020-07-31,2026-04-16
 ror:057w15z03,Erasmus University Rotterdam,057w15z03,NL,6,5,2017-01-01,2025-07-01
 ror:05ewdps05,Bernstein Center for Computational Neuroscience Berlin,05ewdps05,DE,6,9,2023-03-22,2026-02-17
-ror:05f8a4p63,Tamagawa University,05f8a4p63,JP,6,10,2021-10-13,2026-06-19
 ror:05qpz1x62,Friedrich Schiller University Jena,05qpz1x62,DE,6,7,2020-11-01,2026-01-01
-ror:05whq8x35,Laboratoire Parole et Langage,05whq8x35,FR,6,6,2016-07-13,2025-11-25
 ror:001kjn539,St Vincent's Hospital Melbourne,001kjn539,AU,5,2,2020-05-29,2023-09-02
 ror:004fze387,Scuola Internazionale Superiore di Studi Avanzati,004fze387,IT,5,5,2021-10-25,2026-01-11
 ror:00cfam450,Helmholtz Zentrum München,00cfam450,DE,5,6,2023-03-16,2025-07-28
@@ -301,7 +299,6 @@ ror:02a33b393,Max Planck Institute for Evolutionary Anthropology,02a33b393,DE,5,
 ror:02kn6nx58,Keio University,02kn6nx58,JP,5,5,2021-03-19,2025-09-29
 ror:02p0gd045,Universidad Complutense de Madrid,02p0gd045,ES,5,6,2022-08-22,2026-01-01
 ror:02s376052,École Polytechnique Fédérale de Lausanne,02s376052,CH,5,7,2023-06-15,2025-05-04
-ror:02tyrky19,Trinity College Dublin,02tyrky19,IE,5,9,2022-04-27,2026-04-08
 ror:02y72wh86,Queen's University,02y72wh86,CA,5,16,2023-02-16,2024-06-18
 ror:033n9gh91,Carl von Ossietzky Universität Oldenburg,033n9gh91,DE,5,12,2021-02-27,2026-05-03
 ror:0371hy230,Institució Catalana de Recerca i Estudis Avançats,0371hy230,ES,5,3,2023-01-06,2026-02-18
@@ -330,6 +327,7 @@ ror:05s5xvk70,Einstein Center for Neurosciences Berlin,05s5xvk70,DE,5,5,2021-05-
 ror:05trd4x28,University of Trento,05trd4x28,IT,5,5,2022-07-21,2026-05-29
 ror:05vghhr25,University of Turku,05vghhr25,FI,5,12,2024-05-23,2026-06-12
 ror:05wg1m734,Radboud University Medical Center,05wg1m734,NL,5,10,2023-10-12,2026-05-20
+ror:05whq8x35,Laboratoire Parole et Langage,05whq8x35,FR,5,6,2016-07-13,2025-11-25
 ror:05xg72x27,Norwegian University of Science and Technology,05xg72x27,NO,5,9,2022-07-29,2026-03-20
 name:university of clermont auvergne,University of Clermont Auvergne,,FR,4,2,2021-03-04,2024-05-09
 ror:004raaa70,Université Fédérale de Toulouse Midi-Pyrénées,004raaa70,FR,4,3,2022-05-20,2023-01-12
@@ -352,7 +350,7 @@ ror:01j9f6752,University of Koblenz and Landau,01j9f6752,DE,4,3,2015-11-05,2022-
 ror:01jmxt844,University of Otago,01jmxt844,NZ,4,2,2020-01-20,2024-05-11
 ror:01khx4a30,Goldsmiths University of London,01khx4a30,GB,4,5,2020-10-20,2026-02-18
 ror:01kpzv902,Flinders University,01kpzv902,AU,4,2,2018-08-24,2025-12-03
-ror:01rf5x574,Laboratoire de Psychologie Cognitive,01rf5x574,FR,4,6,2016-07-13,2025-01-01
+ror:01kq0pv72,South China Normal University,01kq0pv72,CN,4,7,2022-08-04,2026-06-09
 ror:01t4k8953,Laboratoire de Psychologie Sociale et Cognitive,01t4k8953,FR,4,2,2021-03-04,2024-05-09
 ror:01tm6cn81,University of Gothenburg,01tm6cn81,SE,4,3,2022-08-22,2023-10-18
 ror:01wntqw50,Ankara University,01wntqw50,TR,4,7,2023-04-22,2026-01-19
@@ -369,6 +367,7 @@ ror:02jz4aj89,Maastricht University,02jz4aj89,NL,4,6,2016-07-05,2026-02-18
 ror:02k7v4d05,University of Bern,02k7v4d05,CH,4,4,2023-05-03,2025-04-25
 ror:02kzqn938,Université de Lille,02kzqn938,FR,4,5,2022-12-20,2026-02-18
 ror:02smfhw86,Virginia Tech,02smfhw86,US,4,7,2021-03-11,2026-05-22
+ror:02tyrky19,Trinity College Dublin,02tyrky19,IE,4,8,2022-04-27,2026-04-08
 ror:02v51f717,Peking University,02v51f717,CN,4,5,2020-03-20,2026-02-27
 ror:02v6kpv12,Université Toulouse III - Paul Sabatier,02v6kpv12,FR,4,2,2022-05-20,2023-08-21
 ror:02w2y2t16,Leuphana University of Lüneburg,02w2y2t16,DE,4,4,2023-01-23,2025-01-30
@@ -382,6 +381,7 @@ ror:03j7v5j15,"Institute of Psychology, Chinese Academy of Sciences",03j7v5j15,C
 ror:03mtd9a03,Stanford Medicine,03mtd9a03,US,4,6,2021-03-18,2026-05-20
 ror:03qc8vh97,University of Trás-os-Montes and Alto Douro,03qc8vh97,PT,4,7,2022-05-04,2025-05-05
 ror:03qvqb743,Chuo University,03qvqb743,JP,4,1,2022-01-01,2022-07-04
+ror:03qxff017,Hebrew University of Jerusalem,03qxff017,IL,4,8,2020-09-22,2025-02-20
 ror:03xc55g68,Université Mohammed VI Polytechnique,03xc55g68,MA,4,2,2020-04-07,2026-01-09
 ror:03z77qz90,University of Tartu,03z77qz90,EE,4,3,2023-04-25,2025-01-20
 ror:03zga2b32,University of Bergen,03zga2b32,NO,4,5,2020-05-29,2025-12-19
@@ -403,8 +403,8 @@ ror:04v2twj65,Oxford Brookes University,04v2twj65,GB,4,11,2019-01-22,2021-03-31
 ror:04vg4w365,Loughborough University,04vg4w365,GB,4,2,2016-05-27,2025-02-17
 ror:04xyxjd90,Nottingham Trent University,04xyxjd90,GB,4,3,2021-02-04,2024-09-24
 ror:04zc7p361,University of Kassel,04zc7p361,DE,4,5,2020-12-23,2026-01-31
-ror:053avzc18,Czech Academy of Sciences,053avzc18,CZ,4,2,2022-01-25,2026-03-10
 ror:05ejpqr48,Worcester Polytechnic Institute,05ejpqr48,US,4,12,2023-08-17,2026-03-09
+ror:05f8a4p63,Tamagawa University,05f8a4p63,JP,4,9,2021-10-13,2026-06-19
 ror:05fa8ka61,INESC TEC,05fa8ka61,PT,4,8,2022-05-04,2024-09-02
 ror:05fcmfe52,Fryske Akademy,05fcmfe52,NL,4,3,2020-01-01,2022-05-18
 ror:05gg4qm19,Yamagata University Hospital,05gg4qm19,JP,4,2,2021-01-01,2024-02-29
@@ -444,11 +444,11 @@ ror:01dq60k83,Tohoku University,01dq60k83,JP,3,6,2023-01-01,2025-03-08
 ror:01g8djv19,Solvay (Belgium),01g8djv19,BE,3,2,2019-07-03,2022-12-05
 ror:01gmqr298,Vita-Salute San Raffaele University,01gmqr298,IT,3,6,2023-08-24,2025-06-21
 ror:01jsgmp44,HUN-REN Institute of Experimental Medicine,01jsgmp44,HU,3,1,2025-04-11,2025-08-30
-ror:01kq0pv72,South China Normal University,01kq0pv72,CN,3,6,2022-08-04,2026-06-09
 ror:01nfmeh72,University of Tasmania,01nfmeh72,AU,3,4,2019-09-17,2023-12-04
 ror:01p93h210,University of South Australia,01p93h210,AU,3,1,2019-01-01,2021-01-10
 ror:01pnej532,University of Szeged,01pnej532,HU,3,2,2022-05-05,2025-06-05
 ror:01q9sj412,University Hospital of Bern,01q9sj412,CH,3,3,2021-10-21,2023-05-03
+ror:01rf5x574,Laboratoire de Psychologie Cognitive,01rf5x574,FR,3,5,2016-07-13,2025-01-01
 ror:01sdtdd95,Canadian Institute for Advanced Research,01sdtdd95,CA,3,6,2022-01-01,2024-10-21
 ror:01wttbg53,Hult International Business School,01wttbg53,GB,3,2,2019-07-03,2022-12-05
 ror:01yqg2h08,Harbin Institute of Technology,01yqg2h08,CN,3,5,2022-04-07,2024-02-28
@@ -472,7 +472,6 @@ ror:02k5swt12,Universidade Federal de São Paulo,02k5swt12,BR,3,7,2024-12-31,202
 ror:02mpq6x41,University of Illinois Chicago,02mpq6x41,US,3,4,2022-10-13,2026-02-28
 ror:02nzxcb82,Center for Translational Neurophysiology of Speech and Communication,02nzxcb82,IT,3,2,2022-07-22,2023-12-07
 ror:02pttbw34,Baylor College of Medicine,02pttbw34,US,3,7,2020-10-09,2021-07-21
-ror:02qsmb048,University of Belgrade,02qsmb048,RS,3,9,1970-01-01,2025-07-01
 ror:02qt0xs84,Cal Poly Humboldt,02qt0xs84,US,3,9,2023-10-23,2026-03-01
 ror:02qtvee93,Carleton University,02qtvee93,CA,3,3,2021-01-01,2024-07-10
 ror:02t274463,"University of California, Santa Barbara",02t274463,US,3,5,2021-01-14,2025-11-01
@@ -492,7 +491,6 @@ ror:03gh96r95,Bowdoin College,03gh96r95,US,3,1,2024-01-21,2025-01-02
 ror:03hv28176,Leibniz-Institut für Wissensmedien,03hv28176,DE,3,3,2021-02-12,2025-10-30
 ror:03kgsv495,Bar-Ilan University,03kgsv495,IL,3,3,2020-07-31,2026-04-02
 ror:03p2z7827,Benemérita Universidad Autónoma de Puebla,03p2z7827,MX,3,4,2023-05-30,2025-04-21
-ror:03qxff017,Hebrew University of Jerusalem,03qxff017,IL,3,8,2020-09-22,2025-02-20
 ror:03t78wx29,Hiroshima University,03t78wx29,JP,3,11,2019-01-01,2024-08-01
 ror:041kmwe10,Imperial College London,041kmwe10,GB,3,6,2023-05-03,2023-11-07
 ror:043071f54,University of Roehampton,043071f54,GB,3,2,2020-05-29,2023-09-18
@@ -541,7 +539,6 @@ ror:05tkyf982,Ben-Gurion University of the Negev,05tkyf982,IL,3,3,2021-02-11,202
 "name:department of psychology, stanford university","Department of Psychology, Stanford University.",,,2,1,2025-12-30,2026-06-01
 "name:department of psychology, university of wisconsin-madison","Department of Psychology, University of Wisconsin-Madison.",,,2,3,2025-12-30,2026-06-01
 ror:001gpfp45,California Polytechnic State University,001gpfp45,US,2,5,2021-02-18,2022-02-11
-ror:001xj8m36,Institute for Anthropological Research,001xj8m36,HR,2,1,2026-05-22,2026-05-22
 ror:00453a208,City University of New York,00453a208,US,2,2,2021-04-26,2022-04-14
 ror:00523a319,VIZJA University,00523a319,PL,2,1,2025-10-01,2026-02-18
 ror:0086bb350,Einstein Center Digital Future,0086bb350,DE,2,1,2024-01-01,2026-01-01
@@ -636,7 +633,6 @@ ror:025vmq686,Pontifícia Universidade Católica do Rio Grande do Sul,025vmq686,
 ror:0264fdx42,San Diego State University,0264fdx42,US,2,2,2017-08-20,2020-01-28
 ror:026ejyb70,Oxford Centre for Computational Neuroscience,026ejyb70,GB,2,2,2019-03-08,2024-10-21
 ror:026k5mg93,University of East Anglia,026k5mg93,GB,2,4,2021-03-11,2026-05-11
-ror:026vcq606,KTH Royal Institute of Technology,026vcq606,SE,2,5,2023-01-19,2023-07-26
 ror:02788t795,Maudsley Hospital,02788t795,GB,2,1,2020-05-29,2021-06-04
 ror:027arzy69,Centre Hospitalier Universitaire de Caen Normandie,027arzy69,FR,2,3,2025-10-01,2026-02-18
 ror:027ynra39,University of Bari Aldo Moro,027ynra39,IT,2,2,2025-10-01,2026-02-18
@@ -666,7 +662,7 @@ ror:02nfy3535,Munich Center for Machine Learning,02nfy3535,,2,2,2025-04-24,2026-
 ror:02pammg90,Cedars-Sinai Medical Center,02pammg90,US,2,6,2021-07-08,2022-05-05
 ror:02qa5kg76,Australian Regenerative Medicine Institute,02qa5kg76,AU,2,2,2022-08-05,2026-02-16
 ror:02qjrjx09,University of Cyprus,02qjrjx09,CY,2,1,2021-06-18,2022-09-07
-ror:02rmd1t30,Babeș-Bolyai University,02rmd1t30,RO,2,2,2019-09-04,2026-02-10
+ror:02qsmb048,University of Belgrade,02qsmb048,RS,2,9,2024-05-09,2025-07-01
 ror:02rvd6d64,Psychological Institute of the Russian Academy of Education,02rvd6d64,RU,2,4,2018-01-01,2021-09-24
 ror:02sc3r913,Griffith University,02sc3r913,AU,2,5,2020-09-14,2022-05-30
 ror:02t1bej08,Monash Health,02t1bej08,AU,2,2,2023-09-02,2026-01-13
@@ -684,7 +680,6 @@ ror:036x5ad56,University of Luxembourg,036x5ad56,LU,2,2,2020-01-17,2021-10-21
 ror:037vvf096,Karamanoğlu Mehmetbey University,037vvf096,TR,2,1,2026-01-19,2026-05-20
 ror:038s1ax16,Temple College,038s1ax16,US,2,8,2022-11-28,2024-04-29
 ror:039fp5n52,At Bristol,039fp5n52,GB,2,1,2023-12-09,2025-12-06
-ror:039yyjw43,Royal Anthropological Institute,039yyjw43,GB,2,1,2026-05-22,2026-05-22
 ror:039zxt351,IRCCS Ospedale San Raffaele,039zxt351,IT,2,1,2023-08-24,2025-06-21
 ror:03anc3s24,Austrian Academy of Sciences,03anc3s24,AT,2,1,2022-12-07,2024-03-23
 ror:03dzc0485,University of Regina,03dzc0485,CA,2,2,2022-12-05,2024-03-15
@@ -738,7 +733,6 @@ ror:04kwvgz42,Hacettepe University,04kwvgz42,TR,2,1,2023-04-22,2025-12-31
 ror:04mghma93,Heriot-Watt University,04mghma93,GB,2,4,2024-01-01,2024-03-08
 ror:04mp4zc06,Laboratoire d'étude de l'apprentissage et du développement,04mp4zc06,FR,2,1,2024-04-30,2025-01-20
 ror:04mz9mt17,University of Nottingham Malaysia Campus,04mz9mt17,MY,2,1,2021-02-11,2023-08-24
-ror:04na1dr63,Anthropological Survey of India,04na1dr63,IN,2,1,2026-05-22,2026-05-22
 ror:04nkkrh90,LWL-Universitätsklinikum Bochum,04nkkrh90,DE,2,8,2025-09-17,2026-07-09
 ror:04nm1cv11,University Hospitals Bristol NHS Foundation Trust,04nm1cv11,GB,2,3,2023-12-09,2025-12-06
 ror:04nt8b154,Fukuoka University,04nt8b154,JP,2,6,2024-09-02,2025-01-01
@@ -759,6 +753,7 @@ ror:051fd9666,Case Western Reserve University,051fd9666,US,2,5,2023-07-31,2025-0
 ror:051kpcy16,Université de Caen Normandie,051kpcy16,FR,2,3,2025-10-01,2026-02-18
 ror:052g8jq94,Universitat Autònoma de Barcelona,052g8jq94,ES,2,1,2023-12-13,2024-11-14
 ror:052w4zt36,American University,052w4zt36,US,2,2,2021-10-19,2022-02-09
+ror:053avzc18,Czech Academy of Sciences,053avzc18,CZ,2,2,2022-01-25,2024-05-24
 ror:058hz8544,Institut des Sciences Cognitives,058hz8544,FR,2,2,2025-12-30,2026-05-11
 ror:058zz0t50,California Southern University,058zz0t50,US,2,13,2019-12-19,2025-03-11
 ror:059tvcg64,Adobe Systems (United States),059tvcg64,US,2,7,2022-03-31,2022-06-12
@@ -780,10 +775,8 @@ ror:05k8pq072,Universidade Cruzeiro do Sul,05k8pq072,BR,2,1,2025-10-01,2026-02-1
 ror:05kkv3f82,Universität der Bundeswehr München,05kkv3f82,DE,2,2,2020-03-26,2020-04-24
 ror:05mzfcs16,The Open University,05mzfcs16,GB,2,1,2022-12-07,2023-05-03
 ror:05p0pbv75,Toyota Motor Corporation (Switzerland),05p0pbv75,CH,2,2,2019-06-26,2026-06-11
-ror:05pm8ec76,Laboratoire d'Anthropologie Sociale,05pm8ec76,FR,2,1,2026-05-22,2026-05-22
 ror:05qghxh33,Stony Brook University,05qghxh33,US,2,3,2024-08-23,2026-04-09
 ror:05r183591,"Institute of Linguistics, Academia Sinica",05r183591,TW,2,1,2024-01-01,2024-03-08
-ror:05r8dqr10,University of Rijeka,05r8dqr10,HR,2,3,2026-02-26,2026-06-18
 ror:05rcxtd95,Fondazione Santa Lucia,05rcxtd95,IT,2,1,2022-07-22,2022-09-30
 ror:05vf56z40,University of Tehran,05vf56z40,IR,2,5,2021-11-01,2023-09-01
 ror:05xhpce34,St Göran's Children's Hospital,05xhpce34,SE,2,1,2025-04-26,2025-05-28
@@ -835,7 +828,6 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:department of coaching education, faculty of sport science, celal bayar university, manisa, turkey","Department of Coaching Education, Faculty of Sport Science, Celal Bayar University, Manisa, Turkey.",,,1,1,2025-03-07,2025-03-07
 "name:department of cognitive science, central european university, wien 1100, austria","Department of Cognitive Science, Central European University, Wien 1100, Austria.",,,1,1,2025-03-11,2025-03-11
 "name:department of cognitive science, university of california, san diego, la jolla, ca,usa","Department of Cognitive Science, University of California, San Diego, La Jolla, CA,USA.",,,1,1,2026-04-01,2026-04-01
-"name:department of cognitive sciences, the hebrew university of jerusalem, jerusalem, israel","Department of Cognitive Sciences, The Hebrew University of Jerusalem, Jerusalem, Israel.",,,1,1,2022-04-28,2022-04-28
 "name:department of computer science and information engineering, national taiwan university, taipei 10617, taiwan","Department of Computer Science and Information Engineering, National Taiwan University, Taipei 10617, Taiwan.",,,1,1,2021-10-28,2021-10-28
 "name:department of computer science, brown university","Department of Computer Science, Brown University.",,,1,1,2025-12-30,2025-12-30
 "name:department of computer science, university of wisconsin-madison","Department of Computer Science, University of Wisconsin-Madison.",,,1,1,2026-06-01,2026-06-01
@@ -844,6 +836,7 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:department of electrical engineering, national taiwan university, taipei 10617, taiwan","Department of Electrical Engineering, National Taiwan University, Taipei 10617, Taiwan.",,,1,1,2021-10-28,2021-10-28
 "name:department of exercise and sport sciences, faculty of health science, izmir democracy university, izmir, turkey","Department of Exercise and Sport Sciences, Faculty of Health Science, Izmir Democracy University, Izmir, Turkey.",,,1,1,2025-03-07,2025-03-07
 "name:department of experimental psychology, ghent university, ghent, belgium","Department of Experimental Psychology, Ghent University, Ghent, Belgium.",,,1,4,2021-07-30,2021-07-30
+"name:department of informatics and mathematics, freie universität berlin, berlin, germany","Department of Informatics and Mathematics, Freie Universität Berlin, Berlin, Germany.",,,1,1,2019-09-04,2019-09-04
 "name:department of neurology, charité – universitätsmedizin berlin, berlin, germany","Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany",,,1,1,2024-04-28,2024-04-28
 "name:department of neurology, national taiwan university hospital, college of medicine, national taiwan university, taipei 10048, taiwan","Department of Neurology, National Taiwan University Hospital, College of Medicine, National Taiwan University, Taipei 10048, Taiwan.",,,1,1,2021-10-28,2021-10-28
 "name:department of neuroscience, washington university school of medicine, st louis, missouri, united states of america","Department of Neuroscience, Washington University School of Medicine, St Louis, Missouri, United States of America.",,,1,1,2025-04-11,2025-04-11
@@ -856,12 +849,11 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:department of psychological and brain sciences, university of iowa","Department of Psychological and Brain Sciences, University of Iowa.",,,1,2,2025-12-04,2025-12-04
 "name:department of psychological and brain sciences, washington university in st louis","Department of Psychological and Brain Sciences, Washington University in St. Louis.",,,1,2,2026-02-12,2026-02-12
 "name:department of psychology and neuroscience, temple university, pa, usa","Department of Psychology and Neuroscience, Temple University, PA, USA.",,,1,4,2026-03-18,2026-03-18
-"name:department of psychology and the federmann center for the study of rationality, the hebrew university of jerusalem, jerusalem, israel","Department of Psychology and The Federmann Center for the Study of Rationality, The Hebrew University of Jerusalem, Jerusalem, Israel.",,,1,1,2022-04-28,2022-04-28
 "name:department of psychology, 2121 berkeley way west, berkeley, california 94720, usa","Department of Psychology, 2121 Berkeley Way West, Berkeley, California 94720, USA.",,,1,2,2021-07-01,2021-07-01
+"name:department of psychology, babeş-bolyai university, cluj-napoca, romania","Department of Psychology, Babeş-Bolyai University, Cluj-Napoca, Romania.",,,1,1,2019-09-04,2019-09-04
 "name:department of psychology, brooklyn college and graduate center, the city university of new york, brooklyn, ny 11210, usa","Department of Psychology, Brooklyn College and Graduate Center, The City University of New York, Brooklyn, NY 11210, USA.",,,1,1,2023-05-19,2023-05-19
 "name:department of psychology, college of natural and health sciences, zayed university, abu dhabi, uae","Department of Psychology, College of Natural and Health Sciences, Zayed University, Abu Dhabi, UAE.",,,1,1,2026-02-21,2026-02-21
 "name:department of psychology, college of science, national taiwan university, taipei 10617, taiwan","Department of Psychology, College of Science, National Taiwan University, Taipei 10617, Taiwan.",,,1,5,2021-10-28,2021-10-28
-"name:department of psychology, columbia university, new york, ny, usa","Department of Psychology, Columbia University, New York, NY, USA.",,,1,2,2022-04-28,2022-04-28
 "name:department of psychology, huron university college, london, on, canada","Department of Psychology, Huron University College, London, ON, Canada.",,,1,1,2020-12-28,2020-12-28
 "name:department of psychology, korea army academy at yeongcheon, gyeongsangbuk-do, republic of korea","Department of Psychology, Korea Army Academy at Yeongcheon, Gyeongsangbuk-do, Republic of Korea.",,,1,1,2024-09-09,2024-09-09
 "name:department of psychology, linnaeus university, växjö, sweden","Department of Psychology, Linnaeus University, Växjö, Sweden.",,,1,1,2020-08-31,2020-08-31
@@ -886,7 +878,6 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:department of psychology, university of hong kong, pok fu lam, hong kong","Department of Psychology, University of Hong Kong, Pok Fu Lam, Hong Kong.",,,1,1,2020-12-21,2020-12-21
 "name:department of psychology, university of lorraine, nancy, france","Department of Psychology, University of Lorraine, Nancy, France.",,,1,1,2020-08-31,2020-08-31
 "name:department of psychology, university of minnesota","Department of Psychology, University of Minnesota.",,,1,1,2025-12-04,2025-12-04
-"name:department of psychology, university of pennsylvania, philadelphia, pa, usa","Department of Psychology, University of Pennsylvania, Philadelphia, PA, USA.",,,1,1,2022-04-28,2022-04-28
 "name:department of psychology, vanderbilt university, 2301 vanderbilt place, nashville, tn 37240, usa","Department of Psychology, Vanderbilt University, 2301 Vanderbilt Place, Nashville, TN 37240, USA.",,,1,1,2021-03-17,2021-03-17
 "name:department of psychology, yale university, new haven, connecticut, united states of america","Department of Psychology, Yale University, New Haven, Connecticut, United States of America.",,,1,1,2025-04-11,2025-04-11
 "name:department of psychology, yale university, new haven, ct 06511, usa","Department of Psychology, Yale University, New Haven, CT 06511, USA.",,,1,1,2021-04-23,2021-04-23
@@ -896,7 +887,6 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:experimental psychology, helmholtz institute, utrecht university, utrecht, the netherlands","Experimental Psychology, Helmholtz Institute, Utrecht University, Utrecht, the Netherlands.",,,1,2,2025-01-06,2025-01-06
 "name:eye information laboratory, it university of copenhagen, copenhagen, denmark","Eye Information Laboratory, IT University of Copenhagen, Copenhagen, Denmark.",,,1,1,2025-01-06,2025-01-06
 "name:fachgebiet fur statistische methoden in den sozialwissenschaften, technische universitat dortmund","Fachgebiet fur Statistische Methoden in den Sozialwissenschaften, Technische Universitat Dortmund.",,,1,2,2025-12-04,2025-12-04
-"name:faculty of education, yunnan normal university, kunming, yunnan, china","Faculty of Education, Yunnan Normal University, Kunming, Yunnan, China.",,,1,6,2025-10-01,2025-10-01
 "name:faculty of social data science, hitotsubashi university, tokyo, japan","Faculty of Social Data Science, Hitotsubashi University, Tokyo, Japan.",,,1,1,2026-03-05,2026-03-05
 "name:free university berlin, berlin, de","Free University Berlin, Berlin, DE.",,,1,1,2021-08-12,2021-08-12
 "name:google deepmind, berlin, germany","Google DeepMind, Berlin, Germany.",,,1,2,2025-11-12,2025-11-12
@@ -918,9 +908,7 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:inter-university laboratory of human movement biology, univ lyon, university claude bernard lyon 1, villeurbanne, france","Inter-University Laboratory of Human Movement Biology, Univ Lyon, University Claude Bernard Lyon 1, Villeurbanne, France.",,,1,1,2024-10-22,2024-10-22
 "name:international laboratory for brain, music and sound research (brams), montreal, qc, canada","International Laboratory for Brain, Music and Sound Research (BRAMS), Montreal, QC, Canada.",,,1,1,2024-10-22,2024-10-22
 "name:japan society for the promotion of science, tokyo 1020083, japan","Japan Society for the Promotion of Science, Tokyo 1020083, Japan.",,,1,1,2025-03-11,2025-03-11
-"name:kavli institute for brain science, columbia university, new york, ny, usa","Kavli Institute for Brain Science, Columbia University, New York, NY, USA.",,,1,1,2022-04-28,2022-04-28
 "name:ku phonetics and psycholinguistics lab, department of linguistics, university of kansas, lawrence, ks usa","KU Phonetics and Psycholinguistics Lab, Department of Linguistics, University of Kansas, Lawrence, KS USA.",,,1,2,2023-01-28,2023-01-28
-"name:laboratory assets office, south china normal university, shanwei, guangdong, china","Laboratory Assets Office, South China Normal University, Shanwei, Guangdong, China.",,,1,1,2025-10-01,2025-10-01
 "name:laboratory of social and decision neuroscience, school of psychology, korea university, seoul, republic of korea","Laboratory of Social and Decision Neuroscience, School of Psychology, Korea University, Seoul, Republic of Korea.",,,1,3,2024-09-09,2024-09-09
 "name:lane medical library, stanford university, stanford, ca, united states of america","Lane Medical Library, Stanford University, Stanford, CA, United States of America.",,,1,1,2021-05-21,2021-05-21
 "name:language and brain lab, department of linguistics, simon fraser university, burnaby, bc canada","Language and Brain Lab, Department of Linguistics, Simon Fraser University, Burnaby, BC Canada.",,,1,3,2023-01-28,2023-01-28
@@ -956,10 +944,10 @@ name:department of biology,Department of Biology.,,,1,2,2023-05-19,2023-05-19
 "name:school of psychology, georgia institute of technology, atlanta, ga, united states","School of Psychology, Georgia Institute of Technology, Atlanta, GA, United States.",,,1,2,2021-09-01,2021-09-01
 "name:school of psychology, the university of sydney, camperdown, nsw, australia","School of Psychology, The University of Sydney, Camperdown, NSW, Australia.",,,1,2,2023-01-26,2023-01-26
 "name:school of psychology, the university of sydney, sydney, nsw, australia","School of Psychology, The University of Sydney, Sydney, NSW, Australia.",,,1,2,2025-06-04,2025-06-04
+"name:school of psychology, university of plymouth, plymouth, united kingdom","School of Psychology, University of Plymouth, Plymouth, United Kingdom.",,,1,1,2019-09-04,2019-09-04
 "name:science of consciousness research group, dipartimento di psicologia generale, università di padova, padova, italy","Science of Consciousness Research Group, Dipartimento di Psicologia Generale, Università di Padova, Padova, Italy.",,,1,1,2020-08-31,2020-08-31
 "name:sfb 833, university of tübingen, tübingen, germany","SFB 833, University of Tübingen, Tübingen, Germany.",,,1,1,2021-04-15,2021-04-15
 "name:skidmore college, saratoga springs, usa","Skidmore College, Saratoga Springs, USA.",,,1,1,2023-11-06,2023-11-06
-"name:special education department, ludwigsburg university of education, ludwigsburg, germany","Special Education Department, Ludwigsburg University of Education, Ludwigsburg, Germany.",,,1,1,2025-10-01,2025-10-01
 "name:state key laboratory of brain and cognitive science, university of hong kong, pok fu lam, hong kong","State Key Laboratory of Brain and Cognitive Science, University of Hong Kong, Pok Fu Lam, Hong Kong.",,,1,1,2020-12-21,2020-12-21
 name:suny neuroscience research institute,SUNY Neuroscience Research Institute.,,,1,2,2023-05-19,2023-05-19
 "name:sussex neuroscience, school of life sciences, university of sussex, brighton bn1 9qg, united kingdom","Sussex Neuroscience, School of Life Sciences, University of Sussex, Brighton BN1 9QG, United Kingdom.",,,1,1,2023-05-19,2023-05-19
@@ -977,7 +965,6 @@ name:toulouse mathematics institute,Toulouse Mathematics Institute,,FR,1,1,2023-
 "name:wellcome centre for human neuroimaging, university college london, london wc1n 3bg, uk","Wellcome Centre for Human Neuroimaging, University College London, London WC1N 3BG, UK",,,1,3,2018-12-01,2018-12-01
 "name:wisconsin institute for discovery, university of wisconsin-madison","Wisconsin Institute for Discovery, University of Wisconsin-Madison.",,,1,3,2026-06-01,2026-06-01
 "name:yale university, new haven, ct 06520, usa","Yale University, New Haven, CT 06520, USA.",,,1,3,2023-08-15,2023-08-15
-"name:zuckerman mind brain behavior institute, columbia university, new york, ny, usa","Zuckerman Mind Brain Behavior Institute, Columbia University, New York, NY, USA.",,,1,2,2022-04-28,2022-04-28
 ror:00013q465,Pontificia Universidad Católica del Perú,00013q465,PE,1,1,2024-12-12,2024-12-12
 ror:0009eec40,Laboratoire de Linguistique de Nantes,0009eec40,,1,1,2020-09-02,2020-09-02
 ror:000pvc513,Institut de Chimie de Nice,000pvc513,FR,1,1,2026-02-18,2026-02-18
@@ -1064,6 +1051,7 @@ ror:00qsyw664,Istanbul Aydın University,00qsyw664,TR,1,1,2024-09-14,2024-09-14
 ror:00r4sry34,Murdoch University,00r4sry34,AU,1,1,2025-07-01,2025-07-01
 ror:00r9w3j27,National Center for Global Health and Medicine,00r9w3j27,JP,1,1,2025-07-26,2025-07-26
 ror:00rxpqe74,Providence College,00rxpqe74,US,1,1,2019-08-14,2019-08-14
+ror:00sc9n023,Yunnan Normal University,00sc9n023,CN,1,6,2025-09-18,2025-09-18
 ror:00scwqd12,Missouri University of Science and Technology,00scwqd12,US,1,2,2020-06-17,2020-06-17
 ror:00sfmx060,Pontifícia Universidade Católica de São Paulo,00sfmx060,BR,1,1,2025-07-01,2025-07-01
 ror:00t3r8h32,University of Lübeck,00t3r8h32,DE,1,6,2026-01-01,2026-01-01
@@ -1248,6 +1236,7 @@ ror:025wzwv46,University of Northern British Columbia,025wzwv46,CA,1,1,2024-12-1
 ror:025xvn046,Sciences et Technologies de la Musique et du Son,025xvn046,,1,2,2024-10-04,2024-10-04
 ror:02601yx74,Beijing National Laboratory for Molecular Sciences,02601yx74,CN,1,4,2023-07-16,2023-07-16
 ror:026n0rw09,Instituto Nacional de Ciência e Tecnologia de Obesidade e Diabetes,026n0rw09,BR,1,1,2025-07-01,2025-07-01
+ror:026vcq606,KTH Royal Institute of Technology,026vcq606,SE,1,4,2023-07-26,2023-07-26
 ror:0270vfa57,University of Southern Mississippi,0270vfa57,US,1,1,2019-09-17,2019-09-17
 ror:0272j5188,Northern Arizona University,0272j5188,US,1,1,2024-07-11,2024-07-11
 ror:027b5pf36,True (United States),027b5pf36,US,1,5,2019-09-10,2019-09-10
@@ -1260,7 +1249,6 @@ ror:028kg9j04,Universidade Federal do ABC,028kg9j04,BR,1,2,2021-02-18,2021-02-18
 ror:028prp877,Tanzania National Parks,028prp877,TZ,1,1,2020-04-11,2020-04-11
 ror:0291ys696,Michigan United,0291ys696,US,1,1,2022-01-01,2022-01-01
 ror:0294hxs80,California State University Los Angeles,0294hxs80,US,1,1,2024-07-20,2024-07-20
-ror:029a4pp87,Hôpital Nord,029a4pp87,FR,1,1,1970-01-01,1970-01-01
 ror:029njb796,Perm State University,029njb796,RU,1,2,2024-12-17,2024-12-17
 ror:029qx3s09,High Point University,029qx3s09,US,1,1,2026-02-23,2026-02-23
 ror:029smmd76,University of Human Environments,029smmd76,JP,1,1,2020-06-15,2020-06-15
@@ -1290,6 +1278,7 @@ ror:02hh7en24,University of Colorado Denver,02hh7en24,US,1,2,2019-09-23,2019-09-
 ror:02hr72y72,Open Data Institute,02hr72y72,GB,1,2,2023-10-26,2023-10-26
 ror:02hs8e066,National University College,02hs8e066,PR,1,1,2025-11-20,2025-11-20
 ror:02hzxf772,Sitma (Norway),02hzxf772,NO,1,3,2023-05-08,2023-05-08
+ror:02j0n6s98,Ludwigsburg University of Education,02j0n6s98,DE,1,1,2025-09-18,2025-09-18
 ror:02j3qj605,Dartmouth Hospital,02j3qj605,GB,1,2,2025-01-19,2025-01-19
 ror:02j61yw88,Aristotle University of Thessaloniki,02j61yw88,GR,1,1,2024-12-31,2024-12-31
 ror:02j652854,Universitas Komputer Indonesia,02j652854,ID,1,2,2021-01-01,2021-01-01
@@ -1323,6 +1312,7 @@ ror:02r109517,Weill Cornell Medicine,02r109517,US,1,6,2023-04-19,2023-04-19
 ror:02rc97e94,University of Calabria,02rc97e94,IT,1,1,2025-11-21,2025-11-21
 ror:02rcazp29,TrygFonden,02rcazp29,DK,1,1,2024-03-01,2024-03-01
 ror:02rdkx920,United States Army Combat Capabilities Development Command,02rdkx920,US,1,2,2020-06-18,2020-06-18
+ror:02rmd1t30,Babeș-Bolyai University,02rmd1t30,RO,1,1,2026-02-10,2026-02-10
 ror:02rqvrp93,Meiji University,02rqvrp93,JP,1,1,2022-11-14,2022-11-14
 ror:02rsjh069,Carilion Clinic,02rsjh069,US,1,2,2021-03-11,2021-03-11
 ror:02s6k3f65,University of Basel,02s6k3f65,CH,1,1,2020-12-23,2020-12-23
@@ -1609,7 +1599,6 @@ ror:04wga4j73,Gold Skin Care Center,04wga4j73,US,1,2,2021-10-28,2021-10-28
 ror:04wn09761,Universidade Federal do Rio Grande do Norte,04wn09761,BR,1,2,2024-05-23,2024-05-23
 ror:04wnc7270,Complex Engineering System Institute,04wnc7270,CL,1,1,2026-02-14,2026-02-14
 ror:04wsqd844,Direction Générale de l'Armement,04wsqd844,FR,1,1,2025-12-03,2025-12-03
-ror:04wt43v05,Twitter (United States),04wt43v05,US,1,1,2026-07-02,2026-07-02
 ror:04xa5qt51,XLAB (Slovenia),04xa5qt51,SI,1,2,2025-11-22,2025-11-22
 ror:04xhy8q59,Université de Poitiers,04xhy8q59,FR,1,1,2024-12-12,2024-12-12
 ror:04xnm9a92,The Russian Presidential Academy of National Economy and Public Administration,04xnm9a92,RU,1,1,2015-07-13,2015-07-13
@@ -1704,6 +1693,7 @@ ror:05q3vnk25,Institut de Recherche pour le Développement,05q3vnk25,FR,1,2,2023
 ror:05q5pk319,Hochschule für Technik und Wirtschaft Dresden – University of Applied Sciences,05q5pk319,DE,1,1,2026-03-01,2026-03-01
 ror:05qbk4x57,University of Chinese Academy of Sciences,05qbk4x57,CN,1,3,2023-01-01,2023-01-01
 ror:05r3dyn47,Center for Systems Biology,05r3dyn47,US,1,1,2020-07-03,2020-07-03
+ror:05r8dqr10,University of Rijeka,05r8dqr10,HR,1,3,2026-02-26,2026-02-26
 ror:05r9xgf14,Washington and Lee University,05r9xgf14,US,1,1,2025-08-18,2025-08-18
 ror:05rsv9s98,United States Department of Veterans Affairs,05rsv9s98,US,1,1,2023-09-08,2023-09-08
 ror:05ry19w12,Cofely (Switzerland),05ry19w12,CH,1,1,2025-10-21,2025-10-21
@@ -1727,4 +1717,3 @@ ror:05xvt9f17,Leiden University Medical Center,05xvt9f17,NL,1,1,2022-02-16,2022-
 ror:05xw0ep96,"Czech Academy of Sciences, Institute of Physiology",05xw0ep96,CZ,1,4,2023-05-30,2023-05-30
 ror:05ydjnb78,University of Passau,05ydjnb78,DE,1,1,2025-09-01,2025-09-01
 ror:05ymca674,McGovern Institute for Brain Research,05ymca674,US,1,1,2017-10-11,2017-10-11
-ror:05ynxx418,Linköping University,05ynxx418,SE,1,1,2023-01-19,2023-01-19

@@ -22,6 +22,7 @@ One row per unique paper.
 | `publication_year` | Year of publication. |
 | `publication_date` | Publication date (`YYYY-MM-DD`) when known. |
 | `type` | Work type (e.g. `article`, `preprint`). |
+| `is_preprint` | **Derived, recomputed every run** — manual edits will not stick (unlike `notes`/`exclude`). `True` only when a strong preprint signal fires: `type` is exactly `preprint`, the DOI prefix belongs to a known preprint server (PsyArXiv, OSF Preprints, bioRxiv/medRxiv, arXiv, Research Square, Preprints.org, SocArXiv, EdArXiv, SSRN), or the venue names one of those servers. `False` means "not confidently identified as a preprint", **not** "confirmed published". |
 | `cited_by_count` | Citation count as reported by the source. |
 | `cited_2015` | *How found* — cites the 2015 jsPsych paper (OpenAlex `W2161418887`). |
 | `cited_joss` | *How found* — cites the 2023 jsPsych JOSS paper (OpenAlex `W4376138907`). |
@@ -130,7 +131,12 @@ email fragments are dropped during aggregation, but other free-text variants
 of the same institution may appear as separate `name:` rows.
 
 Papers with `exclude` set to `True` in `data/papers.csv` are omitted from
-both tables. The tables are **regenerated from scratch every monthly run** —
+both tables, and so are papers whose `type` is a non-research type
+(`software`, `peer-review`, `paratext`, `erratum`, `dataset`) — the raw data
+CSVs keep everything; only the analysis filters them. The whole `type`
+string must equal one of those values, so compound Europe PMC types such as
+`research-article; Journal Article` are never filtered. The tables are
+**regenerated from scratch every monthly run** —
 manual edits to files under `analysis/` will be overwritten. Notes and
 exclusions belong in `data/papers.csv`, which is the only place manual edits
 persist.

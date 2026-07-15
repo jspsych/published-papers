@@ -53,10 +53,55 @@ FLAG_COLUMNS = ["cited_2015", "cited_joss", "fulltext_openalex", "fulltext_epmc"
 
 PAPER_COLUMNS = [
     "id", "doi", "title", "venue", "publication_year", "publication_date",
-    "type", "cited_by_count", "cited_2015", "cited_joss",
+    "type", "is_preprint", "cited_by_count", "cited_2015", "cited_joss",
     "fulltext_openalex", "fulltext_epmc", "first_author", "n_authors",
     "date_added", "notes", "exclude",
 ]
+
+# --------------------------------------------------------------------------- #
+# is_preprint detection (high precision)
+#
+# The is_preprint column is DERIVED: it is recomputed from type/DOI/venue on
+# every run, so manual edits to it will NOT stick (unlike notes/exclude).
+# "True" means a strong preprint signal fired; "False" means "not confidently
+# identified as a preprint", NOT "confirmed published".
+# --------------------------------------------------------------------------- #
+
+# DOI registrant prefixes belonging to preprint servers.
+PREPRINT_DOI_PREFIXES = {
+    "10.31234",  # PsyArXiv
+    "10.31219",  # OSF Preprints
+    "10.1101",   # bioRxiv / medRxiv
+    "10.48550",  # arXiv
+    "10.21203",  # Research Square
+    "10.20944",  # Preprints.org
+    "10.31235",  # SocArXiv
+    "10.35542",  # EdArXiv
+    "10.2139",   # SSRN
+}
+
+# Substrings that identify a preprint server in a venue name. "arxiv" as a
+# bare containment is safe: every *arxiv-named venue is a preprint server.
+# "osf preprints" is deliberately NOT listed: OpenAlex assigns that venue to
+# some OSF-hosted materials that are not manuscripts, so the venue alone is
+# not a high-certainty signal (true OSF preprints are still caught by the
+# 10.31219 DOI prefix or type == "preprint").
+PREPRINT_VENUE_TOKENS = [
+    "psyarxiv", "biorxiv", "medrxiv", "arxiv", "ssrn", "research square",
+    "preprints.org",
+]
+
+
+def compute_is_preprint(work_type, doi, venue):
+    """True only when a strong preprint signal fires (see notes above)."""
+    if (work_type or "").strip().lower() == "preprint":
+        return True
+    if doi and doi.split("/", 1)[0] in PREPRINT_DOI_PREFIXES:
+        return True
+    venue_l = (venue or "").lower()
+    if venue_l and any(tok in venue_l for tok in PREPRINT_VENUE_TOKENS):
+        return True
+    return False
 
 AUTHOR_COLUMNS = [
     "paper_id", "doi", "publication_year", "author_position", "author_name",
@@ -484,6 +529,8 @@ def main():
             "publication_year": paper["publication_year"],
             "publication_date": paper["publication_date"],
             "type": paper["type"],
+            "is_preprint": str(compute_is_preprint(
+                paper["type"], paper["doi"], paper["venue"])),
             "cited_by_count": paper["cited_by_count"],
             "cited_2015": str(bool(paper["cited_2015"])),
             "cited_joss": str(bool(paper["cited_joss"])),
@@ -515,6 +562,10 @@ def main():
             continue
         # Ensure all columns present.
         row = {c: old.get(c, "") for c in PAPER_COLUMNS}
+        # is_preprint is derived, so recompute it even for preserved rows
+        # (also backfills rows written before the column existed).
+        row["is_preprint"] = str(compute_is_preprint(
+            old.get("type"), norm_doi(old.get("doi")), old.get("venue")))
         paper_rows.append(row)
         preserved_ids.add(old_id)
 
