@@ -6,6 +6,7 @@ Reads data/papers.csv and data/authors.csv and writes:
   analysis/authors.csv       one row per unique author
   analysis/institutions.csv  one row per unique institution
   analysis/journals.csv      one row per unique venue (normalized name)
+  analysis/dashboard.json    compact summary consumed by the Pages dashboard
 
 Papers whose `exclude` column is the string "True" in data/papers.csv are
 excluded from both summaries, as are papers whose `type` is one of the
@@ -30,9 +31,11 @@ Stdlib only — no third-party dependencies.
 """
 
 import csv
+import json
 import os
 import re
 from collections import Counter
+from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -43,6 +46,7 @@ AUTHORS_IN_CSV = os.path.join(REPO, "data", "authors.csv")
 AUTHORS_OUT_CSV = os.path.join(HERE, "authors.csv")
 INSTITUTIONS_OUT_CSV = os.path.join(HERE, "institutions.csv")
 JOURNALS_OUT_CSV = os.path.join(HERE, "journals.csv")
+DASHBOARD_OUT_JSON = os.path.join(HERE, "dashboard.json")
 
 # Work types excluded from the analysis (the raw data CSVs keep everything).
 # A paper is skipped only when its WHOLE lowercased `type` string equals one
@@ -477,6 +481,50 @@ def main():
         writer = csv.DictWriter(fh, fieldnames=JOURNAL_OUT_COLUMNS)
         writer.writeheader()
         writer.writerows(journal_rows)
+
+    # ------------------------------------------------------------------ #
+    # Write dashboard.json (everything the GitHub Pages dashboard needs
+    # in one small file). All ordering is deterministic: works_by_year is
+    # sorted by year, and the top-N lists inherit the deterministic sort
+    # of the tables above.
+    # ------------------------------------------------------------------ #
+    preprints_linked = sum(
+        1 for r in raw_papers if (r.get("duplicate_of") or "").strip())
+
+    year_counts = Counter()
+    for gid in group_dates:
+        first = group_span.get(gid, ("", ""))[0]
+        if len(first) >= 4 and first[:4].isdigit():
+            year_counts[first[:4]] += 1
+    works_by_year = [{"year": int(y), "n": year_counts[y]}
+                     for y in sorted(year_counts)]
+
+    def top_entries(rows, name_field, limit=25):
+        return [{
+            "name": r[name_field],
+            "n_papers": r["n_papers"],
+            "first_use": r["first_use"],
+            "last_use": r["last_use"],
+        } for r in rows[:limit]]
+
+    dashboard = {
+        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "totals": {
+            "works": len(group_dates),
+            "papers_rows": len(raw_papers),
+            "authors": len(author_rows),
+            "institutions": len(inst_rows),
+            "journals": len(journal_rows),
+            "preprints_linked": preprints_linked,
+        },
+        "works_by_year": works_by_year,
+        "top_journals": top_entries(journal_rows, "journal_name"),
+        "top_institutions": top_entries(inst_rows, "institution_name"),
+        "top_authors": top_entries(author_rows, "author_name"),
+    }
+    with open(DASHBOARD_OUT_JSON, "w", encoding="utf-8") as fh:
+        json.dump(dashboard, fh, indent=1, ensure_ascii=False)
+        fh.write("\n")
 
     # ------------------------------------------------------------------ #
     # Summary

@@ -8,6 +8,9 @@ on:
 
 permissions:
   contents: write
+  # Needed to dispatch the Pages deploy workflow after the data commit
+  # (pushes made with the default GITHUB_TOKEN do not trigger push workflows).
+  actions: write
 
 # Prevent a manual dispatch from racing the scheduled run into a
 # non-fast-forward push failure.
@@ -38,14 +41,25 @@ jobs:
         run: python analysis/generate_summaries.py
 
       - name: Commit and push data changes
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ analysis/
           if git diff --quiet --cached; then
             echo "No data changes to commit."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           NEW="${{ steps.update.outputs.new_papers }}"
           git commit -m "Monthly update: ${NEW:-0} new papers"
           git push
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with the default GITHUB_TOKEN do not trigger `on: push`
+      # workflows, so dispatch the Pages deploy explicitly when we committed.
+      - name: Trigger Pages deploy
+        if: steps.commit.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml

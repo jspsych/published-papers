@@ -1,0 +1,525 @@
+{
+ "generated": "2026-07-15",
+ "totals": {
+  "works": 2419,
+  "papers_rows": 2961,
+  "authors": 6176,
+  "institutions": 1714,
+  "journals": 570,
+  "preprints_linked": 450
+ },
+ "works_by_year": [
+  {
+   "year": 2013,
+   "n": 1
+  },
+  {
+   "year": 2014,
+   "n": 7
+  },
+  {
+   "year": 2015,
+   "n": 13
+  },
+  {
+   "year": 2016,
+   "n": 23
+  },
+  {
+   "year": 2017,
+   "n": 52
+  },
+  {
+   "year": 2018,
+   "n": 64
+  },
+  {
+   "year": 2019,
+   "n": 84
+  },
+  {
+   "year": 2020,
+   "n": 133
+  },
+  {
+   "year": 2021,
+   "n": 261
+  },
+  {
+   "year": 2022,
+   "n": 342
+  },
+  {
+   "year": 2023,
+   "n": 410
+  },
+  {
+   "year": 2024,
+   "n": 356
+  },
+  {
+   "year": 2025,
+   "n": 444
+  },
+  {
+   "year": 2026,
+   "n": 227
+  }
+ ],
+ "top_journals": [
+  {
+   "name": "PsyArXiv",
+   "n_papers": 266,
+   "first_use": "2017-03-03",
+   "last_use": "2026-07-02"
+  },
+  {
+   "name": "Behavior Research Methods",
+   "n_papers": 93,
+   "first_use": "2014-03-28",
+   "last_use": "2026-07-06"
+  },
+  {
+   "name": "Cognition",
+   "n_papers": 64,
+   "first_use": "2017-02-15",
+   "last_use": "2026-05-25"
+  },
+  {
+   "name": "OSF Preprints",
+   "n_papers": 64,
+   "first_use": "2016-06-01",
+   "last_use": "2026-07-02"
+  },
+  {
+   "name": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "n_papers": 59,
+   "first_use": "2017-09-15",
+   "last_use": "2026-06-22"
+  },
+  {
+   "name": "Scientific Reports",
+   "n_papers": 56,
+   "first_use": "2016-09-13",
+   "last_use": "2026-06-12"
+  },
+  {
+   "name": "Frontiers in Psychology",
+   "n_papers": 45,
+   "first_use": "2014-08-06",
+   "last_use": "2026-06-04"
+  },
+  {
+   "name": "Attention Perception & Psychophysics",
+   "n_papers": 44,
+   "first_use": "2016-02-04",
+   "last_use": "2026-07-13"
+  },
+  {
+   "name": "arXiv (Cornell University)",
+   "n_papers": 43,
+   "first_use": "2019-05-17",
+   "last_use": "2026-06-24"
+  },
+  {
+   "name": "Memory & Cognition",
+   "n_papers": 39,
+   "first_use": "2018-04-30",
+   "last_use": "2026-05-29"
+  },
+  {
+   "name": "PLoS ONE",
+   "n_papers": 38,
+   "first_use": "2015-06-26",
+   "last_use": "2026-05-15"
+  },
+  {
+   "name": "Psychonomic Bulletin & Review",
+   "n_papers": 37,
+   "first_use": "2016-07-06",
+   "last_use": "2026-07-13"
+  },
+  {
+   "name": "Quarterly Journal of Experimental Psychology",
+   "n_papers": 31,
+   "first_use": "2020-01-14",
+   "last_use": "2026-05-03"
+  },
+  {
+   "name": "Cognitive Science",
+   "n_papers": 27,
+   "first_use": "2015-01-01",
+   "last_use": "2026-06-01"
+  },
+  {
+   "name": "Journal of Cognition",
+   "n_papers": 24,
+   "first_use": "2019-01-01",
+   "last_use": "2026-01-09"
+  },
+  {
+   "name": "Open Mind",
+   "n_papers": 23,
+   "first_use": "2020-01-01",
+   "last_use": "2026-06-30"
+  },
+  {
+   "name": "Communications Psychology",
+   "n_papers": 22,
+   "first_use": "2022-10-17",
+   "last_use": "2026-04-29"
+  },
+  {
+   "name": "eLife",
+   "n_papers": 21,
+   "first_use": "2017-11-21",
+   "last_use": "2026-03-27"
+  },
+  {
+   "name": "Journal of Memory and Language",
+   "n_papers": 20,
+   "first_use": "2018-06-11",
+   "last_use": "2026-06-20"
+  },
+  {
+   "name": "Psychological Research",
+   "n_papers": 20,
+   "first_use": "2020-11-12",
+   "last_use": "2026-02-07"
+  },
+  {
+   "name": "SSRN Electronic Journal",
+   "n_papers": 18,
+   "first_use": "2022-01-01",
+   "last_use": "2026-01-01"
+  },
+  {
+   "name": "Consciousness and Cognition",
+   "n_papers": 17,
+   "first_use": "2019-09-12",
+   "last_use": "2026-03-12"
+  },
+  {
+   "name": "eScholarship (California Digital Library)",
+   "n_papers": 17,
+   "first_use": "2013-01-01",
+   "last_use": "2024-01-01"
+  },
+  {
+   "name": "Journal of Experimental Psychology General",
+   "n_papers": 17,
+   "first_use": "2018-11-28",
+   "last_use": "2026-01-26"
+  },
+  {
+   "name": "Nature Communications",
+   "n_papers": 17,
+   "first_use": "2019-03-08",
+   "last_use": "2026-05-15"
+  }
+ ],
+ "top_institutions": [
+  {
+   "name": "University College London",
+   "n_papers": 75,
+   "first_use": "2016-03-31",
+   "last_use": "2026-06-17"
+  },
+  {
+   "name": "Centre National de la Recherche Scientifique",
+   "n_papers": 72,
+   "first_use": "2016-07-13",
+   "last_use": "2026-06-22"
+  },
+  {
+   "name": "University of Tübingen",
+   "n_papers": 72,
+   "first_use": "2018-07-01",
+   "last_use": "2026-03-11"
+  },
+  {
+   "name": "Ghent University",
+   "n_papers": 62,
+   "first_use": "2019-06-26",
+   "last_use": "2026-05-27"
+  },
+  {
+   "name": "Princeton University",
+   "n_papers": 61,
+   "first_use": "2018-03-02",
+   "last_use": "2026-04-04"
+  },
+  {
+   "name": "University of Cambridge",
+   "n_papers": 53,
+   "first_use": "2017-11-21",
+   "last_use": "2026-07-06"
+  },
+  {
+   "name": "UNSW Sydney",
+   "n_papers": 50,
+   "first_use": "2018-08-24",
+   "last_use": "2026-05-26"
+  },
+  {
+   "name": "University of Oxford",
+   "n_papers": 50,
+   "first_use": "2015-07-23",
+   "last_use": "2026-06-26"
+  },
+  {
+   "name": "University of Edinburgh",
+   "n_papers": 46,
+   "first_use": "2017-02-15",
+   "last_use": "2026-04-16"
+  },
+  {
+   "name": "University of Toronto",
+   "n_papers": 43,
+   "first_use": "2017-08-17",
+   "last_use": "2026-06-10"
+  },
+  {
+   "name": "Stanford University",
+   "n_papers": 41,
+   "first_use": "2016-04-26",
+   "last_use": "2026-05-20"
+  },
+  {
+   "name": "Humboldt-Universität zu Berlin",
+   "n_papers": 41,
+   "first_use": "2020-11-01",
+   "last_use": "2026-05-27"
+  },
+  {
+   "name": "Inserm",
+   "n_papers": 40,
+   "first_use": "2020-07-31",
+   "last_use": "2026-06-22"
+  },
+  {
+   "name": "University of Chicago",
+   "n_papers": 39,
+   "first_use": "2016-07-06",
+   "last_use": "2026-03-06"
+  },
+  {
+   "name": "Yale University",
+   "n_papers": 37,
+   "first_use": "2018-12-16",
+   "last_use": "2026-04-29"
+  },
+  {
+   "name": "University of Zurich",
+   "n_papers": 36,
+   "first_use": "2019-09-17",
+   "last_use": "2026-05-15"
+  },
+  {
+   "name": "Harvard University",
+   "n_papers": 36,
+   "first_use": "2016-02-04",
+   "last_use": "2026-05-15"
+  },
+  {
+   "name": "The University of Melbourne",
+   "n_papers": 34,
+   "first_use": "2019-01-01",
+   "last_use": "2026-05-27"
+  },
+  {
+   "name": "Western University",
+   "n_papers": 33,
+   "first_use": "2020-11-23",
+   "last_use": "2026-03-28"
+  },
+  {
+   "name": "University of Groningen",
+   "n_papers": 32,
+   "first_use": "2018-04-25",
+   "last_use": "2026-05-29"
+  },
+  {
+   "name": "Radboud University Nijmegen",
+   "n_papers": 32,
+   "first_use": "2016-12-07",
+   "last_use": "2026-05-20"
+  },
+  {
+   "name": "New York University",
+   "n_papers": 32,
+   "first_use": "2017-10-01",
+   "last_use": "2026-06-26"
+  },
+  {
+   "name": "MRC Cognition and Brain Sciences Unit",
+   "n_papers": 32,
+   "first_use": "2018-01-03",
+   "last_use": "2026-03-19"
+  },
+  {
+   "name": "McGill University",
+   "n_papers": 30,
+   "first_use": "2017-01-01",
+   "last_use": "2026-06-15"
+  },
+  {
+   "name": "The University of Sydney",
+   "n_papers": 30,
+   "first_use": "2020-03-18",
+   "last_use": "2026-06-03"
+  }
+ ],
+ "top_authors": [
+  {
+   "name": "Stephen C. Van Hedger",
+   "n_papers": 25,
+   "first_use": "2016-07-06",
+   "last_use": "2026-03-28"
+  },
+  {
+   "name": "Joshua K. Hartshorne",
+   "n_papers": 22,
+   "first_use": "2017-05-04",
+   "last_use": "2025-01-01"
+  },
+  {
+   "name": "Ian Grant Mackenzie",
+   "n_papers": 19,
+   "first_use": "2021-10-01",
+   "last_use": "2026-02-01"
+  },
+  {
+   "name": "Barbara Kaup",
+   "n_papers": 19,
+   "first_use": "2021-02-12",
+   "last_use": "2025-09-08"
+  },
+  {
+   "name": "Teodóra Vékony",
+   "n_papers": 19,
+   "first_use": "2022-05-05",
+   "last_use": "2026-06-22"
+  },
+  {
+   "name": "Dezső Németh",
+   "n_papers": 19,
+   "first_use": "2022-05-05",
+   "last_use": "2026-02-24"
+  },
+  {
+   "name": "Stephen M. Fleming",
+   "n_papers": 19,
+   "first_use": "2018-12-01",
+   "last_use": "2026-06-09"
+  },
+  {
+   "name": "Georg Halbeisen",
+   "n_papers": 18,
+   "first_use": "2021-09-01",
+   "last_use": "2026-07-09"
+  },
+  {
+   "name": "Joshua R. de Leeuw",
+   "n_papers": 18,
+   "first_use": "2014-01-01",
+   "last_use": "2025-10-10"
+  },
+  {
+   "name": "Senne Braem",
+   "n_papers": 17,
+   "first_use": "2020-11-06",
+   "last_use": "2026-01-27"
+  },
+  {
+   "name": "Zhang Chen",
+   "n_papers": 15,
+   "first_use": "2019-08-20",
+   "last_use": "2025-10-08"
+  },
+  {
+   "name": "Simon Kirby",
+   "n_papers": 15,
+   "first_use": "2021-01-01",
+   "last_use": "2026-04-16"
+  },
+  {
+   "name": "Frederick Verbruggen",
+   "n_papers": 15,
+   "first_use": "2020-01-17",
+   "last_use": "2025-04-16"
+  },
+  {
+   "name": "Ben R. Newell",
+   "n_papers": 15,
+   "first_use": "2019-07-25",
+   "last_use": "2026-05-26"
+  },
+  {
+   "name": "Jessica C. Lee",
+   "n_papers": 15,
+   "first_use": "2019-10-03",
+   "last_use": "2025-12-06"
+  },
+  {
+   "name": "Jennifer Culbertson",
+   "n_papers": 14,
+   "first_use": "2020-08-03",
+   "last_use": "2026-04-16"
+  },
+  {
+   "name": "Georgios Paslakis",
+   "n_papers": 14,
+   "first_use": "2022-08-13",
+   "last_use": "2026-07-09"
+  },
+  {
+   "name": "Marcel Braß",
+   "n_papers": 13,
+   "first_use": "2019-07-03",
+   "last_use": "2025-04-16"
+  },
+  {
+   "name": "Tobias Rieger",
+   "n_papers": 13,
+   "first_use": "2022-03-08",
+   "last_use": "2026-05-28"
+  },
+  {
+   "name": "Thomas L. Griffiths",
+   "n_papers": 13,
+   "first_use": "2017-07-25",
+   "last_use": "2026-04-02"
+  },
+  {
+   "name": "Fritz Günther",
+   "n_papers": 13,
+   "first_use": "2020-01-14",
+   "last_use": "2026-05-27"
+  },
+  {
+   "name": "Peter F. Lovibond",
+   "n_papers": 13,
+   "first_use": "2019-10-03",
+   "last_use": "2025-08-22"
+  },
+  {
+   "name": "Daniel Bennett",
+   "n_papers": 12,
+   "first_use": "2021-04-12",
+   "last_use": "2026-01-13"
+  },
+  {
+   "name": "Robert L. Goldstone",
+   "n_papers": 12,
+   "first_use": "2013-01-01",
+   "last_use": "2022-07-25"
+  },
+  {
+   "name": "Kenny Smith",
+   "n_papers": 12,
+   "first_use": "2022-05-11",
+   "last_use": "2026-01-08"
+  }
+ ]
+}

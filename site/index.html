@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jsPsych in the literature</title>
+<style>
+  :root {
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11, 11, 11, 0.10);
+    --series: #2a78d6;
+    --series-partial: #86b6ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --ink: #ffffff;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255, 255, 255, 0.10);
+      --series: #3987e5;
+      --series-partial: #184f95;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 16px 8px; }
+  a { color: var(--series); }
+  a:hover { text-decoration-thickness: 2px; }
+
+  header h1 { font-size: 1.7rem; font-weight: 650; margin: 0 0 4px; letter-spacing: -0.01em; }
+  header .sub { margin: 0; color: var(--ink-2); max-width: 60ch; }
+  header .meta { margin: 6px 0 0; color: var(--muted); font-size: 0.85rem; }
+
+  .hero { margin: 28px 0 8px; }
+  .hero .n {
+    font-size: clamp(48px, 9vw, 64px);
+    font-weight: 600;
+    line-height: 1.05;
+    font-variant-numeric: normal; /* proportional figures for the hero */
+    letter-spacing: -0.02em;
+  }
+  .hero .lbl { color: var(--ink-2); margin-top: 2px; }
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 20px 0 8px;
+  }
+  .tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .tile .lbl { color: var(--ink-2); font-size: 0.82rem; }
+  .tile .val { font-weight: 600; font-size: 1.45rem; margin-top: 2px; }
+
+  section.chart-section { margin: 30px 0; }
+  section.chart-section h2 { font-size: 1.1rem; font-weight: 650; margin: 0 0 10px; }
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 14px 10px;
+  }
+  .footnote, .more { color: var(--muted); font-size: 0.82rem; margin: 8px 2px 0; }
+
+  svg { display: block; }
+  svg text { font-family: inherit; }
+  .tick-label { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .axis-label { fill: var(--muted); font-size: 11px; }
+  .gridline { stroke: var(--grid); stroke-width: 1; }
+  .baseline { stroke: var(--baseline); stroke-width: 1; }
+  .mark-fill { fill: var(--series); }
+  .mark-fill.partial { fill: var(--series-partial); }
+  .direct-label { fill: var(--ink); font-size: 11px; }
+  .bar-label { fill: var(--ink-2); font-size: 13px; }
+  .bar-value { fill: var(--ink); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .hit { fill: transparent; }
+
+  g.mark { cursor: default; outline: none; }
+  g.mark:hover .mark-fill, g.mark:focus-visible .mark-fill { filter: brightness(1.18); }
+  g.mark:focus-visible .mark-fill { stroke: var(--ink); stroke-width: 1.5; }
+  @media (prefers-reduced-motion: no-preference) {
+    g.mark .mark-fill { transition: filter 80ms linear; }
+  }
+
+  #tooltip {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    padding: 6px 10px;
+    font-size: 13px;
+    max-width: 300px;
+    display: none;
+  }
+  #tooltip .t-val { font-weight: 600; }
+  #tooltip .t-lbl { color: var(--ink-2); font-size: 12px; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    clip: rect(0 0 0 0); clip-path: inset(50%);
+    overflow: hidden; white-space: nowrap;
+  }
+
+  footer {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 12px 16px 32px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+  #load-error { color: var(--ink-2); padding: 24px 0; display: none; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>jsPsych in the literature</h1>
+    <p class="sub">Academic papers that cite or mention
+      <a href="https://www.jspsych.org/">jsPsych</a>, the JavaScript library for
+      running behavioral experiments in a web browser. Updated monthly from
+      OpenAlex, Europe PMC, and Crossref.</p>
+    <p class="meta"><span id="updated"></span> &middot;
+      <a href="https://github.com/jspsych/published-papers">Data &amp; code on GitHub</a></p>
+  </header>
+
+  <p id="load-error">Could not load the dashboard data. Please try again later.</p>
+
+  <section class="hero" aria-labelledby="hero-lbl">
+    <div class="n" id="hero-n"></div>
+    <div class="lbl" id="hero-lbl">distinct research works (preprint + published versions counted once)</div>
+  </section>
+
+  <section class="tiles" aria-label="Summary statistics">
+    <div class="tile"><div class="lbl" id="tile0-lbl">Works this year</div><div class="val" id="tile0-val"></div></div>
+    <div class="tile"><div class="lbl">Unique authors</div><div class="val" id="tile1-val"></div></div>
+    <div class="tile"><div class="lbl">Unique institutions</div><div class="val" id="tile2-val"></div></div>
+    <div class="tile"><div class="lbl">Unique journals</div><div class="val" id="tile3-val"></div></div>
+  </section>
+
+  <section class="chart-section" aria-labelledby="h-years">
+    <h2 id="h-years">Works per year</h2>
+    <div class="chart-card"><div id="chart-years"></div></div>
+    <p class="footnote" id="ytd-note"></p>
+    <div class="visually-hidden" id="years-table-wrap"></div>
+  </section>
+
+  <section class="chart-section" aria-labelledby="h-journals">
+    <h2 id="h-journals">Top journals</h2>
+    <div class="chart-card"><div id="chart-journals"></div></div>
+    <p class="more">Top 15 shown &middot;
+      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/journals.csv">full list in journals.csv</a></p>
+  </section>
+
+  <section class="chart-section" aria-labelledby="h-institutions">
+    <h2 id="h-institutions">Top institutions</h2>
+    <div class="chart-card"><div id="chart-institutions"></div></div>
+    <p class="more">Top 15 shown &middot;
+      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/institutions.csv">full list in institutions.csv</a></p>
+  </section>
+
+  <section class="chart-section" aria-labelledby="h-authors">
+    <h2 id="h-authors">Top authors</h2>
+    <div class="chart-card"><div id="chart-authors"></div></div>
+    <p class="more">Top 15 shown &middot;
+      <a href="https://github.com/jspsych/published-papers/blob/main/analysis/authors.csv">full list in authors.csv</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Data sources: <a href="https://openalex.org/">OpenAlex</a>,
+    <a href="https://europepmc.org/">Europe PMC</a>, and
+    <a href="https://www.crossref.org/">Crossref</a>. All data on this page is
+    derived from those public APIs; see the
+    <a href="https://github.com/jspsych/published-papers">repository</a> for the
+    full dataset, methodology, and known coverage gaps.</p>
+</footer>
+
+<div id="tooltip" role="status" aria-hidden="true"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  var numFmt = new Intl.NumberFormat("en-US");
+
+  function el(name, attrs, parent) {
+    var node = document.createElementNS(SVG_NS, name);
+    if (attrs) {
+      for (var k in attrs) { node.setAttribute(k, attrs[k]); }
+    }
+    if (parent) { parent.appendChild(node); }
+    return node;
+  }
+
+  function fmtCompact(n) {
+    if (n > 9999) { return (n / 1000).toFixed(1).replace(/\.0$/, "") + "K"; }
+    return numFmt.format(n);
+  }
+
+  // ---- tooltip -------------------------------------------------------- //
+  var tooltip = document.getElementById("tooltip");
+
+  function showTooltip(valueText, labelText, extraText, x, y) {
+    while (tooltip.firstChild) { tooltip.removeChild(tooltip.firstChild); }
+    var v = document.createElement("div");
+    v.className = "t-val";
+    v.textContent = valueText;               // data-derived: textContent only
+    tooltip.appendChild(v);
+    var l = document.createElement("div");
+    l.className = "t-lbl";
+    l.textContent = labelText;
+    tooltip.appendChild(l);
+    if (extraText) {
+      var e = document.createElement("div");
+      e.className = "t-lbl";
+      e.textContent = extraText;
+      tooltip.appendChild(e);
+    }
+    tooltip.style.display = "block";
+    tooltip.setAttribute("aria-hidden", "false");
+    var rect = tooltip.getBoundingClientRect();
+    var px = Math.min(Math.max(8, x + 12), window.innerWidth - rect.width - 8);
+    var py = y - rect.height - 10;
+    if (py < 8) { py = y + 16; }
+    tooltip.style.left = px + "px";
+    tooltip.style.top = py + "px";
+  }
+
+  function hideTooltip() {
+    tooltip.style.display = "none";
+    tooltip.setAttribute("aria-hidden", "true");
+  }
+
+  function attachMarkEvents(group, getTip) {
+    group.addEventListener("mousemove", function (ev) {
+      var t = getTip();
+      showTooltip(t.value, t.label, t.extra, ev.clientX, ev.clientY);
+    });
+    group.addEventListener("mouseleave", hideTooltip);
+    group.addEventListener("focus", function () {
+      var r = group.getBoundingClientRect();
+      var t = getTip();
+      showTooltip(t.value, t.label, t.extra, r.left + r.width / 2, r.top);
+    });
+    group.addEventListener("blur", hideTooltip);
+  }
+
+  // ---- shape helpers (rounded at the data end, square at baseline) ---- //
+  function topRoundedRect(x, y, w, h, r) {
+    r = Math.max(0, Math.min(r, w / 2, h));
+    return "M" + x + "," + (y + h) +
+      " L" + x + "," + (y + r) +
+      " Q" + x + "," + y + " " + (x + r) + "," + y +
+      " L" + (x + w - r) + "," + y +
+      " Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + r) +
+      " L" + (x + w) + "," + (y + h) + " Z";
+  }
+
+  function rightRoundedRect(x, y, w, h, r) {
+    r = Math.max(0, Math.min(r, h / 2, w));
+    return "M" + x + "," + y +
+      " L" + (x + w - r) + "," + y +
+      " Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + r) +
+      " L" + (x + w) + "," + (y + h - r) +
+      " Q" + (x + w) + "," + (y + h) + " " + (x + w - r) + "," + (y + h) +
+      " L" + x + "," + (y + h) + " Z";
+  }
+
+  function cleanTicks(maxValue) {
+    if (maxValue <= 0) { return { step: 1, top: 1 }; }
+    var steps = [1, 2, 5];
+    var mag = 1;
+    for (;;) {
+      for (var i = 0; i < steps.length; i++) {
+        var s = steps[i] * mag;
+        if (Math.ceil(maxValue / s) <= 5) {
+          return { step: s, top: Math.ceil(maxValue / s) * s };
+        }
+      }
+      mag *= 10;
+    }
+  }
+
+  // ---- column chart: works per year ----------------------------------- //
+  function renderYears(container, data, partialYear) {
+    container.textContent = "";
+    var years = data.works_by_year;
+    if (!years.length) { return; }
+    var W = Math.max(280, container.clientWidth);
+    var H = 260;
+    var mL = 44, mR = 6, mT = 14, mB = 24;
+    var plotW = W - mL - mR, plotH = H - mT - mB;
+    var svg = el("svg", {
+      width: W, height: H, viewBox: "0 0 " + W + " " + H,
+      role: "img", "aria-label": "Column chart of works per year"
+    }, container);
+
+    var maxN = 0, maxIdx = 0;
+    years.forEach(function (d, i) {
+      if (d.n > maxN) { maxN = d.n; maxIdx = i; }
+    });
+    var ticks = cleanTicks(maxN);
+    var yScale = function (v) { return mT + plotH - (v / ticks.top) * plotH; };
+
+    // gridlines + y tick labels (behind marks)
+    for (var v = 0; v <= ticks.top; v += ticks.step) {
+      var gy = yScale(v);
+      if (v > 0) {
+        el("line", { x1: mL, y1: gy, x2: W - mR, y2: gy, "class": "gridline" }, svg);
+      }
+      var tl = el("text", {
+        x: mL - 6, y: gy + 3.5, "text-anchor": "end", "class": "tick-label"
+      }, svg);
+      tl.textContent = numFmt.format(v);
+    }
+    // baseline
+    el("line", { x1: mL, y1: mT + plotH, x2: W - mR, y2: mT + plotH, "class": "baseline" }, svg);
+
+    var band = plotW / years.length;
+    var colW = Math.min(24, Math.max(3, band - 2));
+
+    years.forEach(function (d, i) {
+      var cx = mL + band * i + band / 2;
+      var x = cx - colW / 2;
+      var y = yScale(d.n);
+      var h = mT + plotH - y;
+      var isPartial = d.year === partialYear;
+
+      var g = el("g", { "class": "mark", tabindex: "0", role: "img" }, svg);
+      g.setAttribute("aria-label",
+        d.year + ": " + numFmt.format(d.n) + " works" +
+        (isPartial ? " (year to date)" : ""));
+      // transparent hit target, >= 24px wide
+      var hitW = Math.max(band, 24);
+      el("rect", {
+        x: cx - hitW / 2, y: mT, width: hitW, height: plotH, "class": "hit"
+      }, g);
+      el("path", {
+        d: topRoundedRect(x, y, colW, Math.max(h, 0), 4),
+        "class": "mark-fill" + (isPartial ? " partial" : "")
+      }, g);
+      attachMarkEvents(g, function () {
+        return {
+          value: numFmt.format(d.n) + " works",
+          label: String(d.year) + (isPartial ? " (year to date)" : ""),
+          extra: ""
+        };
+      });
+
+      // x labels: sparse — first, last, and every ~2nd depending on space
+      var labelEvery = band >= 34 ? 1 : (band >= 18 ? 2 : 3);
+      if (i % labelEvery === 0 || i === years.length - 1) {
+        var xl = el("text", {
+          x: cx, y: mT + plotH + 16, "text-anchor": "middle", "class": "tick-label"
+        }, svg);
+        xl.textContent = d.year;
+      }
+      // direct value labels only on the max year and the latest year
+      if (i === maxIdx || i === years.length - 1) {
+        var dl = el("text", {
+          x: cx, y: y - 5, "text-anchor": "middle", "class": "direct-label"
+        }, svg);
+        dl.textContent = numFmt.format(d.n);
+      }
+    });
+  }
+
+  // ---- horizontal bar list -------------------------------------------- //
+  function truncateSvgText(textNode, maxWidth, full) {
+    textNode.textContent = full;
+    if (textNode.getComputedTextLength() <= maxWidth) { return; }
+    var s = full;
+    while (s.length > 1 &&
+           textNode.getComputedTextLength() > maxWidth) {
+      s = s.slice(0, -1);
+      textNode.textContent = s + "…";
+    }
+  }
+
+  function renderBars(container, entries, unitLabel) {
+    container.textContent = "";
+    var rows = entries.slice(0, 15);
+    if (!rows.length) { return; }
+    var W = Math.max(280, container.clientWidth);
+    var rowH = 28, barH = 18;
+    var H = rows.length * rowH;
+    var labelW = Math.max(96, Math.min(210, Math.floor(W * 0.34)));
+    var valueW = 52;
+    var x0 = labelW + 10;
+    var plotW = W - x0 - valueW;
+    var maxN = rows[0].n_papers; // rows arrive sorted desc
+    rows.forEach(function (r) { if (r.n_papers > maxN) { maxN = r.n_papers; } });
+
+    var svg = el("svg", {
+      width: W, height: H, viewBox: "0 0 " + W + " " + H,
+      role: "img", "aria-label": "Horizontal bar chart"
+    }, container);
+
+    // single baseline all bars grow from
+    el("line", { x1: x0, y1: 0, x2: x0, y2: H, "class": "baseline" }, svg);
+
+    rows.forEach(function (r, i) {
+      var yMid = i * rowH + rowH / 2;
+      var w = maxN > 0 ? (r.n_papers / maxN) * plotW : 0;
+      var g = el("g", { "class": "mark", tabindex: "0", role: "img" }, svg);
+      var span = (r.first_use || "?") + " to " + (r.last_use || "?");
+      g.setAttribute("aria-label",
+        r.name + ": " + numFmt.format(r.n_papers) + " " + unitLabel +
+        ", " + span);
+
+      // hit target: full row (>= 24px tall/wide)
+      el("rect", { x: 0, y: i * rowH, width: W, height: rowH, "class": "hit" }, g);
+
+      var lbl = el("text", {
+        x: labelW, y: yMid + 4.5, "text-anchor": "end", "class": "bar-label"
+      }, g);
+      truncateSvgText(lbl, labelW - 4, r.name);
+
+      el("path", {
+        d: rightRoundedRect(x0, yMid - barH / 2, Math.max(w, 1), barH, 4),
+        "class": "mark-fill"
+      }, g);
+
+      var val = el("text", {
+        x: x0 + Math.max(w, 1) + 6, y: yMid + 4, "class": "bar-value"
+      }, g);
+      val.textContent = numFmt.format(r.n_papers);
+
+      attachMarkEvents(g, function () {
+        return {
+          value: numFmt.format(r.n_papers) + " " + unitLabel,
+          label: r.name,
+          extra: "First " + (r.first_use || "unknown") +
+                 " · latest " + (r.last_use || "unknown")
+        };
+      });
+    });
+  }
+
+  // ---- hidden data table for the year chart --------------------------- //
+  function renderYearsTable(wrap, years) {
+    wrap.textContent = "";
+    var caption = document.createElement("p");
+    caption.textContent = "Works per year (data table)";
+    wrap.appendChild(caption);
+    var table = document.createElement("table");
+    var head = table.insertRow();
+    ["Year", "Works"].forEach(function (t) {
+      var th = document.createElement("th");
+      th.textContent = t;
+      head.appendChild(th);
+    });
+    years.forEach(function (d) {
+      var tr = table.insertRow();
+      tr.insertCell().textContent = String(d.year);
+      tr.insertCell().textContent = numFmt.format(d.n);
+    });
+    wrap.appendChild(table);
+  }
+
+  // ---- page ------------------------------------------------------------ //
+  function renderAll(data) {
+    var generatedYear = parseInt(String(data.generated).slice(0, 4), 10);
+
+    document.getElementById("updated").textContent = "Updated " + data.generated;
+    document.getElementById("hero-n").textContent =
+      numFmt.format(data.totals.works);
+
+    var thisYear = 0;
+    data.works_by_year.forEach(function (d) {
+      if (d.year === generatedYear) { thisYear = d.n; }
+    });
+    document.getElementById("tile0-lbl").textContent =
+      "Works in " + generatedYear;
+    document.getElementById("tile0-val").textContent = fmtCompact(thisYear);
+    document.getElementById("tile1-val").textContent =
+      fmtCompact(data.totals.authors);
+    document.getElementById("tile2-val").textContent =
+      fmtCompact(data.totals.institutions);
+    document.getElementById("tile3-val").textContent =
+      fmtCompact(data.totals.journals);
+    document.getElementById("ytd-note").textContent =
+      generatedYear + " is year-to-date.";
+
+    renderYears(document.getElementById("chart-years"), data, generatedYear);
+    renderBars(document.getElementById("chart-journals"),
+               data.top_journals, "works");
+    renderBars(document.getElementById("chart-institutions"),
+               data.top_institutions, "works");
+    renderBars(document.getElementById("chart-authors"),
+               data.top_authors, "works");
+    renderYearsTable(document.getElementById("years-table-wrap"),
+                     data.works_by_year);
+  }
+
+  function debounce(fn, ms) {
+    var t = null;
+    return function () {
+      if (t) { clearTimeout(t); }
+      t = setTimeout(fn, ms);
+    };
+  }
+
+  fetch("analysis/dashboard.json")
+    .then(function (res) {
+      if (!res.ok) { throw new Error("HTTP " + res.status); }
+      return res.json();
+    })
+    .then(function (data) {
+      renderAll(data);
+      window.addEventListener("resize", debounce(function () {
+        renderAll(data);
+      }, 150));
+    })
+    .catch(function (err) {
+      var e = document.getElementById("load-error");
+      e.style.display = "block";
+      e.textContent = "Could not load the dashboard data (" + err.message +
+        "). Please try again later.";
+    });
+})();
+</script>
+</body>
+</html>
