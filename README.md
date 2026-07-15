@@ -26,6 +26,8 @@ One row per unique paper.
 | `publication_year` | Year of publication. |
 | `publication_date` | Publication date (`YYYY-MM-DD`) when known. |
 | `type` | Work type (e.g. `article`, `preprint`). |
+| `topic_field` | **Derived, recomputed every run** — the display name of the OpenAlex `primary_topic` field (e.g. `Psychology`). OpenAlex assigns topics **algorithmically**, so occasional misassignments are expected. Blank for all Europe PMC-only records and for OpenAlex records without a primary topic; newly added columns stay blank until the next full monthly fetch backfills them (`--relink` does not refetch and leaves these columns untouched). |
+| `topic_subfield` | **Derived** — the OpenAlex `primary_topic` subfield display name (e.g. `Cognitive Neuroscience`). Same provenance and caveats as `topic_field`. |
 | `is_preprint` | **Derived, recomputed every run** — manual edits will not stick (unlike `notes`/`exclude`). `True` only when a strong preprint signal fires: `type` is exactly `preprint`, the DOI prefix belongs to a known preprint server (PsyArXiv, OSF Preprints, bioRxiv/medRxiv, arXiv, Research Square, Preprints.org, SocArXiv, EdArXiv, SSRN), or the venue names one of those servers. `False` means "not confidently identified as a preprint", **not** "confirmed published". |
 | `duplicate_of` | **Derived, recomputed every run** — manual edits will not stick. When this row is a preprint (or earlier version) of another row in the dataset, the `id` of that canonical row; blank for canonical / unlinked rows. Chains are flattened (v1 → v2 → published becomes v1 → published), so a canonical row always has a blank `duplicate_of`. Rows are never deleted by linking — this column only annotates. See [Preprint → published linking](#preprint--published-linking). |
 | `match_method` | **Derived** — which signal produced the link: `crossref`, `doi_version`, or `title_author` (see below). Blank whenever `duplicate_of` is blank. |
@@ -170,8 +172,17 @@ only) derives two summary tables from the data CSVs:
   (distinct works), `n_authors` (distinct author keys), `first_use`,
   `last_use`.
 - **`analysis/journals.csv`** — one row per unique venue: `journal_key`,
-  `journal_name`, `n_papers` (distinct works), `n_authors` (distinct author
-  keys), `first_use`, `last_use`. Venues are keyed by normalized name
+  `journal_name`, `field`, `n_papers` (distinct works), `n_authors`
+  (distinct author keys), `first_use`, `last_use`. The `field` column is
+  the **modal `topic_field` across the journal's classified works** (a
+  work's own field is the modal value across its linked members; ties break
+  by count then alphabetically; blank when no member work is classified).
+  Because classification is per-journal, most Europe PMC-only papers are
+  covered indirectly: their journal is classified by its OpenAlex-covered
+  works. Expect the large majority of works to sit in a classified journal
+  once the monthly fetch has backfilled `topic_field`, with a residual
+  blank tail (unclassified OpenAlex records and journals seen only via
+  Europe PMC). The script prints the exact coverage each run. Venues are keyed by normalized name
   (lowercased, runs of punctuation/whitespace collapsed to single spaces —
   this merges MEDLINE-style variants like *Journal of experimental
   psychology. General*) since the sources provide no ISSNs; `journal_name`

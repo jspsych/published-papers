@@ -12,9 +12,12 @@ import tempfile
 import unittest
 from unittest import mock
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _REPO)
+sys.path.insert(0, os.path.join(_REPO, "analysis"))
 
 import update_papers as up  # noqa: E402
+import generate_summaries as gs  # noqa: E402
 
 
 class FakeResponse:
@@ -145,6 +148,53 @@ class CrossrefCacheFormatTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             cache = up._load_crossref_cache(os.path.join(td, "nope.json"))
         self.assertEqual(cache, {"links": {}, "checked": {}})
+
+
+class ExtractTopicTests(unittest.TestCase):
+    def test_full_topic(self):
+        work = {"primary_topic": {
+            "display_name": "Some Topic",
+            "field": {"display_name": "Psychology"},
+            "subfield": {"display_name": "Cognitive Neuroscience"},
+        }}
+        self.assertEqual(up.extract_topic(work),
+                         ("Psychology", "Cognitive Neuroscience"))
+
+    def test_missing_primary_topic(self):
+        self.assertEqual(up.extract_topic({}), ("", ""))
+        self.assertEqual(up.extract_topic({"primary_topic": None}), ("", ""))
+
+    def test_partial_topic(self):
+        work = {"primary_topic": {"field": {"display_name": "Psychology"},
+                                  "subfield": None}}
+        self.assertEqual(up.extract_topic(work), ("Psychology", ""))
+
+
+class ModalValueTests(unittest.TestCase):
+    def test_empty_counter_is_blank(self):
+        from collections import Counter
+        self.assertEqual(gs.modal_value(Counter()), "")
+
+    def test_clear_winner(self):
+        from collections import Counter
+        c = Counter({"Psychology": 3, "Neuroscience": 1})
+        self.assertEqual(gs.modal_value(c), "Psychology")
+
+    def test_tie_breaks_alphabetically(self):
+        from collections import Counter
+        c = Counter({"Neuroscience": 2, "Computer Science": 2})
+        self.assertEqual(gs.modal_value(c), "Computer Science")
+
+    def test_deterministic_regardless_of_insertion_order(self):
+        from collections import Counter
+        c1 = Counter()
+        c1["B Field"] += 1
+        c1["A Field"] += 1
+        c2 = Counter()
+        c2["A Field"] += 1
+        c2["B Field"] += 1
+        self.assertEqual(gs.modal_value(c1), gs.modal_value(c2))
+        self.assertEqual(gs.modal_value(c1), "A Field")
 
 
 if __name__ == "__main__":

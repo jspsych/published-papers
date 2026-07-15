@@ -42,6 +42,7 @@ OPENALEX_SELECT = ",".join([
     "authorships",
     "cited_by_count",
     "type",
+    "primary_topic",
 ])
 
 # The three OpenAlex queries and the boolean flag each one sets.
@@ -57,7 +58,8 @@ FLAG_COLUMNS = ["cited_2015", "cited_joss", "fulltext_openalex", "fulltext_epmc"
 
 PAPER_COLUMNS = [
     "id", "doi", "title", "venue", "publication_year", "publication_date",
-    "type", "is_preprint", "duplicate_of", "match_method", "cited_by_count",
+    "type", "topic_field", "topic_subfield", "is_preprint", "duplicate_of",
+    "match_method", "cited_by_count",
     "cited_2015", "cited_joss", "fulltext_openalex", "fulltext_epmc",
     "first_author", "n_authors", "date_added", "notes", "exclude",
 ]
@@ -106,6 +108,18 @@ def compute_is_preprint(work_type, doi, venue):
     if venue_l and any(tok in venue_l for tok in PREPRINT_VENUE_TOKENS):
         return True
     return False
+
+def extract_topic(work):
+    """(topic_field, topic_subfield) display names from an OpenAlex work's
+    primary_topic. Both are '' when the work has no primary_topic (always
+    the case for Europe PMC-only records, and for some OpenAlex records).
+    OpenAlex assigns topics algorithmically, so occasional misassignments
+    are expected."""
+    pt = work.get("primary_topic") or {}
+    field = (pt.get("field") or {}).get("display_name") or ""
+    subfield = (pt.get("subfield") or {}).get("display_name") or ""
+    return field, subfield
+
 
 AUTHOR_COLUMNS = [
     "paper_id", "doi", "publication_year", "author_position", "author_name",
@@ -309,6 +323,8 @@ def build_openalex_paper(work, flag):
         "publication_year": work.get("publication_year") or "",
         "publication_date": work.get("publication_date") or "",
         "type": work.get("type") or "",
+        "topic_field": extract_topic(work)[0],
+        "topic_subfield": extract_topic(work)[1],
         "cited_by_count": work.get("cited_by_count") or 0,
         "cited_2015": False,
         "cited_joss": False,
@@ -398,6 +414,8 @@ def build_epmc_paper(rec):
         "publication_year": rec.get("pubYear") or "",
         "publication_date": rec.get("firstPublicationDate") or "",
         "type": ptype,
+        "topic_field": "",     # Europe PMC provides no OpenAlex topics
+        "topic_subfield": "",
         "cited_by_count": rec.get("citedByCount") or 0,
         "cited_2015": False,
         "cited_joss": False,
@@ -998,6 +1016,8 @@ def main():
             "publication_year": paper["publication_year"],
             "publication_date": paper["publication_date"],
             "type": paper["type"],
+            "topic_field": paper.get("topic_field", ""),
+            "topic_subfield": paper.get("topic_subfield", ""),
             "is_preprint": str(compute_is_preprint(
                 paper["type"], paper["doi"], paper["venue"])),
             "cited_by_count": paper["cited_by_count"],

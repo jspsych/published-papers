@@ -103,6 +103,20 @@
     outline: 2px solid var(--series);
     outline-offset: 1px;
   }
+  .table-controls select {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font: inherit;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .table-controls select:focus-visible {
+    outline: 2px solid var(--series);
+    outline-offset: 1px;
+  }
   .table-controls .count { color: var(--muted); font-size: 0.82rem; }
 
   .table-wrap {
@@ -225,6 +239,8 @@
     <div class="table-controls">
       <label class="visually-hidden" for="q-journals">Search journals</label>
       <input type="search" id="q-journals" placeholder="Search journals" autocomplete="off">
+      <label class="visually-hidden" for="f-journals">Filter by field</label>
+      <select id="f-journals"><option value="">All fields</option></select>
       <span class="count" id="count-journals" role="status"></span>
     </div>
     <div class="table-card">
@@ -381,8 +397,26 @@
       sortIdx: spec.defaultSortIdx,
       sortDir: "desc",
       query: "",
+      filterValue: "",
       showAll: false
     };
+
+    // optional exact-match <select> filter (e.g. journals by field)
+    var filterSelect = null;
+    if (spec.filter) {
+      filterSelect = document.getElementById(spec.filter.selectId);
+      var values = {};
+      data.forEach(function (row) {
+        var v = (row[spec.filter.key] || "").trim();
+        if (v) { values[v] = true; }
+      });
+      Object.keys(values).sort().forEach(function (v) {
+        var opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;    // data-derived: textContent only
+        filterSelect.appendChild(opt);
+      });
+    }
 
     var table = document.createElement("table");
     table.className = "data";
@@ -447,9 +481,12 @@
     }
 
     function render() {
-      // filter
+      // filter (text search AND select filter combine)
       var q = state.query.toLowerCase();
-      var filtered = !q ? data.slice() : data.filter(function (row) {
+      var fv = state.filterValue;
+      var filtered = data.filter(function (row) {
+        if (fv && (row[spec.filter.key] || "").trim() !== fv) { return false; }
+        if (!q) { return true; }
         return spec.searchKeys.some(function (k) {
           return (row[k] || "").toLowerCase().indexOf(q) !== -1;
         });
@@ -489,8 +526,8 @@
       tbody.textContent = "";
       tbody.appendChild(frag);
 
-      // count ("N of M" when filtered)
-      countEl.textContent = q
+      // count ("N of M" when filtered by search and/or the select filter)
+      countEl.textContent = (q || fv)
         ? numFmt.format(sorted.length) + " of " + numFmt.format(data.length)
         : "";
 
@@ -508,6 +545,12 @@
       state.query = searchInput.value.trim();
       render();
     });
+    if (filterSelect) {
+      filterSelect.addEventListener("change", function () {
+        state.filterValue = filterSelect.value;
+        render();
+      });
+    }
     showAllBtn.addEventListener("click", function () {
       state.showAll = true;
       render();
@@ -553,11 +596,14 @@
 
     makeTable("journals", csvToObjects(results[1]), {
       caption: "All journals in the dataset, sortable and searchable",
-      defaultSortIdx: 1,
+      defaultSortIdx: 2,
       searchKeys: ["journal_name"],
+      filter: { selectId: "f-journals", key: "field" },
       columns: [
         { label: "Journal", key: "journal_name", type: "name",
           cell: function (r) { return textCell("name", r.journal_name); } },
+        { label: "Field", key: "field", type: "name",
+          cell: function (r) { return textCell("plain", r.field || ""); } },
         { label: "Works", key: "n_papers", type: "num",
           cell: function (r) { return numCell(r.n_papers); } },
         { label: "Authors", key: "n_authors", type: "num",

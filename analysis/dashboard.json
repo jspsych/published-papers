@@ -71,151 +71,176 @@
    "name": "PsyArXiv",
    "n_papers": 266,
    "first_use": "2017-03-03",
-   "last_use": "2026-07-02"
+   "last_use": "2026-07-02",
+   "field": ""
   },
   {
    "name": "Behavior Research Methods",
    "n_papers": 93,
    "first_use": "2014-03-28",
-   "last_use": "2026-07-06"
+   "last_use": "2026-07-06",
+   "field": ""
   },
   {
    "name": "Cognition",
    "n_papers": 64,
    "first_use": "2017-02-15",
-   "last_use": "2026-05-25"
+   "last_use": "2026-05-25",
+   "field": ""
   },
   {
    "name": "OSF Preprints",
    "n_papers": 64,
    "first_use": "2016-06-01",
-   "last_use": "2026-07-02"
+   "last_use": "2026-07-02",
+   "field": ""
   },
   {
    "name": "bioRxiv (Cold Spring Harbor Laboratory)",
    "n_papers": 59,
    "first_use": "2017-09-15",
-   "last_use": "2026-06-22"
+   "last_use": "2026-06-22",
+   "field": ""
   },
   {
    "name": "Scientific Reports",
    "n_papers": 56,
    "first_use": "2016-09-13",
-   "last_use": "2026-06-12"
+   "last_use": "2026-06-12",
+   "field": ""
   },
   {
    "name": "Frontiers in Psychology",
    "n_papers": 45,
    "first_use": "2014-08-06",
-   "last_use": "2026-06-04"
+   "last_use": "2026-06-04",
+   "field": ""
   },
   {
    "name": "Attention Perception & Psychophysics",
    "n_papers": 44,
    "first_use": "2016-02-04",
-   "last_use": "2026-07-13"
+   "last_use": "2026-07-13",
+   "field": ""
   },
   {
    "name": "arXiv (Cornell University)",
    "n_papers": 43,
    "first_use": "2019-05-17",
-   "last_use": "2026-06-24"
+   "last_use": "2026-06-24",
+   "field": ""
   },
   {
    "name": "Memory & Cognition",
    "n_papers": 39,
    "first_use": "2018-04-30",
-   "last_use": "2026-05-29"
+   "last_use": "2026-05-29",
+   "field": ""
   },
   {
    "name": "PLoS ONE",
    "n_papers": 38,
    "first_use": "2015-06-26",
-   "last_use": "2026-05-15"
+   "last_use": "2026-05-15",
+   "field": ""
   },
   {
    "name": "Psychonomic Bulletin & Review",
    "n_papers": 37,
    "first_use": "2016-07-06",
-   "last_use": "2026-07-13"
+   "last_use": "2026-07-13",
+   "field": ""
   },
   {
    "name": "Quarterly Journal of Experimental Psychology",
    "n_papers": 31,
    "first_use": "2020-01-14",
-   "last_use": "2026-05-03"
+   "last_use": "2026-05-03",
+   "field": ""
   },
   {
    "name": "Cognitive Science",
    "n_papers": 27,
    "first_use": "2015-01-01",
-   "last_use": "2026-06-01"
+   "last_use": "2026-06-01",
+   "field": ""
   },
   {
    "name": "Journal of Cognition",
    "n_papers": 24,
    "first_use": "2019-01-01",
-   "last_use": "2026-01-09"
+   "last_use": "2026-01-09",
+   "field": ""
   },
   {
    "name": "Open Mind",
    "n_papers": 23,
    "first_use": "2020-01-01",
-   "last_use": "2026-06-30"
+   "last_use": "2026-06-30",
+   "field": ""
   },
   {
    "name": "Communications Psychology",
    "n_papers": 22,
    "first_use": "2022-10-17",
-   "last_use": "2026-04-29"
+   "last_use": "2026-04-29",
+   "field": ""
   },
   {
    "name": "eLife",
    "n_papers": 21,
    "first_use": "2017-11-21",
-   "last_use": "2026-03-27"
+   "last_use": "2026-03-27",
+   "field": ""
   },
   {
    "name": "Journal of Memory and Language",
    "n_papers": 20,
    "first_use": "2018-06-11",
-   "last_use": "2026-06-20"
+   "last_use": "2026-06-20",
+   "field": ""
   },
   {
    "name": "Psychological Research",
    "n_papers": 20,
    "first_use": "2020-11-12",
-   "last_use": "2026-02-07"
+   "last_use": "2026-02-07",
+   "field": ""
   },
   {
    "name": "SSRN Electronic Journal",
    "n_papers": 18,
    "first_use": "2022-01-01",
-   "last_use": "2026-01-01"
+   "last_use": "2026-01-01",
+   "field": ""
   },
   {
    "name": "Consciousness and Cognition",
    "n_papers": 17,
    "first_use": "2019-09-12",
-   "last_use": "2026-03-12"
+   "last_use": "2026-03-12",
+   "field": ""
   },
   {
    "name": "eScholarship (California Digital Library)",
    "n_papers": 17,
    "first_use": "2013-01-01",
-   "last_use": "2024-01-01"
+   "last_use": "2024-01-01",
+   "field": ""
   },
   {
    "name": "Journal of Experimental Psychology General",
    "n_papers": 17,
    "first_use": "2018-11-28",
-   "last_use": "2026-01-26"
+   "last_use": "2026-01-26",
+   "field": ""
   },
   {
    "name": "Nature Communications",
    "n_papers": 17,
    "first_use": "2019-03-08",
-   "last_use": "2026-05-15"
+   "last_use": "2026-05-15",
+   "field": ""
   }
  ],
  "top_institutions": [

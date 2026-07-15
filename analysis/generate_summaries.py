@@ -64,7 +64,7 @@ INSTITUTION_OUT_COLUMNS = [
     "n_papers", "n_authors", "first_use", "last_use",
 ]
 JOURNAL_OUT_COLUMNS = [
-    "journal_key", "journal_name", "n_papers", "n_authors",
+    "journal_key", "journal_name", "field", "n_papers", "n_authors",
     "first_use", "last_use",
 ]
 
@@ -99,6 +99,14 @@ VENUE_ALIASES = {
     "psyarxiv osf preprints": "PsyArXiv",
     "osf preprints osf preprints": "OSF Preprints",
 }
+
+
+def modal_value(counter):
+    """Most frequent value in a Counter; ties broken by count then
+    alphabetically (deterministic). '' for an empty counter."""
+    if not counter:
+        return ""
+    return min(counter.items(), key=lambda kv: (-kv[1], kv[0]))[0]
 
 
 def norm_name(name):
@@ -169,6 +177,7 @@ def main():
     excluded = set()
     type_filtered = 0
     group_dates = {}  # group id -> list of member date strings (non-excluded)
+    group_field_votes = {}  # group id -> Counter of non-blank topic_field
     for row in raw_papers:
         pid = row["id"]
         if (row.get("exclude") or "").strip() == "True":
@@ -178,7 +187,18 @@ def main():
             excluded.add(pid)
             type_filtered += 1
             continue
-        group_dates.setdefault(group_of[pid], []).append(paper_date(row))
+        gid = group_of[pid]
+        group_dates.setdefault(gid, []).append(paper_date(row))
+        tfield = (row.get("topic_field") or "").strip()
+        if tfield:
+            group_field_votes.setdefault(gid, Counter())[tfield] += 1
+
+    # A work's field: modal topic_field across its non-excluded members
+    # (member versions of the same work almost always agree; using the modal
+    # value lets a classified preprint cover an unclassified published row
+    # and vice versa). '' when no member is classified.
+    work_field = {gid: modal_value(group_field_votes[gid])
+                  for gid in group_field_votes}
 
     # first/last use per active group (min/max across its non-excluded members)
     group_span = {}
@@ -239,9 +259,13 @@ def main():
             nvenue = norm_venue(venue)
         j_key = f"name:{nvenue}"
         jentry = journals.setdefault(
-            j_key, {"names": Counter(), "papers": set(), "authors": set()})
+            j_key, {"names": Counter(), "papers": set(), "authors": set(),
+                    "fields": Counter()})
         jentry["names"][venue] += 1  # one spelling vote per work
         jentry["papers"].add(gid)
+        wf = work_field.get(gid, "")
+        if wf:
+            jentry["fields"][wf] += 1  # one field vote per classified work
         group_journal[gid] = j_key
 
     # ------------------------------------------------------------------ #
@@ -470,6 +494,9 @@ def main():
         journal_rows.append({
             "journal_key": key,
             "journal_name": most_frequent(entry["names"]),
+            # Modal topic_field across the journal's classified works (ties:
+            # count then alphabetical); '' when no member work is classified.
+            "field": modal_value(entry["fields"]),
             "n_papers": len(entry["papers"]),
             "n_authors": len(entry["authors"]),
             "first_use": first,
@@ -499,13 +526,19 @@ def main():
     works_by_year = [{"year": int(y), "n": year_counts[y]}
                      for y in sorted(year_counts)]
 
-    def top_entries(rows, name_field, limit=25):
-        return [{
-            "name": r[name_field],
-            "n_papers": r["n_papers"],
-            "first_use": r["first_use"],
-            "last_use": r["last_use"],
-        } for r in rows[:limit]]
+    def top_entries(rows, name_field, limit=25, extra_keys=()):
+        out = []
+        for r in rows[:limit]:
+            e = {
+                "name": r[name_field],
+                "n_papers": r["n_papers"],
+                "first_use": r["first_use"],
+                "last_use": r["last_use"],
+            }
+            for k in extra_keys:
+                e[k] = r[k]
+            out.append(e)
+        return out
 
     dashboard = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -518,7 +551,8 @@ def main():
             "preprints_linked": preprints_linked,
         },
         "works_by_year": works_by_year,
-        "top_journals": top_entries(journal_rows, "journal_name"),
+        "top_journals": top_entries(journal_rows, "journal_name",
+                                    extra_keys=("field",)),
         "top_institutions": top_entries(inst_rows, "institution_name"),
         "top_authors": top_entries(author_rows, "author_name"),
     }
@@ -549,6 +583,24 @@ def main():
     print(f"  Unique journals: {len(journal_rows)} "
           f"(venues recovered from DOI prefix: {venue_from_doi_prefix}, "
           f"works skipped for empty venue: {skipped_no_venue})")
+
+    # Field-classification coverage
+    n_works = len(group_dates)
+    journal_field = {r["journal_key"]: r["field"] for r in journal_rows}
+    direct = sum(1 for gid in group_dates if work_field.get(gid, ""))
+    covered = sum(
+        1 for gid in group_dates
+        if work_field.get(gid, "")
+        or journal_field.get(group_journal.get(gid, ""), ""))
+    classified_journals = sum(1 for r in journal_rows if r["field"])
+    def pct(a, b):
+        return f"{100.0 * a / b:.1f}%" if b else "n/a"
+    print(f"  Field coverage: {pct(direct, n_works)} of works classified "
+          f"directly ({direct}/{n_works}); "
+          f"{pct(classified_journals, len(journal_rows))} of journals "
+          f"classified ({classified_journals}/{len(journal_rows)}); "
+          f"{pct(covered, n_works)} of works in a classified journal or "
+          f"classified directly ({covered}/{n_works})")
     print("  Top 5 authors by n_papers:")
     for r in author_rows[:5]:
         print(f"    {r['n_papers']:>4}  {r['author_name']}  ({r['author_key']})")
