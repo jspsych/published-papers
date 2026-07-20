@@ -37,6 +37,16 @@ jobs:
         id: update
         run: python update_papers.py
 
+      # Incremental: only papers not yet in data/materials_cache.json are
+      # processed, so this is cheap after the initial backlog. Failures must
+      # not block the paper update itself.
+      - name: Find open materials
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
+        run: python find_materials.py
+
       - name: Generate analysis summaries
         run: python analysis/generate_summaries.py
 

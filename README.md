@@ -8,8 +8,8 @@ behavioral experiments in a web browser.
 counts plus sortable, searchable tables of every journal, institution, and
 author in the dataset, rebuilt on every data update.
 
-The data lives in two CSV files under [`data/`](data/) and is refreshed monthly
-by a GitHub Actions workflow. No API keys are required to reproduce it.
+The data lives in three CSV files under [`data/`](data/) and is refreshed
+monthly by a GitHub Actions workflow. No API keys are required to reproduce it.
 
 ## What's in the data
 
@@ -75,6 +75,23 @@ ROR id.
 
 Europe PMC-only records provide free-text affiliation strings but no country
 codes or ROR ids, so those two columns are empty for them.
+
+### `data/materials.csv`
+
+One row per paper–repository-link pair, produced by
+[`find_materials.py`](find_materials.py) (see [Open materials
+discovery](#open-materials-discovery)).
+
+| column | meaning |
+| --- | --- |
+| `paper_id` | Joins to `papers.csv.id`. Links found on a preprint row belong to that row — join through `duplicate_of` to roll them up to the published version. |
+| `doi` | DOI of the paper. |
+| `url` | Normalized repository URL (e.g. `https://osf.io/ab3d9`, `https://github.com/owner/repo`, `https://zenodo.org/records/12345`). |
+| `url_type` | `osf`, `github`, `gitlab`, `zenodo`, `pavlovia`, or `gorilla`. |
+| `source` | How the link was found: `epmc_fulltext` (mined from the paper's full text) or `osf_preprint` (the supplemental project attached to an OSF-hosted preprint). |
+| `section` | Where in the paper the link appeared: `preprint_supplement` > `data_availability` > `body` > `unknown` > `references`. Links from `references` are usually citations of *other* works, not this paper's materials. |
+| `jspsych_confirmed` | `True` when validation found jsPsych markers in the repository (a `jspsych` filename anywhere in the tree, or `jsPsych` inside a small `.html`/`.js` file); `False` when the repository was fully checked and none were found (data/stimuli-only repositories are common); blank when it could not be (fully) checked — private/deleted repositories, archives (`.zip`) whose contents are opaque, trees larger than the per-repository request budget, or URL types that are not validated (`gitlab`, `pavlovia`, `gorilla`). |
+| `checked_date` | UTC date the row was first recorded. |
 
 ## Data sources
 
@@ -161,6 +178,54 @@ stick. `python update_papers.py --relink` reruns *only* this linking step
 against the existing CSVs (Crossref is the only network dependency) and then
 regenerates the analysis summaries, which is useful for testing without a
 full refetch.
+
+## Open materials discovery
+
+[`find_materials.py`](find_materials.py) tries to track down each paper's
+**actual experiment implementation** — the jsPsych code — on OSF, GitHub,
+Zenodo, and friends. It is fully deterministic (no LLM) and uses only free
+APIs, in three stages:
+
+1. **Europe PMC full-text mining.** For papers with full text in Europe PMC
+   (`fulltext_epmc` is `True`), fetch the JATS XML and regex-extract
+   repository links, recording the section each link came from.
+   Data-availability statements are located by JATS `sec-type` or by section
+   titles matching availability/open-practices patterns. Links to the jsPsych
+   library itself (the `jspsych` GitHub org) and `osf.io/<guid>` strings that
+   are actually preprint DOIs in this dataset (i.e. citations of papers) are
+   filtered out.
+2. **OSF preprint lookup.** OSF-hosted preprints (PsyArXiv, OSF Preprints,
+   EdArXiv, SocArXiv) carry their GUID in the DOI suffix; the OSF API returns
+   the preprint's attached supplemental project directly — no text mining.
+3. **Validation.** Each distinct OSF node/registration, GitHub repository,
+   and Zenodo record is checked for jsPsych markers: any filename containing
+   `jspsych`, else `jsPsych` inside a few small `.html`/`.js` files
+   (downloads capped per repository). OSF file trees are walked
+   breadth-first, one level of child components included, under a
+   per-node request budget.
+
+Progress is cached in `data/materials_cache.json` (committed), so runs are
+**resumable and incremental**: the monthly job only processes papers not yet
+checked. Papers with no retrievable full text, and preprints with no
+supplemental node, are re-checked after 180 days (full text and supplements
+often appear late). Validation verdicts are cached per URL and not re-checked.
+
+```bash
+python find_materials.py                 # extract new papers, then validate
+python find_materials.py --limit 50      # cap papers per extraction stage
+python find_materials.py --validate-only # only validate pending URLs
+```
+
+Optional environment variables: `GITHUB_TOKEN` (required for GitHub
+validation; the workflow's default token works) and `OSF_TOKEN`
+(unauthenticated OSF calls are throttled aggressively; a [personal access
+token](https://osf.io/settings/tokens) speeds validation up considerably).
+
+Precision notes: a link in a paper is not proof the repository holds *that
+paper's* materials (papers cite other people's repositories too — hence the
+`section` column), and `jspsych_confirmed = False` frequently just means the
+authors shared data/stimuli but not code. Treat `jspsych_confirmed = True`
+plus a non-`references` section as the high-confidence signal.
 
 ## Analysis
 
