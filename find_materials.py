@@ -81,6 +81,19 @@ OSF_MAX_FILE_DOWNLOADS = 5
 OSF_MAX_FILE_BYTES = 2_000_000
 GH_MAX_FILE_DOWNLOADS = 5
 
+# Reverse GitHub code search (stage 4, opt-in via --github-search).
+GH_SEARCH_MAX_REPOS_PER_PAPER = 5
+# A repo whose files match this many different papers' DOIs is a
+# bibliography/metadata aggregator, not anyone's materials.
+GH_SEARCH_FREQ_THRESHOLD = 5
+# Code search allows ~10 requests/min authenticated; pace a bit under that.
+GH_SEARCH_PACE_SECONDS = 8.0
+
+# Work types not worth a code-search query (kept in sync with
+# update_papers.NON_RESEARCH_TYPES; matched against the whole type string).
+NON_RESEARCH_TYPES = {"software", "peer-review", "paratext", "erratum",
+                      "dataset", "retraction", "editorial", "letter"}
+
 # --------------------------------------------------------------------------- #
 # Link extraction
 # --------------------------------------------------------------------------- #
@@ -249,7 +262,14 @@ MAX_WAIT_SECONDS = 120
 
 
 class RateLimited(Exception):
-    """Raised when a service keeps throttling beyond our patience."""
+    """Raised when a service keeps throttling beyond our patience.
+
+    reset_epoch, when known (GitHub's X-RateLimit-Reset), is the Unix time
+    at which the quota replenishes."""
+
+    def __init__(self, url, reset_epoch=None):
+        super().__init__(url)
+        self.reset_epoch = reset_epoch
 
 
 def http_get(url, params=None, headers=None, max_bytes=None):
@@ -270,24 +290,41 @@ def http_get(url, params=None, headers=None, max_bytes=None):
             return None
         if resp.status_code in (401, 403, 410):
             # Treat like not-found for our purposes (private/removed), except
-            # GitHub-style rate limiting which sends 403 with a reset header.
-            if resp.headers.get("X-RateLimit-Remaining") == "0":
-                raise RateLimited(url)
+            # GitHub-style rate limiting: primary limits send 403 with
+            # X-RateLimit-Remaining: 0, secondary limits send 403 with a
+            # Retry-After header. Either must NOT be mistaken for "no result"
+            # (that would get cached as a permanent negative).
+            if (resp.headers.get("X-RateLimit-Remaining") == "0"
+                    or resp.headers.get("Retry-After")):
+                reset = None
+                try:
+                    reset = float(resp.headers.get("X-RateLimit-Reset", ""))
+                except ValueError:
+                    ra = resp.headers.get("Retry-After")
+                    if ra:
+                        try:
+                            reset = time.time() + float(ra)
+                        except ValueError:
+                            pass
+                raise RateLimited(url, reset_epoch=reset)
             return None
         if resp.status_code == 429 or resp.status_code >= 500:
-            if attempt == MAX_RETRIES:
-                raise RateLimited(url) if resp.status_code == 429 \
-                    else resp.raise_for_status()
-            wait = backoff
+            ra_s = None
             ra = resp.headers.get("Retry-After")
             if ra:
                 try:
                     ra_s = float(ra)
-                    if ra_s > MAX_WAIT_SECONDS:
-                        raise RateLimited(url)
-                    wait = max(wait, ra_s)
                 except ValueError:
                     pass
+            if attempt == MAX_RETRIES:
+                if resp.status_code == 429:
+                    raise RateLimited(
+                        url,
+                        reset_epoch=time.time() + ra_s if ra_s else None)
+                resp.raise_for_status()
+            if ra_s is not None and ra_s > MAX_WAIT_SECONDS:
+                raise RateLimited(url, reset_epoch=time.time() + ra_s)
+            wait = max(backoff, ra_s or 0)
             time.sleep(min(wait, MAX_WAIT_SECONDS))
             backoff *= 2
             continue
@@ -317,8 +354,11 @@ def http_get_json(url, params=None, headers=None):
 # Cache
 # --------------------------------------------------------------------------- #
 
+CACHE_KEYS = ("extracted", "osf_preprint", "gh_search", "pmcid", "validated")
+
+
 def load_cache(path=CACHE_JSON):
-    cache = {"extracted": {}, "osf_preprint": {}, "pmcid": {}, "validated": {}}
+    cache = {k: {} for k in CACHE_KEYS}
     if os.path.exists(path):
         try:
             with open(path, encoding="utf-8") as fh:
@@ -332,8 +372,7 @@ def load_cache(path=CACHE_JSON):
 
 
 def save_cache(cache, path=CACHE_JSON):
-    payload = {k: dict(sorted(cache[k].items())) for k in
-               ("extracted", "osf_preprint", "pmcid", "validated")}
+    payload = {k: dict(sorted(cache[k].items())) for k in CACHE_KEYS}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=2, sort_keys=True)
         fh.write("\n")
@@ -478,6 +517,158 @@ def stage_osf_preprints(papers, cache, materials, limit=None):
             materials.write()
         time.sleep(0.3)
     print(f"  done: {n_links} supplemental projects found")
+
+
+# --------------------------------------------------------------------------- #
+# Stage 4 (opt-in): reverse GitHub code search by DOI
+#
+# For papers with no materials link from stages 1-2, search GitHub code for
+# the paper's DOI: authors often cite their paper's DOI in the repo README.
+# Recall is limited (many author repos never mention the DOI) and raw
+# precision is poor — DOI strings also live in bibliography/metadata dumps —
+# so repos matching many different papers' DOIs are dropped as aggregators,
+# and stage 3 validation remains the final gate on jsPsych content.
+# --------------------------------------------------------------------------- #
+
+def _github_search_repos(doi):
+    """Distinct repo full_names whose files contain the DOI string, capped.
+    Returns a list, or None when the search could not be run."""
+    try:
+        resp = http_get(f"{GITHUB_API}/search/code",
+                        params={"q": f'"{doi}"', "per_page": 30},
+                        headers=gh_headers())
+    except RateLimited:
+        raise
+    if resp is None:
+        return None
+    try:
+        data = resp.json()
+    except ValueError:
+        return None
+    repos = []
+    for item in data.get("items") or []:
+        full = ((item.get("repository") or {}).get("full_name") or "")
+        if not full or "/" not in full:
+            continue
+        owner = full.split("/", 1)[0].lower()
+        if owner in GITHUB_EXCLUDED_OWNERS:
+            continue
+        if full.lower() not in [r.lower() for r in repos]:
+            repos.append(full)
+        if len(repos) >= GH_SEARCH_MAX_REPOS_PER_PAPER:
+            break
+    return repos
+
+
+def gh_search_repo_counts(gh_search_cache):
+    """repo (lowercase) -> number of distinct papers whose DOI search hit it,
+    across the whole cache (so the aggregator filter sees every run)."""
+    counts = {}
+    for entry in gh_search_cache.values():
+        for repo in set(r.lower() for r in entry.get("repos") or []):
+            counts[repo] = counts.get(repo, 0) + 1
+    return counts
+
+
+def covered_paper_ids(papers, materials):
+    """Paper ids that already have a materials link, including canonical
+    papers covered via one of their duplicate (preprint) rows."""
+    covered = {r["paper_id"] for r in materials.rows.values()}
+    for p in papers:
+        dup_of = (p.get("duplicate_of") or "").strip()
+        if dup_of and p["id"] in covered:
+            covered.add(dup_of)
+    return covered
+
+
+def stage_github_search(papers, cache, materials, limit=None):
+    """Search GitHub code for DOIs of papers with no materials link yet."""
+    covered = covered_paper_ids(papers, materials)
+    eligible = [p for p in papers
+                if p.get("doi")
+                and not (p.get("duplicate_of") or "").strip()
+                and (p.get("type") or "").strip().lower()
+                not in NON_RESEARCH_TYPES
+                and p["id"] not in covered
+                and p["id"] not in cache["gh_search"]]
+    if limit is not None:
+        eligible = eligible[:limit]
+    print(f"Stage 4 (GitHub code search): {len(eligible)} papers to search")
+    if not os.environ.get("GITHUB_TOKEN"):
+        print("  GITHUB_TOKEN not set; skipping (code search needs auth)",
+              file=sys.stderr)
+        return
+    n_hits = 0
+    stopped = False
+    for i, paper in enumerate(eligible, 1):
+        # Primary code-search quota replenishes every minute; secondary
+        # rate limits can last several minutes. Wait until the reported
+        # reset time (capped at 15 min) and retry a few times before
+        # giving up on the stage.
+        repos = None
+        skip_paper = False
+        for attempt in range(4):
+            try:
+                repos = _github_search_repos(paper["doi"])
+                break
+            except requests.RequestException as exc:
+                # Transient network failure (DNS blip, connection reset):
+                # leave this paper unsearched for the next run instead of
+                # crashing the whole sweep.
+                print(f"  network error, skipping {paper['id']}: {exc}",
+                      file=sys.stderr)
+                time.sleep(10)
+                skip_paper = True
+                break
+            except RateLimited as exc:
+                if attempt == 3:
+                    print("  GitHub search still rate limited after 3 waits; "
+                          "stopping stage 4 (resumable)", file=sys.stderr)
+                    stopped = True
+                    break
+                # Escalate when the server doesn't say when to come back:
+                # sticky secondary limits outlast a fixed 65s wait.
+                wait = (65.0, 300.0, 600.0)[attempt]
+                if exc.reset_epoch:
+                    wait = exc.reset_epoch - time.time() + 5
+                wait = min(max(wait, 30.0), 900.0)
+                print(f"  GitHub rate limited; waiting {wait:.0f}s "
+                      f"({i}/{len(eligible)})", file=sys.stderr)
+                time.sleep(wait)
+        if stopped:
+            break
+        if skip_paper:
+            continue  # not cached; re-searched next run
+        if repos is None:
+            repos = []  # unsearchable DOI or transient error: record empty
+        cache["gh_search"][paper["id"]] = {"date": TODAY, "repos": repos}
+        if repos:
+            n_hits += 1
+        if i % 25 == 0:
+            print(f"  {i}/{len(eligible)} searched, {n_hits} with hits")
+            save_cache(cache)
+        time.sleep(GH_SEARCH_PACE_SECONDS)
+
+    # Materialize rows from the whole cache, dropping aggregator repos.
+    counts = gh_search_repo_counts(cache["gh_search"])
+    frequent = {r for r, c in counts.items() if c >= GH_SEARCH_FREQ_THRESHOLD}
+    papers_by_id = {p["id"]: p for p in papers}
+    added = 0
+    for pid, entry in cache["gh_search"].items():
+        paper = papers_by_id.get(pid)
+        if not paper:
+            continue
+        for repo in entry.get("repos") or []:
+            if repo.lower() in frequent:
+                continue
+            materials.add(paper, f"https://github.com/{repo}", "github",
+                          "github_search", "reverse_search")
+            added += 1
+    # Prune rows for repos that only later crossed the aggregator threshold.
+    pruned = materials.prune_github_search(frequent)
+    print(f"  done: {n_hits} papers with hits this run; "
+          f"{added} candidate rows materialized, {len(frequent)} aggregator "
+          f"repos excluded, {pruned} stale rows pruned")
 
 
 # --------------------------------------------------------------------------- #
@@ -672,6 +863,12 @@ def stage_validate(cache, materials, limit=None):
                 print("  GitHub rate limited; skipping remaining GitHub URLs",
                       file=sys.stderr)
             continue
+        except requests.RequestException as exc:
+            # Transient network failure: leave this URL unvalidated for the
+            # next run rather than crashing the whole pass.
+            print(f"  network error, skipping {url}: {exc}", file=sys.stderr)
+            time.sleep(10)
+            continue
         if checked:
             cache["validated"][url.lower()] = {
                 "confirmed": verdict, "date": TODAY}
@@ -705,7 +902,8 @@ class MaterialsStore:
             # Keep the row but refresh section/source if the new signal is
             # stronger (data_availability beats body beats references).
             rank = {"preprint_supplement": 0, "data_availability": 1,
-                    "body": 2, "unknown": 3, "references": 4}
+                    "body": 2, "reverse_search": 3, "unknown": 4,
+                    "references": 5}
             if rank.get(section, 5) < rank.get(existing.get("section"), 5):
                 existing["section"] = section
                 existing["source"] = source
@@ -720,6 +918,20 @@ class MaterialsStore:
             "jspsych_confirmed": "",
             "checked_date": TODAY,
         }
+
+    def prune_github_search(self, frequent_repos):
+        """Remove github_search rows whose repo is now flagged as an
+        aggregator. Returns the number of rows removed."""
+        doomed = []
+        for key, row in self.rows.items():
+            if row.get("source") != "github_search":
+                continue
+            repo = row["url"].split("github.com/", 1)[-1].lower()
+            if repo in frequent_repos:
+                doomed.append(key)
+        for key in doomed:
+            del self.rows[key]
+        return len(doomed)
 
     def distinct_urls(self):
         seen = {}
@@ -774,6 +986,11 @@ def main(argv=None):
                     help="skip extraction; only validate pending URLs")
     ap.add_argument("--validate-limit", type=int, default=None,
                     help="max URLs to validate this run")
+    ap.add_argument("--github-search", action="store_true",
+                    help="also reverse-search GitHub code for DOIs of papers "
+                         "with no materials link (slow: ~10 queries/min)")
+    ap.add_argument("--github-search-limit", type=int, default=None,
+                    help="max papers to reverse-search this run")
     args = ap.parse_args(argv)
 
     papers = load_papers()
@@ -788,6 +1005,12 @@ def main(argv=None):
         save_cache(cache)
         materials.write()
         stage_osf_preprints(papers, cache, materials, limit=args.limit)
+        save_cache(cache)
+        materials.write()
+
+    if args.github_search:
+        stage_github_search(papers, cache, materials,
+                            limit=args.github_search_limit)
         save_cache(cache)
         materials.write()
 

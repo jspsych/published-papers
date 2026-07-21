@@ -98,6 +98,50 @@ class PreprintGuidTests(unittest.TestCase):
             fm.osf_guid_from_preprint_doi("10.1101/2024.01.01.573000"), "")
 
 
+class GithubSearchTests(unittest.TestCase):
+    def test_repo_counts_across_cache(self):
+        cache = {
+            "p1": {"repos": ["Lab/task", "agg/bib"]},
+            "p2": {"repos": ["agg/bib"]},
+            "p3": {"repos": ["agg/BIB"]},  # case-insensitive
+        }
+        counts = fm.gh_search_repo_counts(cache)
+        self.assertEqual(counts["agg/bib"], 3)
+        self.assertEqual(counts["lab/task"], 1)
+
+    def test_covered_includes_canonical_via_duplicate(self):
+        papers = [
+            {"id": "W1", "duplicate_of": ""},
+            {"id": "P1", "duplicate_of": "W1"},
+            {"id": "W2", "duplicate_of": ""},
+        ]
+
+        class FakeStore:
+            rows = {("P1", "u"): {"paper_id": "P1"}}
+
+        covered = fm.covered_paper_ids(papers, FakeStore())
+        self.assertIn("P1", covered)
+        self.assertIn("W1", covered)  # canonical covered via its preprint
+        self.assertNotIn("W2", covered)
+
+    def test_prune_github_search(self):
+        store = fm.MaterialsStore(path=os.devnull)
+        store.rows = {
+            ("W1", "https://github.com/agg/bib"): {
+                "paper_id": "W1", "url": "https://github.com/agg/bib",
+                "source": "github_search"},
+            ("W1", "https://github.com/lab/task"): {
+                "paper_id": "W1", "url": "https://github.com/lab/task",
+                "source": "github_search"},
+            ("W2", "https://github.com/agg/bib"): {
+                "paper_id": "W2", "url": "https://github.com/agg/bib",
+                "source": "epmc_fulltext"},  # not from search: kept
+        }
+        removed = store.prune_github_search({"agg/bib"})
+        self.assertEqual(removed, 1)
+        self.assertEqual(len(store.rows), 2)
+
+
 class CachePolicyTests(unittest.TestCase):
     def test_never_extracted(self):
         self.assertTrue(fm._should_reextract(None))
