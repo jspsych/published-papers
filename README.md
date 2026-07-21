@@ -88,8 +88,8 @@ discovery](#open-materials-discovery)).
 | `doi` | DOI of the paper. |
 | `url` | Normalized repository URL (e.g. `https://osf.io/ab3d9`, `https://github.com/owner/repo`, `https://zenodo.org/records/12345`). |
 | `url_type` | `osf`, `github`, `gitlab`, `zenodo`, `pavlovia`, or `gorilla`. |
-| `source` | How the link was found: `epmc_fulltext` (mined from the paper's full text) or `osf_preprint` (the supplemental project attached to an OSF-hosted preprint). |
-| `section` | Where in the paper the link appeared: `preprint_supplement` > `data_availability` > `body` > `unknown` > `references`. Links from `references` are usually citations of *other* works, not this paper's materials. |
+| `source` | How the link was found: `epmc_fulltext` (mined from the paper's full text), `osf_preprint` (the supplemental project attached to an OSF-hosted preprint), or `github_search` (reverse GitHub code search on the paper's DOI). |
+| `section` | Where in the paper the link appeared: `preprint_supplement` > `data_availability` > `body` > `reverse_search` > `unknown` > `references`. Links from `references` are usually citations of *other* works, not this paper's materials; `reverse_search` links were never in the paper at all — the repository cites the paper's DOI. |
 | `jspsych_confirmed` | `True` when validation found jsPsych markers in the repository (a `jspsych` filename anywhere in the tree, or `jsPsych` inside a small `.html`/`.js` file); `False` when the repository was fully checked and none were found (data/stimuli-only repositories are common); blank when it could not be (fully) checked — private/deleted repositories, archives (`.zip`) whose contents are opaque, trees larger than the per-repository request budget, or URL types that are not validated (`gitlab`, `pavlovia`, `gorilla`). |
 | `checked_date` | UTC date the row was first recorded. |
 
@@ -203,6 +203,17 @@ APIs, in three stages:
    (downloads capped per repository). OSF file trees are walked
    breadth-first, one level of child components included, under a
    per-node request budget.
+4. **Reverse GitHub code search** (opt-in via `--github-search`; requires
+   `GITHUB_TOKEN`). Papers that still have no materials link get a GitHub
+   code search on their DOI — authors often cite the paper DOI in a repo
+   README even when the paper never links the repo. Raw hits are noisy, so
+   repositories whose files match **five or more** different papers' DOIs
+   are dropped as bibliography/metadata aggregators (JATOS docs, personal
+   websites, `elife-article-xml`, …), and validation remains the gate on
+   jsPsych content. These rows have `source = github_search` and
+   `section = reverse_search`. Code search is rate-limited (~10
+   queries/min), so the full backlog took hours; the incremental monthly
+   cost is a few queries.
 
 Progress is cached in `data/materials_cache.json` (committed), so runs are
 **resumable and incremental**: the monthly job only processes papers not yet
@@ -211,9 +222,10 @@ supplemental node, are re-checked after 180 days (full text and supplements
 often appear late). Validation verdicts are cached per URL and not re-checked.
 
 ```bash
-python find_materials.py                 # extract new papers, then validate
-python find_materials.py --limit 50      # cap papers per extraction stage
-python find_materials.py --validate-only # only validate pending URLs
+python find_materials.py                  # extract new papers, then validate
+python find_materials.py --limit 50       # cap papers per extraction stage
+python find_materials.py --validate-only  # only validate pending URLs
+python find_materials.py --github-search  # also reverse-search GitHub by DOI
 ```
 
 Optional environment variables: `GITHUB_TOKEN` (required for GitHub

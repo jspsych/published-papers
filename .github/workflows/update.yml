@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           OSF_TOKEN: ${{ secrets.OSF_TOKEN }}
-        run: python find_materials.py
+        run: python find_materials.py --github-search
 
       - name: Generate analysis summaries
         run: python analysis/generate_summaries.py
