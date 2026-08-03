@@ -2192,6 +2192,10 @@
       "date": "2026-07-20",
       "status": "ok"
     },
+    "W4409357663": {
+      "date": "2026-08-03",
+      "status": "ok"
+    },
     "W4409361562": {
       "date": "2026-07-20",
       "status": "ok"
@@ -2754,6 +2758,10 @@
     },
     "W7167333866": {
       "date": "2026-07-20",
+      "status": "noft"
+    },
+    "W7171237340": {
+      "date": "2026-08-03",
       "status": "noft"
     },
     "epmc:MED:30562522": {
@@ -3985,6 +3993,10 @@
         "JATOS/JATOS_docs",
         "SFRL/PhD_QMUL_Latex"
       ]
+    },
+    "W3018275620": {
+      "date": "2026-08-03",
+      "repos": []
     },
     "W3022417968": {
       "date": "2026-07-21",
@@ -6221,6 +6233,10 @@
       "date": "2026-07-20",
       "repos": []
     },
+    "W4324152549": {
+      "date": "2026-08-03",
+      "repos": []
+    },
     "W4324157328": {
       "date": "2026-07-20",
       "repos": [
@@ -6396,6 +6412,16 @@
         "specl/ind-illusions",
         "DominiqueMakowski/DominiqueMakowski.github.io",
         "RealityBending/IllusionGamePhenomenologicalControl"
+      ]
+    },
+    "W4367047297": {
+      "date": "2026-08-03",
+      "repos": [
+        "zhihengli-casia/AI-Paper-Trends",
+        "freezed-corpse-143/topaperlist",
+        "SenuriWijenayake/senuri-wijenayake",
+        "morningD/lang.csconf",
+        "ChongKaKam/CCFSearcher"
       ]
     },
     "W4367054263": {
@@ -6577,6 +6603,16 @@
     "W4380031412": {
       "date": "2026-07-20",
       "repos": []
+    },
+    "W4380365635": {
+      "date": "2026-08-03",
+      "repos": [
+        "yongkaiwu/FairAI",
+        "rjteoh/what-is-ai-safety",
+        "drgoebel/knowledge_lab",
+        "andrewcshi/AI-Index-Report-2024",
+        "andrewcshi/ai-index-2025"
+      ]
     },
     "W4380681409": {
       "date": "2026-07-20",
@@ -7085,6 +7121,13 @@
     "W4387319535": {
       "date": "2026-07-20",
       "repos": []
+    },
+    "W4387421459": {
+      "date": "2026-08-03",
+      "repos": [
+        "MahdiBedoui/TEST",
+        "MahdiBedoui/Who_is_Answering_CHI"
+      ]
     },
     "W4387427268": {
       "date": "2026-07-20",
@@ -9568,6 +9611,10 @@
       "date": "2026-07-20",
       "repos": []
     },
+    "W4414509570": {
+      "date": "2026-08-03",
+      "repos": []
+    },
     "W4414578224": {
       "date": "2026-07-20",
       "repos": []
@@ -10661,6 +10708,10 @@
       "date": "2026-07-20",
       "repos": []
     },
+    "W7161956001": {
+      "date": "2026-08-03",
+      "repos": []
+    },
     "W7162004681": {
       "date": "2026-07-20",
       "repos": []
@@ -10924,6 +10975,105 @@
     },
     "W7168278977": {
       "date": "2026-07-20",
+      "repos": []
+    },
+    "W7168367123": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7168563634": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7168649565": {
+      "date": "2026-08-03",
+      "repos": [
+        "qihongl/paper-tracking",
+        "MaohuaNie/personal-website-2"
+      ]
+    },
+    "W7168687739": {
+      "date": "2026-08-03",
+      "repos": [
+        "JATOS/JATOS_docs"
+      ]
+    },
+    "W7168868100": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7169624383": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7169762716": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7169878327": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7169884949": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7170142279": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7170156554": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171144936": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171237340": {
+      "date": "2026-08-03",
+      "repos": [
+        "Schiwo/jsPsychWorkflow_StroopTask",
+        "Schiwo/jsPsychWorkflow_FlankerTask",
+        "Schiwo/jsPsychWorkflow_ImmediateSerialRecallTask"
+      ]
+    },
+    "W7171370454": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171460082": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171518427": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171828962": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171841219": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7171869083": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7172005838": {
+      "date": "2026-08-03",
+      "repos": [
+        "daweibai/daweibai"
+      ]
+    },
+    "W7172011092": {
+      "date": "2026-08-03",
+      "repos": []
+    },
+    "W7172099418": {
+      "date": "2026-08-03",
       "repos": []
     },
     "W888502841": {
@@ -13532,6 +13682,10 @@
       "date": "2026-07-20",
       "status": "noft"
     },
+    "W7171237340": {
+      "date": "2026-08-03",
+      "status": "noft"
+    },
     "epmc:PPR:PPR392928": {
       "date": "2026-07-20",
       "status": "noft"
@@ -14090,6 +14244,7 @@
     "W4408887453": "PMC12890248",
     "W4409113421": "PMC13168620",
     "W4409348385": "PMC11992832",
+    "W4409357663": "PMC12058195",
     "W4409361562": "PMC12589337",
     "W4409361886": "PMC12058820",
     "W4409377750": "PMC11993574",
@@ -14231,6 +14386,7 @@
     "W7165373596": "PMC13280941",
     "W7166837499": "",
     "W7167333866": "",
+    "W7171237340": "",
     "epmc:MED:30562522": "PMC6303190",
     "epmc:MED:30564183": "PMC6288301",
     "epmc:MED:32047460": "PMC6997336",
@@ -14482,6 +14638,14 @@
     "https://github.com/andlab-um/jc-workshops": {
       "confirmed": false,
       "date": "2026-07-21"
+    },
+    "https://github.com/andrewcshi/ai-index-2025": {
+      "confirmed": false,
+      "date": "2026-08-03"
+    },
+    "https://github.com/andrewcshi/ai-index-report-2024": {
+      "confirmed": null,
+      "date": "2026-08-03"
     },
     "https://github.com/andrewsu/ai-nuggets": {
       "confirmed": false,
@@ -14798,6 +14962,10 @@
     "https://github.com/chatjohn/paper-mining": {
       "confirmed": false,
       "date": "2026-07-21"
+    },
+    "https://github.com/chongkakam/ccfsearcher": {
+      "confirmed": false,
+      "date": "2026-08-03"
     },
     "https://github.com/choxos/funded-trials": {
       "confirmed": false,
@@ -15190,6 +15358,10 @@
     "https://github.com/doragd/algorithm-practice-in-industry": {
       "confirmed": null,
       "date": "2026-07-21"
+    },
+    "https://github.com/drgoebel/knowledge_lab": {
+      "confirmed": null,
+      "date": "2026-08-03"
     },
     "https://github.com/dukeenglish/papertutor": {
       "confirmed": null,
@@ -16847,6 +17019,10 @@
       "confirmed": false,
       "date": "2026-07-21"
     },
+    "https://github.com/qihongl/paper-tracking": {
+      "confirmed": null,
+      "date": "2026-08-03"
+    },
     "https://github.com/quentinglorieux/rbw-romainquentin": {
       "confirmed": null,
       "date": "2026-07-21"
@@ -16975,6 +17151,10 @@
       "confirmed": null,
       "date": "2026-07-21"
     },
+    "https://github.com/rjteoh/what-is-ai-safety": {
+      "confirmed": null,
+      "date": "2026-08-03"
+    },
     "https://github.com/robayedavies/psyc401-book": {
       "confirmed": null,
       "date": "2026-07-21"
@@ -17079,6 +17259,18 @@
       "confirmed": false,
       "date": "2026-07-20"
     },
+    "https://github.com/schiwo/jspsychworkflow_flankertask": {
+      "confirmed": true,
+      "date": "2026-08-03"
+    },
+    "https://github.com/schiwo/jspsychworkflow_immediateserialrecalltask": {
+      "confirmed": true,
+      "date": "2026-08-03"
+    },
+    "https://github.com/schiwo/jspsychworkflow_strooptask": {
+      "confirmed": true,
+      "date": "2026-08-03"
+    },
     "https://github.com/schlossvrl/gpt": {
       "confirmed": null,
       "date": "2026-07-20"
@@ -17126,6 +17318,10 @@
     "https://github.com/sensorimotordevices/sensorimotordevices.github.io": {
       "confirmed": false,
       "date": "2026-07-20"
+    },
+    "https://github.com/senuriwijenayake/senuri-wijenayake": {
+      "confirmed": null,
+      "date": "2026-08-03"
     },
     "https://github.com/sepsad/orthogonalized-gonogo-task": {
       "confirmed": true,
@@ -17842,6 +18038,10 @@
     "https://github.com/yoannjulliard/academic_website": {
       "confirmed": false,
       "date": "2026-07-20"
+    },
+    "https://github.com/yongkaiwu/fairai": {
+      "confirmed": false,
+      "date": "2026-08-03"
     },
     "https://github.com/yorkcla/scoping-review-of-musical-applications-in-interactive-sonification": {
       "confirmed": false,
