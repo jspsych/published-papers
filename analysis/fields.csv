@@ -1,17 +1,17 @@
 field,n_works,n_journals,n_authors,first_use,last_use
-Psychology,1057,197,2797,2009-03-01,2026-08-28
-Neuroscience,583,125,1981,2015-01-01,2026-09-01
-Computer Science,354,100,1177,2013-01-01,2026-08-27
-Social Sciences,147,40,463,2009-01-01,2026-09-02
-Decision Sciences,82,25,263,2016-01-01,2026-08-05
-Medicine,74,30,344,2016-05-27,2026-07-25
-Arts and Humanities,45,17,137,2018-08-06,2026-07-30
-Engineering,37,11,115,2005-01-01,2026-07-02
-Health Professions,30,6,100,2014-01-01,2026-05-01
-Mathematics,28,6,90,2018-01-01,2026-08-01
+Psychology,1089,201,2857,2009-03-01,2026-10-01
+Neuroscience,600,127,1989,2015-01-01,2026-09-28
+Computer Science,367,100,1236,2013-01-01,2026-09-18
+Social Sciences,155,41,479,2009-01-01,2026-09-09
+Decision Sciences,83,24,265,2016-01-01,2026-08-05
+Medicine,77,30,349,2016-05-27,2026-09-02
+Arts and Humanities,46,18,143,2018-08-06,2026-07-30
+Engineering,41,12,123,2005-01-01,2026-07-02
+Health Professions,31,6,98,2014-01-01,2026-05-01
+Mathematics,30,6,96,2018-01-01,2026-08-01
 "Business, Management and Accounting",14,9,47,2014-01-01,2026-02-16
-"Economics, Econometrics and Finance",12,1,41,2018-10-01,2026-07-02
-"Biochemistry, Genetics and Molecular Biology",11,4,107,2017-09-21,2026-07-29
+"Economics, Econometrics and Finance",13,1,41,2018-10-01,2026-07-02
+"Biochemistry, Genetics and Molecular Biology",12,4,73,2017-09-21,2026-07-29
 Physics and Astronomy,10,4,30,2016-03-31,2026-01-01
 Environmental Science,8,3,30,2021-03-17,2025-01-01
 Agricultural and Biological Sciences,3,0,9,2019-07-24,2026-08-19
