@@ -349,9 +349,15 @@ persist.
 
 ```bash
 pip install -r requirements.txt
+export OPENALEX_API_KEY=...   # free key from https://openalex.org/settings/api
 python update_papers.py
 python analysis/generate_summaries.py
 ```
+
+OpenAlex requires an API key (since Feb 2026). Without one the script still
+runs, but OpenAlex's keyless budget is only enough for a page or two, so a
+full fetch fails with HTTP 401. In CI the key comes from the
+`OPENALEX_API_KEY` repository secret.
 
 This reads any existing CSVs, fetches all four sources, and rewrites
 `data/papers.csv` and `data/authors.csv`. A fresh run takes a few minutes and

@@ -28,6 +28,12 @@ import requests
 MAILTO = "josh.deleeuw@gmail.com"
 
 OPENALEX_BASE = "https://api.openalex.org/works"
+
+# OpenAlex has required an API key since Feb 2026; keyless calls get only a
+# tiny daily testing budget and then fail with 401/409. The monthly workflow
+# passes the key from the OPENALEX_API_KEY repository secret. Free keys:
+# https://openalex.org/settings/api
+OPENALEX_API_KEY = os.environ.get("OPENALEX_API_KEY", "").strip()
 EPMC_BASE = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 
 # OpenAlex fields to request (keeps responses small).
@@ -261,7 +267,22 @@ def fetch_openalex(filter_str):
             "cursor": cursor,
             "mailto": MAILTO,
         }
-        data = http_get_json(OPENALEX_BASE, params)
+        if OPENALEX_API_KEY:
+            params["api_key"] = OPENALEX_API_KEY
+        try:
+            data = http_get_json(OPENALEX_BASE, params)
+        except requests.HTTPError as exc:
+            resp = getattr(exc, "response", None)
+            if resp is not None and resp.status_code in (401, 403, 409):
+                hint = ("OPENALEX_API_KEY is set but was rejected"
+                        if OPENALEX_API_KEY else
+                        "no OPENALEX_API_KEY set, so the keyless daily "
+                        "budget ran out")
+                raise RuntimeError(
+                    f"OpenAlex refused the request (HTTP {resp.status_code}): "
+                    f"{hint}. Get a free key at "
+                    f"https://openalex.org/settings/api") from exc
+            raise
         batch = data.get("results", [])
         results.extend(batch)
         page += 1
