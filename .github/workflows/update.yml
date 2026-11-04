@@ -35,6 +35,8 @@ jobs:
 
       - name: Run update
         id: update
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: python update_papers.py
 
       # Incremental: only papers not yet in data/materials_cache.json are
